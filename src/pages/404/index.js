@@ -1,10 +1,11 @@
 import * as React from "react";
+import { Content } from "components";
 
 const NotFoundPage = () => {
   return (
-    <main>
-      home
-    </main>
+    <Content>
+      404
+    </Content>
   );
 };
 
