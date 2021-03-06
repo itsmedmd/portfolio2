@@ -1,0 +1,15 @@
+@import "style";
+
+.layout {
+    color: $red;
+}
+
+.header,
+.footer {
+    background-color: $black;
+    height: $header-height;
+}
+
+.main {
+    background-color: $white;
+}

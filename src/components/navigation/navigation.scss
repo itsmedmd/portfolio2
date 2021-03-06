@@ -1,0 +1,17 @@
+@import "style";
+
+.nav {
+    &__big-text {
+        display: block;
+        color: $red;
+        font-size: $font-24;
+    }
+
+    &__link {
+        text-transform: uppercase;
+    }
+
+    &__link--active {
+        text-decoration: underline 1px solid $red;
+    }
+}
