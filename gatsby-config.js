@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: "portfolio2",
+    title: "Deimantas Butėnas - Portfolio",
+    siteUrl: "https://www.deimantasbutenas.lt/",
   },
   plugins: [
     "gatsby-plugin-sass",
