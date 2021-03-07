@@ -1,12 +1,12 @@
 import * as React from "react";
 import { Layout } from "components";
 
-const HomePage = () => {
+const NotFoundPage = () => {
   return (
     <Layout>
-      home
+      404
     </Layout>
   );
 };
 
-export default HomePage;
+export default NotFoundPage;
