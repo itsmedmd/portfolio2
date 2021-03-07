@@ -1,17 +1,42 @@
 @import "style";
 
 .nav {
+    &__list {
+        display: flex;
+        align-items: center;
+        padding: 8px 24px;
+        list-style: none;
+    }
+
+    &__item {
+        margin-right: 36px;
+    }
+
     &__big-text {
         display: block;
-        color: $red;
-        font-size: $font-24;
+        font-size: 40px;
+        font-weight: 700;
+        line-height: 0.85;
+        letter-spacing: 2px;
+    }
+
+    &__small-text {
+        font-size: 18px;
     }
 
     &__link {
+        color: $text-bright;
+        text-decoration: none;
         text-transform: uppercase;
+        font-size: 20px;
+        letter-spacing: 0.5px;
     }
 
-    &__link--active {
-        text-decoration: underline 1px solid $red;
+    &__link:first-of-type {
+        text-align: center;
+    }
+
+    &__link--active:not(:first-of-type) {
+        text-decoration: underline 1px solid $text-bright;
     }
 }
