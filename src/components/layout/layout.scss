@@ -2,12 +2,18 @@
 
 .layout {
     color: $red;
+    width: 100%;
 }
 
 .header,
 .footer {
     background-color: $black;
     height: $header-height;
+}
+
+.header {
+    display: flex;
+    align-items: center;
 }
 
 .main {
