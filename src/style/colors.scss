@@ -2,4 +2,11 @@ $black: #000000;
 $white: #ffffff;
 $red: #ff0000;
 
+$grey-400: rgb(240, 240, 240);
+$grey-500: rgb(230, 230, 230);
+$grey: $grey-500;
+
+$text-default: $grey;
 $text-bright: $white;
+$text-hover: $grey-400;
+$text-active: $white;
