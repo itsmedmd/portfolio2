@@ -1,4 +1,5 @@
-@import "./index.scss";
+@import "./typography.scss";
+@import "./colors.scss";
 
 * {
     box-sizing: border-box;
@@ -12,5 +13,6 @@ body {
 }
 
 a {
+    color: $white;
     text-decoration: none;
 }

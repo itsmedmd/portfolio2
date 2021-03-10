@@ -1,7 +1,6 @@
-@import "style";
+@import "styles";
 
 .layout {
-    color: $red;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
@@ -9,7 +8,7 @@
 
 .header,
 .footer {
-    background-color: $black;
+    background-color: $header-background;
     height: $header-height;
 }
 
@@ -19,5 +18,12 @@
 }
 
 .main {
+    background-color: $page-background;
     flex-grow: 1;
+    padding: $page-padding-vertical $page-padding-horizontal;
+
+    &__content {
+        margin: 0 auto;
+        max-width: $page-max-width;
+    }
 }
