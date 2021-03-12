@@ -4,6 +4,8 @@
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    background: url("../../images/background.jpg") no-repeat center center fixed; 
+    background-size: cover;
 }
 
 .header,
@@ -18,7 +20,10 @@
 }
 
 .main {
-    background-color: $page-background;
+    background: url("../../images/background-overlay.png"); 
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-color: rgba($page-background, 0.7);
     flex-grow: 1;
     padding: $page-padding-vertical $page-padding-horizontal;
 
