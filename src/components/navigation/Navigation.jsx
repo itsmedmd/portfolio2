@@ -17,18 +17,18 @@ export const Navigation = () => {
                     className="nav__link"
                     activeClassName="nav__link--active"
                     partiallyActive={true}
-                    to="/projects/"
+                    to="/projects"
                 >
                     Projects
                 </Link>
             </li>
             <li className="nav__item">
-                <Link className="nav__link" activeClassName="nav__link--active" to="/about/">
+                <Link className="nav__link" activeClassName="nav__link--active" to="/about">
                     About
                 </Link>
             </li>
             <li className="nav__item">
-                <Link className="nav__link" activeClassName="nav__link--active" to="/contact/">
+                <Link className="nav__link" activeClassName="nav__link--active" to="/contact">
                     Contact
                 </Link>
             </li>

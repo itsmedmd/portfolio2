@@ -1,4 +1,4 @@
-@import "style";
+@import "styles";
 
 .nav {
     font-family: $font-navigation;
@@ -47,6 +47,10 @@
     &__link:active {
         color: $text-active;
         border-bottom: 1px solid $text-active;
+    }
+
+    &__link:focus {
+        outline-offset: 0;
     }
 
     &__link--active {

@@ -1,21 +1,34 @@
-@import "style";
+@import "styles";
 
 .layout {
-    color: $red;
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: url("../../images/background.jpg") no-repeat center center fixed; 
+    background-size: cover;
 }
 
 .header,
 .footer {
-    background-color: $black;
+    background-color: $header-background;
     height: $header-height;
 }
 
 .header {
-    display: flex;
     align-items: center;
+    display: flex;
 }
 
 .main {
-    background-color: $white;
+    background: url("../../images/background-overlay.png"); 
+    background-attachment: fixed;
+    background-repeat: repeat;
+    background-color: rgba($page-background, 0.4);
+    flex-grow: 1;
+    padding: $page-padding-vertical $page-padding-horizontal;
+
+    &__content {
+        margin: 0 auto;
+        max-width: $page-max-width;
+    }
 }
