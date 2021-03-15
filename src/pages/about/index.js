@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "gatsby";
-import { Layout } from "components";
+import { Layout, ListImageItem } from "components";
 import "./index.scss";
 
 const About = () => {
@@ -27,7 +27,18 @@ const About = () => {
             <li className="about__list-item">Developing accessible websites</li>
           </ul>
           <div className="about__skills">
-            skills
+            <ul className="about__skills-column">
+              <ListImageItem imgSrc={require("images/react.svg")} text="reactjs" />
+              <ListImageItem imgSrc={require("images/javascript.svg")} text="javascript" />
+              <ListImageItem imgSrc={require("images/css.svg")} text="css" />
+              <ListImageItem imgSrc={require("images/git.svg")} text="git" />
+            </ul>
+            <ul className="about__skills-column">
+              <ListImageItem imgSrc={require("images/gatsby.svg")} text="gatsby" />
+              <ListImageItem imgSrc={require("images/sass.svg")} text="sass" />
+              <ListImageItem imgSrc={require("images/html.svg")} text="html" />
+              <ListImageItem imgSrc={require("images/webpack.svg")} text="webpack" />
+            </ul>
           </div>
         </section>
       </article>
