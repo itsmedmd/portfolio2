@@ -1,0 +1,19 @@
+@import "styles";
+
+.about {
+    &__section {
+        padding-bottom: 48px;
+    }
+
+    &__section:not(:first-of-type) {
+        border-top: 1px solid rgba($white, 0.5);
+        padding-top: 32px;
+    }
+
+    &__action {
+        display: flex;
+        justify-content: space-evenly;
+        margin: 10vh auto 0;
+        max-width: 75%;
+    }
+}

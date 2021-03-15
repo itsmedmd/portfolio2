@@ -1,0 +1,10 @@
+@import "./typography.scss";
+@import "./colors.scss";
+
+@mixin side-title {
+    color: $side-title-color;
+    font-family: $font-navigation;
+    position: absolute;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+}

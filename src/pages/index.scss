@@ -1,4 +1,8 @@
+@import "styles";
+
 .homepage {
+    max-width: $home-page-max-width;
+
     &__title {
         text-align: center;
         text-transform: uppercase;

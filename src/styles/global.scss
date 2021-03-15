@@ -8,8 +8,9 @@
 }
 
 body {
-    font-family: $font-text;
     color: $text-default;
+    font-family: $font-text;
+    position: relative;
 }
 
 a {
