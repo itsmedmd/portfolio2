@@ -2,17 +2,22 @@
 
 .about {
     &__section {
-        padding-bottom: 48px;
+        padding-bottom: 64px;
     }
 
     &__section:not(:first-of-type) {
-        border-top: 1px solid rgba($white, 0.5);
-        padding-top: 32px;
+        border-top: 1px solid rgba($white, 0.3);
+        padding-top: 64px;
     }
 
     &__section-title {
         font-size: 24px;
         margin-bottom: 16px;
+    }
+
+    &__section--centered {
+        display: flex;
+        justify-content: center;
     }
 
     &__description {
@@ -42,8 +47,8 @@
 
     &__action {
         display: flex;
-        justify-content: space-evenly;
-        margin: 10vh auto 0;
+        justify-content: space-between;
+        margin: 5vh auto 0;
         max-width: 75%;
     }
 }

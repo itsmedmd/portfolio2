@@ -19,6 +19,7 @@ const About = () => {
             if you don't, I will look for you, I will find you and I will kill you.
           </p>
         </section>
+
         <section className="about__section">
           <h3 className="about__section-title">I have experience with:</h3>
           <ul className="about__list">
@@ -41,11 +42,21 @@ const About = () => {
             </ul>
           </div>
         </section>
+
+        <section className="about__section about__section--centered">
+            <a className="button-link button-link--with-img" href="https://github.com/ElqBell">
+              <img className="button-link__image" src={require("images/github.svg")} alt=""/>
+              My github profile
+            </a>
+        </section>
+
+        <section className="about__section">
+          <div className="about__action">
+            <Link className="button-link" to="/projects">Projects</Link>
+            <Link className="button-link" to="/contact">Contact</Link>
+          </div>
+        </section>
       </article>
-      <div className="about__action">
-        <Link className="button-link" to="/projects">Projects</Link>
-        <Link className="button-link" to="/contact">Contact</Link>
-      </div>
     </Layout>
   );
 };
