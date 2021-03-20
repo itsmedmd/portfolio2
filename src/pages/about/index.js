@@ -16,7 +16,7 @@ const About = () => {
             particular set of skills. Skills I have acquired over many cold and endless nights.
             Skills that make me a delight for people like you. If you exit this website 
             now that'll be the end of it. I will not look for you, I will not pursue you, but
-            if you decide to proceed, I will wait for your message, I will reply to it and I will write
+            if you decide to proceed, I will wait for your message, I will reply to you and I will write
             the best front-end code you've seen.
           </p>
         </section>
@@ -38,7 +38,7 @@ const About = () => {
             </ul>
             <ul className="about__skills-column">
               <ListImageItem imgSrc={require("images/gatsby.svg")} text="gatsby" />
-              <ListImageItem imgSrc={require("images/sass.svg")} text="sass" />
+              <ListImageItem imgSrc={require("images/sass.svg")} text="sass(scss)" />
               <ListImageItem imgSrc={require("images/html.svg")} text="html" />
               <ListImageItem imgSrc={require("images/webpack.svg")} text="webpack" />
             </ul>
