@@ -1,0 +1,31 @@
+@import "styles";
+
+.page-animation {
+    display: grid;
+    position: fixed;
+    pointer-events: none;
+    height: 100vh;
+    width: 100%;
+    z-index: $z-index-under;
+
+    &__element {
+        position: relative;
+        overflow: hidden;
+    }
+
+    &__sub-element {
+        background-color: $header-background;
+        height: 400%;
+        position: relative;
+        transform: rotate(45deg);
+        width: 400%;
+    }
+
+    &__sub-element--active {
+        animation: PageTransition 1s ease-out 1 alternate forwards;
+    }
+
+    &--active {
+        z-index: $z-index-transition-overlay;
+    }
+}

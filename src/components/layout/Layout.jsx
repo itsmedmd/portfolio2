@@ -1,11 +1,15 @@
-import * as React from "react";
+import React, { useEffect } from "react";
 import "styles/global.scss";
 import "./layout.scss";
-import { Navigation } from "components";
+import { Navigation, PageAnimation } from "components";
 
 export const Layout = ({ className, children }) => {
+  useEffect(() => {
+  });
+
   return (
     <div className="layout">
+      <PageAnimation/>
       <header className="header">
         <Navigation/>
       </header>
