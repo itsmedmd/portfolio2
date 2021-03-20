@@ -1,11 +1,15 @@
+@import "styles";
+
 .homepage {
+    max-width: $home-page-max-width;
+
     &__title {
         text-align: center;
         text-transform: uppercase;
         margin: 10vh auto 0;
         max-width: 75%;
         letter-spacing: 7px;
-        line-height: 1.5;
+        line-height: 1.8;
     }
 
     &__action {
