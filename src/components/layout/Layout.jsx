@@ -1,4 +1,4 @@
-import * as React from "react";
+import React from "react";
 import "styles/global.scss";
 import "./layout.scss";
 import { Navigation } from "components";

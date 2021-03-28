@@ -1,12 +1,32 @@
-import * as React from "react";
-import { Layout } from "components";
+import React from "react";
+import { graphql } from "gatsby";
+import { Layout, ProjectLink } from "components";
 
-const Projects = () => {
+
+const Projects = ({ data }) => {
+  console.log(data.allProject.nodes);
+
   return (
     <Layout className="projects">
-      Projects
+      <h2 className="side-title-left">Deimantas Butėnas</h2>
     </Layout>
   );
 };
+
+export const query = graphql`
+  query ProjectsQuery {
+    allProject {
+      nodes {
+        id
+        description
+        features
+        img
+        title
+        tools
+      }
+    }
+  }
+`;
+
 
 export default Projects;

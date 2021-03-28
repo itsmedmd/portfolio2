@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "Deimantas Butėnas - Portfolio",
+    description: "Portfolio website of a front-end developer Deimantas Butėnas.",
     siteUrl: "https://www.deimantasbutenas.lt/",
   },
   plugins: [

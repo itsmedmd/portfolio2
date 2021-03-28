@@ -1,9 +1,11 @@
-import * as React from "react";
-import { Link } from "gatsby";
+import React from "react";
+import { Link, graphql } from "gatsby";
 import { Layout, ListImageItem } from "components";
 import "./index.scss";
 
-const About = () => {
+const About = ({ data }) => {
+  console.log(data.allAbout.nodes);
+
   return (
     <Layout className="about">
       <h1 className="side-title-right">About</h1>
@@ -62,5 +64,21 @@ const About = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query AboutQuery {
+    allAbout {
+      nodes {
+        description
+        experiences
+        id
+        skills {
+          text
+          img
+        }
+      }
+    }
+  }
+`;
 
 export default About;
