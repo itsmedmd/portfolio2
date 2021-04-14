@@ -22,6 +22,7 @@ exports.sourceNodes = async ({
     createContentDigest,
 }) => {
     // create nodes for build time data
+    // projects data
     projectsData.map(project => createNode({
         ...project,
         id: createNodeId(project.title),
@@ -33,6 +34,7 @@ exports.sourceNodes = async ({
         },
     }));
 
+    // about page data
     createNode({
         ...aboutData,
         id: createNodeId(aboutData.description),

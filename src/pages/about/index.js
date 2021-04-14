@@ -4,7 +4,7 @@ import { Layout, ListImageItem } from "components";
 import "./index.scss";
 
 const About = ({ data }) => {
-  console.log(data.allAbout.nodes);
+  console.log(data.about);
 
   return (
     <Layout className="about">
@@ -67,15 +67,13 @@ const About = ({ data }) => {
 
 export const query = graphql`
   query AboutQuery {
-    allAbout {
-      nodes {
-        description
-        experiences
-        id
-        skills {
-          text
-          img
-        }
+    about {
+      description
+      experiences
+      id
+      skills {
+        img
+        text
       }
     }
   }
