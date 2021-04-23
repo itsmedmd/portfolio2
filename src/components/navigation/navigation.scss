@@ -57,4 +57,10 @@
     &__link--active {
         border-bottom: 1px solid $text-bright;
     }
+
+    &__link--home {
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+    }
 }
