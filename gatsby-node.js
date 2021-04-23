@@ -2,6 +2,7 @@ const path = require("path");
 const projectsData = require("./src/data/projects.js");
 const aboutData = require("./src/data/about.js");
 
+// custom webpack config
 exports.onCreateWebpackConfig = ({ actions }) => {
     actions.setWebpackConfig({
         resolve: {
@@ -16,13 +17,13 @@ exports.onCreateWebpackConfig = ({ actions }) => {
     });
 };
 
+// create graphql nodes from data files for build time data
 exports.sourceNodes = async ({
     actions: { createNode },
     createNodeId,
     createContentDigest,
 }) => {
-    // create nodes for build time data
-    // projects data
+    // "project" pages' data
     projectsData.map(project => createNode({
         ...project,
         id: createNodeId(project.title),
@@ -34,7 +35,7 @@ exports.sourceNodes = async ({
         },
     }));
 
-    // about page data
+    // "about" page data
     createNode({
         ...aboutData,
         id: createNodeId(aboutData.description),
@@ -44,5 +45,37 @@ exports.sourceNodes = async ({
             type: `About`,
             contentDigest: createContentDigest(aboutData),
         },
-    })
-}
+    });
+};
+
+// programatically create "Project" pages
+exports.createPages = async ({ graphql, actions }) => {
+    const { createPage } = actions;
+    const result = await graphql(`
+        query ProjectsQuery {
+            allProject {
+                nodes {
+                    id
+                    description
+                    features
+                    img
+                    title
+                    tools
+                }
+            }
+        }
+    `);
+
+    result.data.allProject.nodes.forEach(({ node }, index) => {
+        const pagePath = `projektas-${index}`;
+        createPage({
+          path: pagePath,
+          component: path.resolve(`src/templates/project/Project.jsx`),
+          context: {
+            // Data passed to context is available
+            // in page queries as GraphQL variables.
+            slug: pagePath,
+          },
+        })
+      })
+};

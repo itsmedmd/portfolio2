@@ -1,1 +1,1 @@
-export * from "./ProjectLink.jsx"
+export * from "./ProjectLink";
