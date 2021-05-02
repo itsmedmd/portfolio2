@@ -66,8 +66,8 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `);
 
-    result.data.allProject.nodes.forEach(({ node }, index) => {
-        const pagePath = `projektas-${index}`;
+    result.data.allProject.nodes.forEach(({title}) => {
+        const pagePath = "projects/" + title.toLowerCase().replace(/[\s-]+/g, "-");
         createPage({
           path: pagePath,
           component: path.resolve(`src/templates/project/Project.jsx`),
