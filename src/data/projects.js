@@ -2,7 +2,7 @@ const projectsData = [
     {
         title: "Photography portfolio",
         description: "A photography and videography portfolio website.",
-        img: "project1.jpg",
+        img: "photography-portfolio.jpg",
         features: [
             "Image and video lazyloading",
             "Automatic image compression",
@@ -22,63 +22,42 @@ const projectsData = [
     },
     {
         title: "Movie database",
-        description: "A photography and videography portfolio website.",
-        img: "project2.jpg",
+        description: "Movie database website where you can search for movies and read information about them.",
+        img: "movie-database.jpg",
         features: [
-            "Image and video lazyloading",
-            "Automatic image compression",
-            "Automatic image clean-up(deletion) from Amazon S3",
-            "Automatic 'videos' page HTML code generation",
-            "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
-            "Email contact form"
+            "Data fetching from themoviedb.org",
+            "Debounce function for fetching data",
+            "Simple and intuitive design",
+            "Fast and efficient code",
+            "Movie sorting by popularity"
         ],
         tools: [
-            "Amazon Web Services(AWS)",
-            "NodeJS with AWS Lambda",
-            "NodeJS image processing module 'sharp'",
-            "JavaScript",
+            "ReactJS with GatsbyJS",
             "SCSS",
             "HTML"
         ]
     },
     {
         title: "Zyzz Bodybuilding",
-        description: "A photography and videography portfolio website.",
-        img: "project3.jpg",
+        description: "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
+        img: "zyzz-bodybuilding.jpg",
         features: [
-            "Image and video lazyloading",
-            "Automatic image compression",
-            "Automatic image clean-up(deletion) from Amazon S3",
-            "Automatic 'videos' page HTML code generation",
-            "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
-            "Email contact form"
+            "Real pictures of the one and only God",
+            "Image lazyloading",
+            "Animations with Intersection Observer API"
         ],
         tools: [
-            "Amazon Web Services(AWS)",
-            "NodeJS with AWS Lambda",
-            "NodeJS image processing module 'sharp'",
-            "JavaScript",
+            "ReactJS with GatsbyJS",
             "SCSS",
             "HTML"
         ]
     },
     {
         title: "Japanese Musicians",
-        description: "A photography and videography portfolio website.",
-        img: "project4.jpg",
-        features: [
-            "Image and video lazyloading",
-            "Automatic image compression",
-            "Automatic image clean-up(deletion) from Amazon S3",
-            "Automatic 'videos' page HTML code generation",
-            "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
-            "Email contact form"
-        ],
+        description: "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design.",
+        img: "japanese-musicians.jpg",
         tools: [
-            "Amazon Web Services(AWS)",
-            "NodeJS with AWS Lambda",
-            "NodeJS image processing module 'sharp'",
-            "JavaScript",
+            "ReactJS with GatsbyJS",
             "SCSS",
             "HTML"
         ]

@@ -19,10 +19,8 @@ export const query = graphql`
       nodes {
         id
         description
-        features
         img
         title
-        tools
       }
     }
   }
