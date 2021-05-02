@@ -1,14 +1,19 @@
 import React from "react";
+import "./index.scss";
 import { graphql } from "gatsby";
 import { Layout, ProjectLink } from "components";
 
 
 const Projects = ({ data }) => {
-  console.log(data.allProject.nodes);
-
   return (
-    <Layout className="projects">
-      <h2 className="side-title-left">Deimantas Butėnas</h2>
+    <Layout className="projects" noMargin={true} noPadding={true}>
+      <div className="projects__slider">
+        {
+            data.allProject.nodes.map(({id, ...projectData}) => 
+              <ProjectLink key={id} {...projectData} />
+            )
+        }
+      </div>
     </Layout>
   );
 };

@@ -31,4 +31,12 @@
         margin: 0 auto;
         max-width: $page-max-width;
     }
+
+    &__content--no-max-width {
+        max-width: none;
+    }
+
+    &--no-padding {
+        padding: 0;
+    }
 }

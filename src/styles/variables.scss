@@ -5,4 +5,6 @@ $page-padding-horizontal: 55px;
 $home-page-max-width: 1600px;
 $page-max-width: 900px;
 
+$page-height-viewport-content: calc(100vh - 2 * #{$header-height});
+
 $z-index-overlay: 1;

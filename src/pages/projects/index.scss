@@ -1,0 +1,15 @@
+@import "styles";
+
+.projects {
+    height: $page-height-viewport-content;
+    //max-width: 1600px;
+    overflow-x: hidden;
+
+    &__slider {
+        align-items: center;
+        display: flex;
+        height: inherit;
+        justify-content: center;
+        transform: translateX(520px);
+    }
+}
