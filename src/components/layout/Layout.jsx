@@ -9,8 +9,8 @@ export const Layout = ({ className, children, noMargin, noPadding }) => {
       <header className="header">
         <Navigation/>
       </header>
-      <main className={`main ${noPadding ? "main--no-padding" : ""}`}>
-        <div className={`main__content ${className} ${noMargin ? "main__content--no-max-width" : ""}`}>
+      <main className={`main ${noPadding && "main--no-padding"}`}>
+        <div className={`main__content ${className} ${noMargin && "main__content--no-max-width"}`}>
           {children}
         </div>
       </main>

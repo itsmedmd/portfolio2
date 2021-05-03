@@ -2,7 +2,7 @@
 
 .projects {
     height: $page-height-viewport-content;
-    //max-width: 1600px;
+    //max-width: 2000px;
     overflow-x: hidden;
 
     &__slider {
@@ -10,6 +10,5 @@
         display: flex;
         height: inherit;
         justify-content: center;
-        transform: translateX(520px);
     }
 }
