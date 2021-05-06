@@ -48,6 +48,19 @@ exports.sourceNodes = async ({
     });
 };
 
+// add slug (path) entries for projects
+exports.onCreateNode = ({ node, actions }) => {
+    const { createNodeField } = actions
+    if (node.internal.type === `Project`) {
+      const slug = "projects/" + node.title.toLowerCase().replace(/[\s-]+/g, "-");
+      createNodeField({
+        node,
+        name: `slug`,
+        value: slug
+      });
+    }
+  }
+
 // programatically create "Project" pages
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
@@ -61,20 +74,22 @@ exports.createPages = async ({ graphql, actions }) => {
                     img
                     title
                     tools
+                    fields {
+                        slug
+                    }
                 }
             }
         }
     `);
 
-    result.data.allProject.nodes.forEach(({title}) => {
-        const pagePath = "projects/" + title.toLowerCase().replace(/[\s-]+/g, "-");
+    result.data.allProject.nodes.forEach(node => {
         createPage({
-          path: pagePath,
+          path: node.fields.slug,
           component: path.resolve(`src/templates/project/Project.jsx`),
           context: {
             // Data passed to context is available
             // in page queries as GraphQL variables.
-            slug: pagePath,
+            slug: node.fields.slug,
           },
         })
       })

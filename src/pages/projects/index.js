@@ -38,6 +38,7 @@ const Projects = ({ data }) => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, [projectRef, sliderOffset, data]);
+  console.log(data.allProject.nodes);
 
   return (
     <Layout className="projects" noMargin={true} noPadding={true}>
@@ -62,6 +63,9 @@ export const query = graphql`
         description
         img
         title
+        fields {
+          slug
+        }
       }
     }
   }
