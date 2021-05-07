@@ -21,15 +21,35 @@ exports.onCreateWebpackConfig = ({ actions }) => {
 exports.sourceNodes = async ({
     actions: { createNode },
     createNodeId,
+    getNodesByType,
     createContentDigest,
 }) => {
+    // get all files from the folder 'images'
+    // and all ImageSharp nodes
+    //const arrayOfFiles = getNodesByType("File").filter(file => file.sourceInstanceName === "images");
+    //const arrayOfImageSharp = getNodesByType("ImageSharp");
+
     // "project" pages' data
     projectsData.map(project => {
-        const slug = "projects/" + project.title.toLowerCase().replace(/[\s-]+/g, "-");
+        // create slug (url) of the project page
+        const formattedTitle = project.title.toLowerCase().replace(/[\s-]+/g, "-");
+        const slug = `projects/${formattedTitle}`;
+
+        // find the corresponding project ImageSharp node
+        // const imgSharp = arrayOfImageSharp.find(img =>
+        //     arrayOfFiles.find(file =>
+        //         file.id === img.parent &&
+        //         file.relativePath === project.img
+        //     )
+        // );
+        //const imgFile = arrayOfFiles.find(file => file.relativePath === project.img);
+
         createNode({
             ...project,
             id: createNodeId(project.title),
             slug,
+            //childImageSharp: imgSharp,
+            //image: imgFile.absolutePath,
             parent: null,
             children: [],
             internal: {
@@ -52,34 +72,53 @@ exports.sourceNodes = async ({
     });
 };
 
-// programatically create "Project" pages
-exports.createPages = async ({ graphql, actions }) => {
-    const { createPage } = actions;
-    const projectsQuery = await graphql(`
-        query ProjectsQuery {
-            allProject {
-                nodes {
-                    id
-                    description
-                    features
-                    img
-                    title
-                    tools
-                    slug
-                }
-            }
-        }
-    `);
+// add slug (path) entries for projects
+exports.onCreateNode = ({ node, actions }) => {
+    //const { createNodeField } = actions;
+    // if (node.internal.type === "Project") {
+    //     const imgFile = arrayOfFiles.find(file => file.relativePath === project.img);
+    //     createNodeField({
+    //         node,
+    //         name: "imgFile",
+    //         value: imgFile
+    //     });
+    // }
 
-    projectsQuery.data.allProject.nodes.forEach(node => 
-        createPage({
-            path: node.slug,
-            component: path.resolve(`src/templates/project/Project.jsx`),
-            context: {
-                // Data passed to context is available
-                // in page queries as GraphQL variables.
-                slug: node.slug
-            }
-        })
-    );
+    //if (node.internal.type === "File" && node.sourceInstanceName === "images") {
+        //const imgFile = arrayOfFiles.find(file => file.relativePath === project.img);
+        //console.log(node);
+        //console.log("-------------------------------------------------------------------");
+    //}
 };
+
+// programatically create "Project" pages
+// exports.createPages = async ({ graphql, actions }) => {
+//     const { createPage } = actions;
+//     const projectsQuery = await graphql(`
+//         query ProjectsQuery {
+//             allProject {
+//                 nodes {
+//                     id
+//                     description
+//                     features
+//                     img
+//                     title
+//                     tools
+//                     slug
+//                 }
+//             }
+//         }
+//     `);
+
+//     projectsQuery.data.allProject.nodes.forEach(node => 
+//         createPage({
+//             path: node.slug,
+//             component: path.resolve(`src/templates/project/Project.jsx`),
+//             context: {
+//                 // Data passed to context is available
+//                 // in page queries as GraphQL variables.
+//                 slug: node.slug
+//             }
+//         })
+//     );
+// };
