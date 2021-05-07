@@ -6,6 +6,8 @@ import { Link } from "gatsby";
 import "./projectLink.scss";
 
 export const ProjectLink = ({ title, img, description, slug, projectRef }) => (
+  // sita iskelt i projects page query, kad tik 1 karta executintu query
+  // + isfiltruot kuriuos reikia ir paduot childImageSharp data ir cia tiesiog renderint
   <StaticQuery
     query={graphql`
       query ProjectLinkImageQuery {
