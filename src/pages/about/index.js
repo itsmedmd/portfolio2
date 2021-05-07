@@ -33,16 +33,16 @@ const About = ({ data }) => {
           </ul>
           <div className="about__skills">
             <ul className="about__skills-column">
-              <ListImageItem imgSrc={require("images/react.svg")} text="reactjs" />
-              <ListImageItem imgSrc={require("images/javascript.svg")} text="javascript" />
-              <ListImageItem imgSrc={require("images/css.svg")} text="css" />
-              <ListImageItem imgSrc={require("images/git.svg")} text="git" />
+              <ListImageItem img="react.svg" text="reactjs" />
+              <ListImageItem img="javascript.svg" text="javascript" />
+              <ListImageItem img="css.svg" text="css" />
+              <ListImageItem img="git.svg" text="git" />
             </ul>
             <ul className="about__skills-column">
-              <ListImageItem imgSrc={require("images/gatsby.svg")} text="gatsby" />
-              <ListImageItem imgSrc={require("images/sass.svg")} text="sass(scss)" />
-              <ListImageItem imgSrc={require("images/html.svg")} text="html" />
-              <ListImageItem imgSrc={require("images/webpack.svg")} text="webpack" />
+              <ListImageItem img="gatsby.svg" text="gatsby" />
+              <ListImageItem img="sass.svg" text="sass(scss)" />
+              <ListImageItem img="html.svg" text="html" />
+              <ListImageItem img="webpack.svg" text="webpack" />
             </ul>
           </div>
         </section>

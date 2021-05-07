@@ -62,9 +62,7 @@ export const query = graphql`
         description
         img
         title
-        fields {
-          slug
-        }
+        slug
       }
     }
   }

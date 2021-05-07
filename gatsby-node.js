@@ -24,16 +24,20 @@ exports.sourceNodes = async ({
     createContentDigest,
 }) => {
     // "project" pages' data
-    projectsData.map(project => createNode({
-        ...project,
-        id: createNodeId(project.title),
-        parent: null,
-        children: [],
-        internal: {
-            type: `Project`,
-            contentDigest: createContentDigest(project),
-        },
-    }));
+    projectsData.map(project => {
+        const slug = "projects/" + project.title.toLowerCase().replace(/[\s-]+/g, "-");
+        createNode({
+            ...project,
+            id: createNodeId(project.title),
+            slug,
+            parent: null,
+            children: [],
+            internal: {
+                type: `Project`,
+                contentDigest: createContentDigest(project),
+            }
+        })}
+    );
 
     // "about" page data
     createNode({
@@ -44,27 +48,14 @@ exports.sourceNodes = async ({
         internal: {
             type: `About`,
             contentDigest: createContentDigest(aboutData),
-        },
+        }
     });
 };
-
-// add slug (path) entries for projects
-exports.onCreateNode = ({ node, actions }) => {
-    const { createNodeField } = actions
-    if (node.internal.type === `Project`) {
-      const slug = "projects/" + node.title.toLowerCase().replace(/[\s-]+/g, "-");
-      createNodeField({
-        node,
-        name: `slug`,
-        value: slug
-      });
-    }
-  }
 
 // programatically create "Project" pages
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
-    const result = await graphql(`
+    const projectsQuery = await graphql(`
         query ProjectsQuery {
             allProject {
                 nodes {
@@ -74,23 +65,21 @@ exports.createPages = async ({ graphql, actions }) => {
                     img
                     title
                     tools
-                    fields {
-                        slug
-                    }
+                    slug
                 }
             }
         }
     `);
 
-    result.data.allProject.nodes.forEach(node => {
+    projectsQuery.data.allProject.nodes.forEach(node => 
         createPage({
-          path: node.fields.slug,
-          component: path.resolve(`src/templates/project/Project.jsx`),
-          context: {
-            // Data passed to context is available
-            // in page queries as GraphQL variables.
-            slug: node.fields.slug,
-          },
+            path: node.slug,
+            component: path.resolve(`src/templates/project/Project.jsx`),
+            context: {
+                // Data passed to context is available
+                // in page queries as GraphQL variables.
+                slug: node.slug
+            }
         })
-      })
+    );
 };
