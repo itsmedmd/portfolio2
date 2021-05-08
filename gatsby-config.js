@@ -1,4 +1,10 @@
 module.exports = {
+  flags: {
+    FAST_DEV: true,
+    PRESERVE_WEBPACK_CACHE: true,
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    DEV_SSR: false,
+  },
   siteMetadata: {
     title: "Deimantas Butėnas - Portfolio",
     description: "Portfolio website of a front-end developer Deimantas Butėnas.",
