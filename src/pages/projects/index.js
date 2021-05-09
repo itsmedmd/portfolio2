@@ -4,61 +4,67 @@ import { graphql } from "gatsby";
 import { Layout, ProjectLink } from "components";
 
 const Projects = ({ data }) => {
-  console.log("QUEEN: ", data);
   const { allFile, allProject } = data;
   const DEFAULT_PROJECT_SIZE = 1024;
   const projectRef = useRef(null);
-  const [sliderOffset, setSliderOffset] = useState(0);
+  const [sliderOffset, setSliderOffset] = useState(1);
+  const [activeProject, setActiveProject] = useState(Math.ceil(allProject.nodes.length / 2) - 1);
 
   // Only 'allFile' entries that have "childImageSharp" are important.
   // *.svg files don't have it, those svg files are not used here.
   const allImages = allFile.nodes.filter(file => file.childImageSharp); 
 
-  /////////////////////////////////////////// REMAKE THIS /////////////////////////////////////////////////////////////
+  // update active project ID
+  const handleActiveProjectChange = (newProjectID) => {
+    console.log("last id:", activeProject, "new id:", newProjectID);
+    let newID = newProjectID;
+    if(newID === -1) {
+      newID = allProject.nodes.length - 1;
+      //newID = 0;
+    } else if (newID === allProject.nodes.length) {
+      //newID = allProject.nodes.length - 1;
+      newID = 0;
+    }
+    setActiveProject(newID);
+  };
+
   useEffect(() => {
-    // Calculate the width of the entire slider and center the active project on the screen/
-    // If the number of projects is odd, center the middle project on the first render,
-    // if the number of projects is even, center the project before the middle one on the first render.
+    // Calculate the offset to set on the slider to center the active project on the screen
     const centerSlider = () => {
       const projectWidth = (projectRef?.current?.offsetWidth) || 0
       let offset = 0;
-
       if (allProject) {
-        const middleProjectNum = allProject.nodes.length / 2;
-        offset = (
-          middleProjectNum % 2 === 0
-          ? middleProjectNum - 1
-          : middleProjectNum
-          ) * projectWidth / 2;
+        offset = (activeProject * projectWidth * -1) + projectWidth / 4;
       }
       setSliderOffset(offset);
-    };
-
-    const handleResize = () => {
-      centerSlider();
     };
 
     if (projectRef?.current) {
       centerSlider();
     };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, [projectRef, sliderOffset, allProject]);
+    window.addEventListener("resize", centerSlider);
+    return () => window.removeEventListener("resize", centerSlider);
+  }, [projectRef, activeProject, allProject]);
+
+  console.log("active:", activeProject, "offset:", sliderOffset);
 
   return (
     <Layout className="projects" noMargin={true} noPadding={true}>
-      <div className="projects__slider" style={{ transform: `translateX(${sliderOffset !== 0 ? sliderOffset : DEFAULT_PROJECT_SIZE / 2}px)` }}>
+      <div className="projects__slider" style={{ transform: `translateX(${sliderOffset === 1 ? DEFAULT_PROJECT_SIZE / 2 : sliderOffset}px)` }}>
         {
             allProject.nodes.map(({id, img, title, slug}, index) => {
               const sharpImg = allImages.find(imgSharp => imgSharp.relativePath === img);
               return (
                 <ProjectLink
                   key={id}
+                  projectID={index}
+                  isActive={activeProject === index ? true : false}
+                  setActiveID={handleActiveProjectChange}
                   title={title}
                   slug={slug}
                   sharpImg={sharpImg.childImageSharp.gatsbyImageData}
-                  projectRef={index === 0 ? projectRef : undefined}
+                  projectRef={index === allProject.nodes.length - 1 ? projectRef : undefined}
                 />
               );
             })
