@@ -20,7 +20,7 @@ const Projects = ({ data }) => {
     // If the number of projects is odd, center the middle project on the first render,
     // if the number of projects is even, center the project before the middle one on the first render.
     const centerSlider = () => {
-      const projectWidth = (projectRef && projectRef.current.offsetWidth) || 0
+      const projectWidth = (projectRef?.current?.offsetWidth) || 0
       let offset = 0;
 
       if (allProject) {
