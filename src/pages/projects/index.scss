@@ -10,5 +10,6 @@
         display: flex;
         height: inherit;
         justify-content: center;
+        transition: transform $slider-transition-length ease-out;
     }
 }

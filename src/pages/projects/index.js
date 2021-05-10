@@ -43,8 +43,6 @@ const Projects = ({ data }) => {
     return () => window.removeEventListener("resize", centerSlider);
   }, [projectRef, activeProject, allProject]);
 
-  console.log("active:", activeProject, "offset:", sliderOffset);
-
   return (
     <Layout className="projects" noPadding={true} noMaxWidth={true}>
       <div className="projects__slider" style={{ transform: `translateX(${sliderOffset === 1 ? DEFAULT_PROJECT_SIZE / 2 : sliderOffset}px)` }}>

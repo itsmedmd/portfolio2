@@ -1,10 +1,15 @@
+// header and footer
 $header-height: 100px;
 $page-padding-vertical: 60px;
 $page-padding-horizontal: 55px;
 
+// pages
 $home-page-max-width: 1600px;
 $page-max-width: 900px;
-
 $page-height-viewport-content: calc(100vh - 2 * #{$header-height});
 
+// projects slider
+$slider-transition-length: 0.6s;
+
+//general
 $z-index-overlay: 1;
