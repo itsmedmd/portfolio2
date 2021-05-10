@@ -16,7 +16,6 @@ const Projects = ({ data }) => {
 
   // update active project ID
   const handleActiveProjectChange = (newProjectID) => {
-    console.log("last id:", activeProject, "new id:", newProjectID);
     let newID = newProjectID;
     if(newID === -1) {
       newID = allProject.nodes.length - 1;
@@ -31,11 +30,8 @@ const Projects = ({ data }) => {
   useEffect(() => {
     // Calculate the offset to set on the slider to center the active project on the screen
     const centerSlider = () => {
-      const projectWidth = (projectRef?.current?.offsetWidth) || 0
-      let offset = 0;
-      if (allProject) {
-        offset = (activeProject * projectWidth * -1) + 1.5 * projectWidth;
-      }
+      const projectWidth = projectRef?.current?.offsetWidth || 0;
+      const offset = (activeProject * projectWidth * -1) + 1.5 * projectWidth;
       setSliderOffset(offset);
     };
 
@@ -79,7 +75,7 @@ export const query = graphql`
     allFile {
       nodes {
         childImageSharp {
-          gatsbyImageData(placeholder: BLURRED)
+          gatsbyImageData(placeholder: DOMINANT_COLOR)
         }
         relativePath
       }
