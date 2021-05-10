@@ -34,7 +34,7 @@ const Projects = ({ data }) => {
       const projectWidth = (projectRef?.current?.offsetWidth) || 0
       let offset = 0;
       if (allProject) {
-        offset = (activeProject * projectWidth * -1) + projectWidth / 4;
+        offset = (activeProject * projectWidth * -1) + 1.5 * projectWidth;
       }
       setSliderOffset(offset);
     };
@@ -50,7 +50,7 @@ const Projects = ({ data }) => {
   console.log("active:", activeProject, "offset:", sliderOffset);
 
   return (
-    <Layout className="projects" noMargin={true} noPadding={true}>
+    <Layout className="projects" noPadding={true} noMaxWidth={true}>
       <div className="projects__slider" style={{ transform: `translateX(${sliderOffset === 1 ? DEFAULT_PROJECT_SIZE / 2 : sliderOffset}px)` }}>
         {
             allProject.nodes.map(({id, img, title, slug}, index) => {

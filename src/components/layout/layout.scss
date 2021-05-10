@@ -29,11 +29,10 @@
 
     &__content {
         margin: 0 auto;
-        max-width: $page-max-width;
     }
 
-    &__content--no-max-width {
-        max-width: none;
+    &__content--with-max-width {
+        max-width: $page-max-width;
     }
 
     &--no-padding {
