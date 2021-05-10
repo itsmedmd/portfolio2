@@ -12,7 +12,10 @@ export const ProjectLink = ({ projectID, isActive, setActiveID, title, slug, sha
   return (
       <div className="projectLink" ref={projectRef}>
           <GatsbyImage image={sharpImg} className="projectLink__image" alt=""/>
+          
           <div className={`projectLink__overlay ${isActive && "projectLink__overlay--active "}`}>
+            <h2 className="projectLink__title">{title.toUpperCase()}</h2>
+
             <div className="projectLink__navigation">
               <button
                 type="button"
@@ -33,7 +36,7 @@ export const ProjectLink = ({ projectID, isActive, setActiveID, title, slug, sha
                 <p className="sr-only">Next project</p>
               </button>
             </div>
-            <p className="projectLink__title">{title.toUpperCase()}</p>
+
             <Link
               tabIndex={isActive ? "0" : "-1"}
               className="button-link button-link--project projectLink__link"

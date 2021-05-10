@@ -45,6 +45,8 @@ const Projects = ({ data }) => {
 
   return (
     <Layout className="projects" noPadding={true} noMaxWidth={true}>
+      <h1 className="sr-only">Projects</h1>
+
       <div className="projects__slider" style={{ transform: `translateX(${sliderOffset === 1 ? DEFAULT_PROJECT_SIZE / 2 : sliderOffset}px)` }}>
         {
             allProject.nodes.map(({id, img, title, slug}, index) => {

@@ -13,6 +13,7 @@
     }
 
     &__overlay {
+        pointer-events: none;
         height: 100%;
         padding: 28px; 
         position: absolute;
@@ -25,6 +26,7 @@
     }
 
     &__overlay--active {
+        pointer-events: initial;
         opacity: 1;
     }
 
@@ -32,6 +34,7 @@
         border-bottom: 1px solid $grey-900;
         display: inline-block;
         font-size: 26px;
+        font-weight: 500;
         padding: 4px 8px;
     }
 
