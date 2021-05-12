@@ -10,10 +10,10 @@ export const ProjectLink = ({ projectID, isActive, setActiveID, title, slug, sha
   };
 
   return (
-      <div className="projectLink" ref={projectRef}>
-          <GatsbyImage image={sharpImg} className="projectLink__image" alt=""/>
+      <div className={`projectLink ${isActive && "projectLink--active"}`} ref={projectRef}>
+          <GatsbyImage image={sharpImg} className="projectLink__image-container" alt=""/>
           
-          <div className={`projectLink__overlay ${isActive && "projectLink__overlay--active "}`}>
+          <div className={`projectLink__overlay ${isActive && "projectLink__overlay--active"}`}>
             <h2 className="projectLink__title">{title.toUpperCase()}</h2>
 
             <div className="projectLink__navigation">
