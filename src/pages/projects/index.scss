@@ -12,4 +12,8 @@
         justify-content: center;
         transition: transform $slider-transition-length ease-out;
     }
+
+    &__slider--no-transition {
+        transition: none;
+    }
 }

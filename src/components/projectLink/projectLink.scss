@@ -29,6 +29,10 @@
         z-index: $z-index-overlay;
     }
 
+    &__overlay--no-transition {
+        transition: none;
+    }
+
     &__overlay--active {
         pointer-events: initial;
         opacity: 1;
@@ -87,5 +91,9 @@
     &--active {
         transform: none;
         opacity: 1;
+    }
+
+    &--no-transition {
+        transition: none;
     }
 }

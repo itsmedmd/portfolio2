@@ -3,17 +3,30 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import "./projectLink.scss";
 
-export const ProjectLink = ({ projectID, isActive, setActiveID, title, slug, sharpImg, projectRef }) => {
+export const ProjectLink = ({ projectID, isActive, setActiveID, noTransition, title, slug, sharpImg, projectRef }) => {
   const handleNavigation = (target, value) => {
     target.blur();
     setActiveID(projectID + value);
   };
 
   return (
-      <div className={`projectLink ${isActive && "projectLink--active"}`} ref={projectRef}>
+      <div
+        className={`
+          projectLink
+          ${isActive ? "projectLink--active" : ""}
+          ${noTransition ? "projectLink--no-transition" : ""}
+        `}
+        ref={projectRef}
+      >
           <GatsbyImage image={sharpImg} className="projectLink__image-container" alt=""/>
           
-          <div className={`projectLink__overlay ${isActive && "projectLink__overlay--active"}`}>
+          <div
+            className={`
+              projectLink__overlay
+              ${isActive && "projectLink__overlay--active"}
+              ${noTransition ? "projectLink__overlay--no-transition" : ""}
+            `}
+          >
             <h2 className="projectLink__title">{title.toUpperCase()}</h2>
 
             <div className="projectLink__navigation">

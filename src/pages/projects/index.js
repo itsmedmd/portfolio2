@@ -5,10 +5,18 @@ import { Layout, ProjectLink } from "components";
 
 const Projects = ({ data }) => {
   const { allFile, allProject } = data;
+
+  // copy 2 last projects to the start and 2 first projects to the end
+  // of the array. This is used to create an "infinite" image carousel
+  const projects = [...allProject.nodes];
+  projects.unshift(projects[projects.length - 2], projects[projects.length - 1]);
+  projects.push(projects[2], projects[3]);
+
   const DEFAULT_PROJECT_SIZE = 1024;
   const projectRef = useRef(null);
+  const [noTransition, setNoTransition] = useState(false);
   const [sliderOffset, setSliderOffset] = useState(1);
-  const [activeProject, setActiveProject] = useState(Math.ceil(allProject.nodes.length / 2) - 1);
+  const [activeProject, setActiveProject] = useState(Math.ceil(projects.length / 2) - 1);
 
   // Only 'allFile' entries that have "childImageSharp" are important.
   // *.svg files don't have it, those svg files are not used here.
@@ -16,22 +24,26 @@ const Projects = ({ data }) => {
 
   // update active project ID
   const handleActiveProjectChange = (newProjectID) => {
-    let newID = newProjectID;
-    if(newID === -1) {
-      newID = allProject.nodes.length - 1;
-      //newID = 0;
-    } else if (newID === allProject.nodes.length) {
-      //newID = allProject.nodes.length - 1;
-      newID = 0;
+    setNoTransition(false);
+    setActiveProject(newProjectID);
+  };
+
+  const handleTransitionEnd = () => {
+    if (activeProject === 1) {
+      setActiveProject(projects.length - 3);
+      setNoTransition(true);
+    } else if (activeProject === projects.length - 2) {
+      setActiveProject(2);
+      setNoTransition(true);
     }
-    setActiveProject(newID);
   };
 
   useEffect(() => {
     // Calculate the offset to set on the slider to center the active project on the screen
     const centerSlider = () => {
       const projectWidth = projectRef?.current?.offsetWidth || 0;
-      const offset = (activeProject * projectWidth * -1) + 1.5 * projectWidth;
+      const offset = (activeProject * projectWidth * -1) + 3.5 * projectWidth; ////////////////////////////// verify 3.5
+
       setSliderOffset(offset);
     };
 
@@ -47,20 +59,25 @@ const Projects = ({ data }) => {
     <Layout className="projects" noPadding={true} noMaxWidth={true}>
       <h1 className="sr-only">Projects</h1>
 
-      <div className="projects__slider" style={{ transform: `translateX(${sliderOffset === 1 ? DEFAULT_PROJECT_SIZE / 2 : sliderOffset}px)` }}>
+      <div
+        onTransitionEnd={handleTransitionEnd}
+        className={`projects__slider ${noTransition ? "projects__slider--no-transition" : ""}`}
+        style={{transform: `translateX(${sliderOffset === 1 ? DEFAULT_PROJECT_SIZE / 2 : sliderOffset}px)`}}
+      >
         {
-            allProject.nodes.map(({id, img, title, slug}, index) => {
+            projects.map(({id, img, title, slug}, index) => {
               const sharpImg = allImages.find(imgSharp => imgSharp.relativePath === img);
               return (
                 <ProjectLink
-                  key={id}
+                  key={`${id}-${index}`}
                   projectID={index}
                   isActive={activeProject === index ? true : false}
                   setActiveID={handleActiveProjectChange}
+                  noTransition={noTransition}
                   title={title}
                   slug={slug}
                   sharpImg={sharpImg.childImageSharp.gatsbyImageData}
-                  projectRef={index === allProject.nodes.length - 1 ? projectRef : undefined}
+                  projectRef={index === projects.length - 1 ? projectRef : undefined}
                 />
               );
             })
