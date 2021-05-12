@@ -21,7 +21,7 @@ const projectsData = [
         ]
     },
     {
-        title: "Movie database",
+        title: "Movie search system",
         description: "Movie database website where you can search for movies and read information about them.",
         img: "movie-database.jpg",
         features: [

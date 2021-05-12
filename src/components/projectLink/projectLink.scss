@@ -17,7 +17,6 @@
     }
 
     &__overlay {
-        mix-blend-mode: screen;
         pointer-events: none;
         height: 100%;
         padding: 28px; 
@@ -36,7 +35,7 @@
     }
 
     &__title {
-        border-bottom: 1px solid $grey-900;
+        border-bottom: 1px solid $white;
         display: inline-block;
         font-size: 26px;
         font-weight: 500;
