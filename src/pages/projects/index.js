@@ -12,12 +12,16 @@ const Projects = ({ data }) => {
   projects.unshift(projects[projects.length - 2], projects[projects.length - 1]);
   projects.push(projects[2], projects[3]);
 
-  const DEFAULT_PROJECT_SIZE = 1024;
-  const PROJECT_MARGIN_SIZE = 3;
   const projectRef = useRef(null);
   const [noTransition, setNoTransition] = useState(false);
   const [sliderOffset, setSliderOffset] = useState(1);
   const [activeProject, setActiveProject] = useState(Math.ceil(projects.length / 2) - 1);
+  const PROJECT_MARGIN_SIZE = 3;
+  const DEFAULT_PROJECT_SIZE = 1024;
+
+  // use the second DEFAULT_OFFSET if animation on load is not wanted
+  const DEFAULT_OFFSET = DEFAULT_PROJECT_SIZE / 2;
+  //const DEFAULT_OFFSET = DEFAULT_PROJECT_SIZE / 2 - activeProject * PROJECT_MARGIN_SIZE * 2;
 
   // Only 'allFile' entries that have "childImageSharp" are important.
   // *.svg files don't have it, those svg files are not used here.
@@ -30,6 +34,8 @@ const Projects = ({ data }) => {
   };
 
   const handleTransitionEnd = () => {
+    // if the end is reached when navigating to either side,
+    // turn off transitions and jump to the other side
     if (activeProject === 1) {
       setActiveProject(projects.length - 3);
       setNoTransition(true);
@@ -42,7 +48,7 @@ const Projects = ({ data }) => {
   useEffect(() => {
     // Calculate the offset to set on the slider to center the active project on the screen
     const centerSlider = () => {
-      const projectWidth = projectRef?.current?.offsetWidth || 0;
+      const projectWidth = projectRef?.current?.offsetWidth || DEFAULT_PROJECT_SIZE;
       const offset =
         3.5 * projectWidth                                         //////////////////////////////////// verify 3.5
         - activeProject * projectWidth
@@ -56,7 +62,7 @@ const Projects = ({ data }) => {
 
     window.addEventListener("resize", centerSlider);
     return () => window.removeEventListener("resize", centerSlider);
-  }, [projectRef, activeProject, allProject]);
+  }, [projectRef, activeProject]);
 
   return (
     <Layout className="projects" noPadding={true} noMaxWidth={true}>
@@ -65,7 +71,7 @@ const Projects = ({ data }) => {
       <div
         onTransitionEnd={handleTransitionEnd}
         className={`projects__slider ${noTransition ? "projects__slider--no-transition" : ""}`}
-        style={{transform: `translateX(${sliderOffset === 1 ? DEFAULT_PROJECT_SIZE / 2 : sliderOffset}px)`}}
+        style={{transform: `translateX(${sliderOffset === 1 ? DEFAULT_OFFSET : sliderOffset}px)`}}
       >
         {
             projects.map(({id, img, title, slug}, index) => {
