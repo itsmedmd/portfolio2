@@ -3,7 +3,16 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import "./projectLink.scss";
 
-export const ProjectLink = ({ projectID, isActive, setActiveID, noTransition, title, slug, sharpImg, projectRef }) => {
+export const ProjectLink = ({
+  projectID,
+  isActive,
+  setActiveID,
+  noTransition,
+  title,
+  slug,
+  sharpImg,
+  projectRef
+}) => {
   const handleNavigation = (target, value) => {
     target.blur();
     setActiveID(projectID + value);
@@ -23,7 +32,7 @@ export const ProjectLink = ({ projectID, isActive, setActiveID, noTransition, ti
           <div
             className={`
               projectLink__overlay
-              ${isActive && "projectLink__overlay--active"}
+              ${isActive ? "projectLink__overlay--active" : ""}
               ${noTransition ? "projectLink__overlay--no-transition" : ""}
             `}
           >

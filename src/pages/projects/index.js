@@ -13,6 +13,7 @@ const Projects = ({ data }) => {
   projects.push(projects[2], projects[3]);
 
   const DEFAULT_PROJECT_SIZE = 1024;
+  const PROJECT_MARGIN_SIZE = 3;
   const projectRef = useRef(null);
   const [noTransition, setNoTransition] = useState(false);
   const [sliderOffset, setSliderOffset] = useState(1);
@@ -42,8 +43,10 @@ const Projects = ({ data }) => {
     // Calculate the offset to set on the slider to center the active project on the screen
     const centerSlider = () => {
       const projectWidth = projectRef?.current?.offsetWidth || 0;
-      const offset = (activeProject * projectWidth * -1) + 3.5 * projectWidth; ////////////////////////////// verify 3.5
-
+      const offset =
+        3.5 * projectWidth                                         //////////////////////////////////// verify 3.5
+        - activeProject * projectWidth
+        - activeProject * PROJECT_MARGIN_SIZE * 2; 
       setSliderOffset(offset);
     };
 
