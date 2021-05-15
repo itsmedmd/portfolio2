@@ -50,7 +50,7 @@ const Projects = ({ data }) => {
     const centerSlider = () => {
       const projectWidth = projectRef?.current?.offsetWidth || DEFAULT_PROJECT_SIZE;
       const offset =
-        3.5 * projectWidth                                         //////////////////////////////////// verify 3.5
+        3.5 * projectWidth
         - activeProject * projectWidth
         - activeProject * PROJECT_MARGIN_SIZE * 2; 
       setSliderOffset(offset);
@@ -101,7 +101,7 @@ export const query = graphql`
     allFile {
       nodes {
         childImageSharp {
-          gatsbyImageData(placeholder: DOMINANT_COLOR)
+          gatsbyImageData
         }
         relativePath
       }

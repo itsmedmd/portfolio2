@@ -1,36 +1,8 @@
 const projectsData = [
     {
-        title: "Photography portfolio",
-        description: "A photography and videography portfolio website.",
-        img: "photography-portfolio.jpg",
-        features: [
-            "Image and video lazyloading",
-            "Automatic image compression",
-            "Automatic image clean-up(deletion) from Amazon S3",
-            "Automatic 'videos' page HTML code generation",
-            "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
-            "Email contact form"
-        ],
-        tools: [
-            "Amazon Web Services(AWS)",
-            "NodeJS with AWS Lambda",
-            "NodeJS image processing module 'sharp'",
-            "JavaScript",
-            "SCSS",
-            "HTML"
-        ]
-    },
-    {
-        title: "Movie search system",
-        description: "Movie database website where you can search for movies and read information about them.",
-        img: "movie-database.jpg",
-        features: [
-            "Data fetching from themoviedb.org",
-            "Debounce function for fetching data",
-            "Simple and intuitive design",
-            "Fast and efficient code",
-            "Movie sorting by popularity"
-        ],
+        title: "Japanese Musicians",
+        description: "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design.",
+        img: "japanese-musicians.jpg",
         tools: [
             "ReactJS with GatsbyJS",
             "SCSS",
@@ -53,15 +25,43 @@ const projectsData = [
         ]
     },
     {
-        title: "Japanese Musicians",
-        description: "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design.",
-        img: "japanese-musicians.jpg",
+        title: "Movie search system",
+        description: "Movie database website where you can search for movies and read information about them.",
+        img: "movie-database.jpg",
+        features: [
+            "Data fetching from themoviedb.org",
+            "Debounce function for fetching data",
+            "Simple and intuitive design",
+            "Fast and efficient code",
+            "Movie sorting by popularity"
+        ],
         tools: [
             "ReactJS with GatsbyJS",
             "SCSS",
             "HTML"
         ]
-    }
+    },    
+    {
+        title: "Photography portfolio",
+        description: "A photography and videography portfolio website.",
+        img: "photography-portfolio.jpg",
+        features: [
+            "Image and video lazyloading",
+            "Automatic image compression",
+            "Automatic image clean-up(deletion) from Amazon S3",
+            "Automatic 'videos' page HTML code generation",
+            "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
+            "Email contact form"
+        ],
+        tools: [
+            "Amazon Web Services(AWS)",
+            "NodeJS with AWS Lambda",
+            "NodeJS image processing module 'sharp'",
+            "JavaScript",
+            "SCSS",
+            "HTML"
+        ]
+    },
 ];
 
 module.exports = projectsData;
