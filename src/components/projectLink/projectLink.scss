@@ -3,17 +3,14 @@
 .projectLink {
     flex-shrink: 0;
     position: relative;
-    margin: 0 3px;
-    max-width: 100vw; //////// CHANGE THIS FOR SMALLER SCREEN HEIGHTS
+    max-width: 100%;
     transition: transform $slider-transition-length ease-out, opacity $slider-transition-length ease-out;
     transform: scaleY(0.9);
-    opacity: 0.75;
+    opacity: 0.75;    
 
     &__image-container {
         display: block;
-        height: auto;
-        max-height: $page-height-viewport-content;
-        max-width: 100%;
+        max-height: $page-height-viewport-content;        
     }
 
     &__overlay {
@@ -89,6 +86,7 @@
     }
 
     &--active {
+        margin: 0 6px;
         transform: none;
         opacity: 1;
     }

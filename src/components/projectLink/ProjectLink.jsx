@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { useMediaQuery } from "react-responsive";
 import { Link } from "gatsby";
 import "./projectLink.scss";
 
@@ -13,6 +14,11 @@ export const ProjectLink = ({
   sharpImg,
   projectRef
 }) => {
+  // check if the screen is wide but with small height
+  const isDesktopSmallHeight = useMediaQuery({
+    query: "(max-height: 820px) and (min-width: 1200px)"
+  });
+
   const handleNavigation = (target, value) => {
     target.blur();
     setActiveID(projectID + value);
@@ -27,7 +33,13 @@ export const ProjectLink = ({
         `}
         ref={projectRef}
       >
-          <GatsbyImage image={sharpImg} className="projectLink__image-container" alt=""/>
+          <GatsbyImage
+            image={sharpImg}
+            className="projectLink__image-container"
+            imgClassName="projectLink__image"
+            alt=""
+            objectFit={isDesktopSmallHeight ? "contain" : "cover"}
+          />
           
           <div
             className={`
