@@ -16,15 +16,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
     "gatsby-transformer-sharp",
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          placeholder: `blurred`,
-          quality: 75,
-        }
-      }
-    },
+    "gatsby-plugin-sharp",
     {
       resolve: "gatsby-plugin-google-analytics",
       options: {

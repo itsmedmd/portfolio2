@@ -16,7 +16,6 @@ const Projects = ({ data }) => {
   const [noTransition, setNoTransition] = useState(false);
   const [sliderOffset, setSliderOffset] = useState(1);
   const [activeProject, setActiveProject] = useState(Math.ceil(projects.length / 2) - 1);
-  const PROJECT_MARGIN_SIZE = 3;
   const DEFAULT_PROJECT_SIZE = 1024;
 
   // use the second DEFAULT_OFFSET if animation on load is not wanted
@@ -49,10 +48,7 @@ const Projects = ({ data }) => {
     // Calculate the offset to set on the slider to center the active project on the screen
     const centerSlider = () => {
       const projectWidth = projectRef?.current?.offsetWidth || DEFAULT_PROJECT_SIZE;
-      const offset =
-        3.5 * projectWidth
-        - activeProject * projectWidth
-        - activeProject * PROJECT_MARGIN_SIZE * 2; 
+      const offset = 3.5 * projectWidth - activeProject * projectWidth; 
       setSliderOffset(offset);
     };
 
@@ -65,7 +61,7 @@ const Projects = ({ data }) => {
   }, [projectRef, activeProject]);
 
   return (
-    <Layout className="projects" noPadding={true} noMaxWidth={true}>
+    <Layout className="projects" noPadding={true} noMaxWidth={true} centered={true}>
       <h1 className="sr-only">Projects</h1>
 
       <div
@@ -101,7 +97,7 @@ export const query = graphql`
     allFile {
       nodes {
         childImageSharp {
-          gatsbyImageData
+          gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
         }
         relativePath
       }

@@ -38,4 +38,9 @@
     &--no-padding {
         padding: 0;
     }
+
+    &--centered {
+        display: flex;
+        align-items: center;
+    }
 }

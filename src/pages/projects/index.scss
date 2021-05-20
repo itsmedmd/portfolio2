@@ -3,12 +3,10 @@
 .projects {
     max-width: 2000px;
     overflow-x: hidden;
-    height: $page-height-viewport-content;
 
     &__slider {
         align-items: center;
         display: flex;
-        height: inherit;
         justify-content: center;
         transition: transform $slider-transition-length ease-out;
     }
