@@ -3,9 +3,9 @@ import "styles/global.scss";
 import "./layout.scss";
 import { Navigation } from "components";
 
-export const Layout = ({ className, children, noPadding, noMaxWidth, centered }) => {
+export const Layout = ({ className, children, noPadding, noMaxWidth, centered, animation }) => {
   return (
-    <div className="layout">
+    <div className={`layout ${animation ? "layout--with-animation" : ""}`}>
       <header className="header">
         <Navigation/>
       </header>

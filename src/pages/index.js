@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from "gatsby";
-import { Layout } from "components";
+import { Layout, PageLoadAnimation } from "components";
 import "./index.scss";
 
 const HomePage = () => {
   return (
-    <Layout className="homepage">
+    <Layout className="homepage" animation={true} >
+      <PageLoadAnimation text="Deimantas Butėnas" />
       <h1 className="homepage__title">
         Your friendly neighbourhood spider with a passion for webs
       </h1>

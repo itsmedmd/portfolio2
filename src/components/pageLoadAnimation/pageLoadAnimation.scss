@@ -1,5 +1,39 @@
 @import "styles";
 
 .page-load-animation {
+    background-color: $black;
+    font-size: 42px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: $z-index-overlay;
 
+    @include respond-to(max-width, 1024px) {
+        font-size: 34px;
+    }
+
+    @include respond-to(max-width, 480px) {
+        font-size: 22px;
+    }
+
+    @include respond-to(max-width, 360px) {
+        font-size: 18px;
+    }
+
+    &__text {
+        padding: 0 16px;
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        letter-spacing: 10px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+
+    &__word {
+        display: inline-block;
+        margin: 12px;
+    }
 }
