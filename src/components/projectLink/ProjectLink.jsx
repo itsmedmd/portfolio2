@@ -27,35 +27,35 @@ export const ProjectLink = ({
   return (
       <div
         className={`
-          projectLink
-          ${isActive ? "projectLink--active" : ""}
-          ${noTransition ? "projectLink--no-transition" : ""}
+          project-link
+          ${isActive ? "project-link--active" : ""}
+          ${noTransition ? "project-link--no-transition" : ""}
         `}
         ref={projectRef}
       >
           <GatsbyImage
             image={sharpImg}
-            className="projectLink__image-container"
-            imgClassName="projectLink__image"
+            className="project-link__image-container"
+            imgClassName="project-link__image"
             alt=""
             objectFit={isDesktopSmallHeight ? "contain" : "cover"}
           />
           
           <div
             className={`
-              projectLink__overlay
-              ${isActive ? "projectLink__overlay--active" : ""}
-              ${noTransition ? "projectLink__overlay--no-transition" : ""}
+              project-link__overlay
+              ${isActive ? "project-link__overlay--active" : ""}
+              ${noTransition ? "project-link__overlay--no-transition" : ""}
             `}
           >
-            <h2 className="projectLink__title">{title.toUpperCase()}</h2>
+            <h2 className="project-link__title">{title.toUpperCase()}</h2>
 
-            <div className="projectLink__navigation">
+            <div className="project-link__navigation">
               <button
                 type="button"
                 tabIndex={isActive ? "0" : "-1"}
                 onClick={(e) => handleNavigation(e.target, -1)}
-                className="projectLink__navigate projectLink__navigate--left"
+                className="project-link__navigate project-link__navigate--left"
               >
                 &#8249;
                 <p className="sr-only">Previous project</p>
@@ -64,7 +64,7 @@ export const ProjectLink = ({
                 type="button"
                 tabIndex={isActive ? "0" : "-1"}
                 onClick={(e) => handleNavigation(e.target, 1)}
-                className="projectLink__navigate projectLink__navigate--right"
+                className="project-link__navigate project-link__navigate--right"
               >
                 &#8250;
                 <p className="sr-only">Next project</p>
@@ -73,7 +73,7 @@ export const ProjectLink = ({
 
             <Link
               tabIndex={isActive ? "0" : "-1"}
-              className="button-link button-link--project projectLink__link"
+              className="button-link button-link--project project-link__link"
               to={`/${slug}`}
             >
               Learn more
