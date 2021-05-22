@@ -24,8 +24,8 @@ export const PageLoadAnimation = ({ text, sendIsAnimationActiveSignal }) => {
       <div
         className={`
           page-load-animation
-          ${isActive ? "" : "page-load-animation--invisible"}
-          ${isFinished ? "page-load-animation--finished" : ""}
+          ${isActive ? "" : " page-load-animation--invisible"}
+          ${isFinished ? " page-load-animation--finished" : ""}
         `}
       >
         <h2 className="page-load-animation__text">

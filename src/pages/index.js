@@ -10,8 +10,6 @@ const HomePage = () => {
     setIsAnimationActive(val);
   };
 
-  console.log("status:", isAnimationActive);
-
   return (
     <Layout className="homepage" animation={isAnimationActive} >
       <PageLoadAnimation text="Deimantas Butėnas" sendIsAnimationActiveSignal={handleAnimationChange} />
