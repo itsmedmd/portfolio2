@@ -7,6 +7,7 @@
     left: 0;
     position: absolute;
     top: 0;
+    transition: opacity 0.5s;
     width: 100%;
     z-index: $z-index-overlay;
 
@@ -23,10 +24,11 @@
     }
 
     &__text {
+        font-family: $font-page-load-animation;
+        animation: 1.5s page-animation-overlay-disappear ease-in forwards;
         padding: 0 16px;
         position: relative;
-        top: 50%;
-        transform: translateY(-50%);
+        top: 40vh;
         letter-spacing: 10px;
         text-align: center;
         text-transform: uppercase;
@@ -48,5 +50,13 @@
     &__word {
         display: inline-block;
         margin: 12px;
+    }
+
+    &--invisible {
+        opacity: 0;
+    }
+
+    &--finished {
+        z-index: $z-index-hidden;
     }
 }

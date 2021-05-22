@@ -1,0 +1,5 @@
+@keyframes page-animation-overlay-disappear {
+    0%      { transform: scale(1); }
+    95%     { transform: scale(0.95); }
+    100%    { transform: scale(0); }
+}

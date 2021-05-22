@@ -1,14 +1,14 @@
 @import "styles";
 
 .layout {
-    background: url("../../images/background.jpg") no-repeat center center fixed; 
-    background-size: cover;
+    //background: url("../../images/background.jpg") no-repeat center center fixed; 
+    //background-size: cover;
+    background-color: rgb(97, 82, 56);
     display: flex;
     flex-direction: column;
     min-height: 100vh;
 
     &--with-animation {
-        height: 100vh;
         overflow: hidden;
     }
 }
