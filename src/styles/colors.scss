@@ -1,8 +1,9 @@
+// general colors
 $black: #000000;
 $white: #ffffff;
-$red: #ff0000;
 $transparent: rgba(0, 0, 0, 0);
 
+// grey
 $grey-300: rgb(250, 250, 250);
 $grey-400: rgb(240, 240, 240);
 $grey-500: rgb(230, 230, 230);
@@ -10,12 +11,20 @@ $grey-600: rgb(210, 210, 210);
 $grey-900: rgb(100, 100, 100);
 $grey: $grey-500;
 
+// text colors
 $text-default: $grey;
 $text-bright: $white;
 $text-hover: $grey-600;
 $text-active: $grey-300;
+$side-title-color: rgba($white, 0.9);
 
+// anaglyphic text colors
+$text-anaglyph-left-outer: rgba(250, 110, 100, 0.9);
+$text-anaglyph-left-inner: rgba(255, 255, 135, 0.7);
+$text-anaglyph-right-outer: rgba(40, 100, 255, 0.85);
+$text-anaglyph-right-inner: rgba(40, 255, 255, 0.9);
+
+// backgrounds
 $page-background: rgb(18, 20, 18);
 $header-background: rgb(4, 6, 4);
 
-$side-title-color: rgba($white, 0.9);

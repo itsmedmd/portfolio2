@@ -1,11 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
-import { Layout } from "components";
+import { Layout, PageLoadAnimation } from "components";
 import "./index.scss";
 
 const HomePage = () => {
+  const [isAnimationActive, setIsAnimationActive] = useState(true);
+
+  const handleAnimationChange = (val) => {
+    setIsAnimationActive(val);
+  };
+
   return (
-    <Layout className="homepage">
+    <Layout className="homepage" animation={isAnimationActive} >
+      <PageLoadAnimation text="Deimantas Butėnas" sendIsAnimationActiveSignal={handleAnimationChange} />
       <h1 className="homepage__title">
         Your friendly neighbourhood spider with a passion for webs
       </h1>

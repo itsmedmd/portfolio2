@@ -1,0 +1,62 @@
+@import "styles";
+
+.page-load-animation {
+    background-color: $black;
+    font-size: 42px;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transition: opacity 0.5s;
+    width: 100%;
+    z-index: $z-index-overlay;
+
+    @include respond-to(max-width, 1024px) {
+        font-size: 34px;
+    }
+
+    @include respond-to(max-width, 480px) {
+        font-size: 22px;
+    }
+
+    @include respond-to(max-width, 360px) {
+        font-size: 18px;
+    }
+
+    &__text {
+        font-family: $font-page-load-animation;
+        animation: 1.5s page-animation-overlay-disappear ease-in forwards;
+        padding: 0 16px;
+        position: relative;
+        top: 40vh;
+        letter-spacing: 10px;
+        text-align: center;
+        text-transform: uppercase;
+        text-shadow:
+            -1px    -0.2px  0.5px   $text-anaglyph-left-inner,
+            -3px    -0.2px  0.5px   $text-anaglyph-left-outer,
+            1px     -0.3px  0.5px   $text-anaglyph-right-inner,
+            3.5px   0.2px   0.5px   $text-anaglyph-right-outer;
+
+        @include respond-to(max-width, 768px) { 
+            text-shadow:
+                -0.75px     -0.2px  0.5px   $text-anaglyph-left-inner,
+                -2px        -0.2px  0.5px   $text-anaglyph-left-outer,
+                0.75px      -0.3px  0.5px   $text-anaglyph-right-inner,
+                2.5px       0.2px   0.5px   $text-anaglyph-right-outer;
+        }
+    }
+
+    &__word {
+        display: inline-block;
+        margin: 12px;
+    }
+
+    &--invisible {
+        opacity: 0;
+    }
+
+    &--finished {
+        z-index: $z-index-hidden;
+    }
+}
