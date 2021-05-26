@@ -46,36 +46,31 @@ const Contact = () => {
 
             <form className="contact__form" onSubmit={handleSubmit}>
               <div className="form-row">
-                <FormField fieldFor="name" labelText="Name">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    onChange={handleNameChange}
-                    required
-                  />
-                </FormField>
+                <FormField
+                  fieldFor="name"
+                  type="text"
+                  labelText="Name"
+                  handleChange={handleNameChange}
+                  isRequired={true}
+                ></FormField>
 
-                <FormField fieldFor="email" labelText="Email">
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    onChange={handleEmailChange}
-                    required
-                  />
-                </FormField>
+                <FormField
+                  fieldFor="email"
+                  type="email"
+                  labelText="Email"
+                  handleChange={handleEmailChange}
+                  isRequired={true}
+                ></FormField>
               </div>
 
-              <FormField fieldFor="message" labelText="Message">
-                <textarea
-                  type="text"
-                  id="message"
-                  name="message"
-                  onChange={handleMessageChange}
-                  required
-                />
-              </FormField>
+              <FormField
+                fieldFor="message"
+                type="text"
+                labelText="Message"
+                handleChange={handleMessageChange}
+                isRequired={true}
+                isTextArea={true}
+              ></FormField>
 
               <button type="submit" className="button-link">Submit</button>
             </form>
