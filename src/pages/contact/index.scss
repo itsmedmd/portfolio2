@@ -1,5 +1,19 @@
 @import "styles";
 
 .contact {
+    &__content {
+        display: flex;
+    }
 
+    &__links {
+        flex-grow: 2;
+    }
+
+    &__message {
+        flex-grow: 3;
+    }
+
+    &__form {
+        
+    }
 }
