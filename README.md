@@ -1,2 +1,2 @@
-# My revamped portfolio website (development still in progress)
-  You can find live version [here](https://www.deimantasbutenas.lt/).
+# My portfolio website v2
+  You can find live version [here](https://www.deimantasb.com/).
