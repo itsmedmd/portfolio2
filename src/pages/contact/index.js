@@ -28,23 +28,26 @@ const Contact = () => {
     };
   };
 
-  //////////////////////////////////////// fix default button styles
-
   return (
     <Layout className="contact">
-      <h1 className="side-title-left">Contact</h1>
+      <h1 className="side-title-right">Contact</h1>
 
       <article className="contact__content">
         <section className="contact__links">
-          <a href="mailto:deimantas.butenas@gmail.com">deimantas.butenas@gmail.com</a>
-          <a className="button-link" href="linkedin">LinkedIn</a>
-          <a className="button-link" href="https://github.com/ElqBell">GitHub</a>
+          <a
+            href="mailto:deimantas.butenas@gmail.com"
+            className="contact__email-link"
+          >
+            deimantas.butenas@gmail.com
+          </a>
+          <a className="button-link button-link--medium" href="linkedin">LinkedIn</a>
+          <a className="button-link button-link--medium" href="https://github.com/ElqBell">GitHub</a>
         </section>
 
         <aside className="contact__message">
-            <h2>Send me a message.</h2>
+            <h2 className="contact__message-title">Send me a quick message.</h2>
 
-            <form className="contact__form" onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit}>
               <div className="form-row">
                 <FormField
                   fieldFor="name"
@@ -72,7 +75,7 @@ const Contact = () => {
                 isTextArea={true}
               ></FormField>
 
-              <button type="submit" className="button-link">Submit</button>
+              <button type="submit" className="button-link contact__submit">Submit</button>
             </form>
         </aside>
       </article>

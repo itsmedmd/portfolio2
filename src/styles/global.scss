@@ -18,6 +18,7 @@ a {
     text-decoration: none;
 }
 
-button {
+button, input, textarea {
+    border: none;
     font-family: $font-text;
 }

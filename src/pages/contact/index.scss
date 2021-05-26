@@ -3,17 +3,34 @@
 .contact {
     &__content {
         display: flex;
+        padding: 0 8px;
     }
 
     &__links {
-        flex-grow: 2;
+        display: grid;
+        flex-grow: 5;
+        row-gap: 44px;
+        grid-auto-rows: min-content;
+        margin-top: 8vh;
+    }
+
+    &__email-link {
+        font-size: 24px;
     }
 
     &__message {
-        flex-grow: 3;
+        flex-grow: 6;
+        margin-left: 72px;
     }
 
-    &__form {
-        
+    &__message-title {
+        font-size: 30px;
+        font-weight: 500;
+        margin-bottom: 40px;
+    }
+
+    &__submit {
+        cursor: pointer;
+        width: 100%;
     }
 }

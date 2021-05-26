@@ -33,17 +33,17 @@
         text-align: center;
         text-transform: uppercase;
         text-shadow:
-            -1px    -0.2px  0.5px   $text-anaglyph-left-inner,
+            -1.5px  -0.2px  0.5px   $text-anaglyph-left-inner,
             -3px    -0.2px  0.5px   $text-anaglyph-left-outer,
-            1px     -0.3px  0.5px   $text-anaglyph-right-inner,
-            3.5px   0.2px   0.5px   $text-anaglyph-right-outer;
+            1.5px   -0.3px  0.5px   $text-anaglyph-right-inner,
+            3.5px    0.2px  0.5px   $text-anaglyph-right-outer;
 
         @include respond-to(max-width, 768px) { 
             text-shadow:
-                -0.75px     -0.2px  0.5px   $text-anaglyph-left-inner,
-                -2px        -0.2px  0.5px   $text-anaglyph-left-outer,
-                0.75px      -0.3px  0.5px   $text-anaglyph-right-inner,
-                2.5px       0.2px   0.5px   $text-anaglyph-right-outer;
+                -1px     -0.2px  0.5px   $text-anaglyph-left-inner,
+                -2px     -0.2px  0.5px   $text-anaglyph-left-outer,
+                1px      -0.3px  0.5px   $text-anaglyph-right-inner,
+                2.5px     0.2px  0.5px   $text-anaglyph-right-outer;
         }
     }
 

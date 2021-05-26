@@ -27,7 +27,7 @@ export const FormField = ({
             </label>
             {
                 isTextArea ? 
-                <textarea className="form-field__textarea"{...properties}/> :
+                <textarea className="form-field__textarea" {...properties}/> :
                 <input className="form-field__input" {...properties}/>
             }
 

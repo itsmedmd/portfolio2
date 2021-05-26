@@ -48,7 +48,7 @@ const About = ({ data }) => {
         </section>
 
         <section className="about__section about__section--centered">
-            <a className="button-link button-link--with-img" href="https://github.com/ElqBell">
+            <a className="button-link button-link--small" href="https://github.com/ElqBell">
               <img className="button-link__image" src={require("images/github.svg")} alt=""/>
               My github profile
             </a>
