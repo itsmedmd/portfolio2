@@ -8,7 +8,7 @@
 */
 export const createSVGImagesObject = (array) => {
     const obj = {};
-    array.map(svg => {
+    array.forEach(svg => {
         const filename = svg.relativePath.split(".svg")[0];
         obj[filename] = svg.publicURL;
     });
