@@ -4,7 +4,7 @@ import "./listImageItem.scss";
 export const ListImageItem = ({ img, text }) => {
   return (
       <div className="list-image-item">
-          <img className="list-image-item__image" src={require(`images/${img}`)} alt=""/>
+          <img className="list-image-item__image" src={img} alt=""/>
           <span className="list-image-item__text">{text}</span>
       </div>
   );

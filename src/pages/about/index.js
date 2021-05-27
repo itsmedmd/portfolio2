@@ -67,6 +67,12 @@ const About = ({ data }) => {
 
 export const query = graphql`
   query AboutQuery {
+    allFile(filter: {extension: {regex: "/svg/"}}) {
+      nodes {
+        relativePath
+        publicURL
+      }
+    }
     about {
       description
       experiences

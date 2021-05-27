@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.scss";
+import { graphql } from "gatsby";
 import { Layout, FormField } from "components";
 
 const Contact = () => {
@@ -94,5 +95,16 @@ const Contact = () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query ContactImagesQuery {
+    allFile(filter: {relativePath: {regex: "/(gatsby.svg)|(linkedin.svg)/"}}) {
+      nodes {
+        relativePath
+        publicURL
+      }
+    }
+  }
+`;
 
 export default Contact;
