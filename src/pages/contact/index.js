@@ -29,7 +29,7 @@ const Contact = () => {
   };
 
   return (
-    <Layout className="contact">
+    <Layout className="contact" centered={true}>
       <h1 className="side-title-right">Contact</h1>
 
       <article className="contact__content">
@@ -40,8 +40,20 @@ const Contact = () => {
           >
             deimantas.butenas@gmail.com
           </a>
-          <a className="button-link button-link--medium" href="linkedin">LinkedIn</a>
-          <a className="button-link button-link--medium" href="https://github.com/ElqBell">GitHub</a>
+          <a
+            className="button-link button-link--medium"
+            href="https://www.linkedin.com/in/deimantas-but%C4%97nas-85870a192/"
+          >
+            <img className="button-link__image" src={require("images/linkedin.svg")} alt=""/>
+            LinkedIn
+          </a>
+          <a
+            className="button-link button-link--medium"
+            href="https://github.com/ElqBell/"
+          >
+            <img className="button-link__image" src={require("images/github.svg")} alt=""/>
+            GitHub
+          </a>
         </section>
 
         <aside className="contact__message">
