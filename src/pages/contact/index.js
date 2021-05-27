@@ -54,7 +54,7 @@ const Contact = ({ data }) => {
         setFormStatus(status.success);
         console.log("Success sending email!");
       } else {
-        setFormStatus(status.success);
+        setFormStatus(status.error);
         console.error("Error sending email!", res);
       }
       setTimeout(() => setFormStatus(status.idle), 2500);
