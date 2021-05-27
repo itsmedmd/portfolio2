@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import "./index.scss";
 import { graphql } from "gatsby";
 import { Layout, FormField } from "components";
+import { createSVGImagesObject } from "utils";
 
-const Contact = () => {
+const Contact = ({ data }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const images = createSVGImagesObject(data.allFile.nodes);
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -45,14 +47,14 @@ const Contact = () => {
             className="button-link button-link--medium"
             href="https://www.linkedin.com/in/deimantas-but%C4%97nas-85870a192/"
           >
-            <img className="button-link__image" src={require("images/linkedin.svg")} alt=""/>
+            <img className="button-link__image" src={images.linkedin} alt=""/>
             LinkedIn
           </a>
           <a
             className="button-link button-link--medium"
             href="https://github.com/ElqBell/"
           >
-            <img className="button-link__image" src={require("images/github.svg")} alt=""/>
+            <img className="button-link__image" src={images.github} alt=""/>
             GitHub
           </a>
         </section>
@@ -98,7 +100,7 @@ const Contact = () => {
 
 export const query = graphql`
   query ContactImagesQuery {
-    allFile(filter: {relativePath: {regex: "/(gatsby.svg)|(linkedin.svg)/"}}) {
+    allFile(filter: {relativePath: {regex: "/(github.svg)|(linkedin.svg)/"}}) {
       nodes {
         relativePath
         publicURL
