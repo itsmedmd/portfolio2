@@ -24,11 +24,28 @@ const Contact = ({ data }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const data = {
-      name,
-      email,
-      msg: message
+    const url = 'https://3jxqp8oiza.execute-api.eu-central-1.amazonaws.com/beta/contact/';
+
+    const options = {
+      method: 'POST',
+      body: JSON.stringify({
+        name,
+        email,
+        msg: message
+      }),
+      headers: { 'Content-Type': 'application/json; charset=utf-8' }
     };
+
+    e.target.reset();
+
+    fetch(url, options)
+    .then(res => {
+      if(res.status === 200) {
+        console.log("success sending email!");
+      } else {
+        console.error("error sending email!");
+      }
+    });
   };
 
   return (
