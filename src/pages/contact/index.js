@@ -1,13 +1,22 @@
 import React, { useState } from "react";
 import "./index.scss";
 import { graphql } from "gatsby";
-import { Layout, FormField } from "components";
+import { Layout, FormField, FormLoader } from "components";
 import { createSVGImagesObject } from "utils";
 
 const Contact = ({ data }) => {
+  // status of the form used for 'formStatus' state variable
+  const status = {
+    sending: "Sending email",
+    success: "Email successfully sent",
+    error: "An error occurred",
+    idle: ""
+  };
+
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [formStatus, setFormStatus] = useState(status.idle);
   const images = createSVGImagesObject(data.allFile.nodes);
 
   const handleNameChange = (e) => {
@@ -37,14 +46,23 @@ const Contact = ({ data }) => {
     };
 
     e.target.reset();
+    setFormStatus(status.sending);
 
     fetch(url, options)
     .then(res => {
       if(res.status === 200) {
-        console.log("success sending email!");
+        setFormStatus(status.success);
+        console.log("Success sending email!");
       } else {
-        console.error("error sending email!");
+        setFormStatus(status.success);
+        console.error("Error sending email!", res);
       }
+      setTimeout(() => setFormStatus(status.idle), 2500);
+    })
+    .catch(error => {
+      setFormStatus(status.error);
+      console.error("Error sending email!", error);
+      setTimeout(() => setFormStatus(status.idle), 2500);
     });
   };
 
@@ -79,7 +97,14 @@ const Contact = ({ data }) => {
         <aside className="contact__message">
             <h2 className="contact__message-title">Send me a quick message.</h2>
 
-            <form onSubmit={handleSubmit}>
+            <form className="contact__form" onSubmit={handleSubmit}>
+              <FormLoader
+                status={formStatus}
+                defaultStatus={status.idle}
+                successStatus={status.success}
+                errorStatus={status.error}
+              />
+
               <div className="form-row">
                 <FormField
                   fieldFor="name"

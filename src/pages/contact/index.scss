@@ -41,6 +41,10 @@
         margin-bottom: 48px;
     }
 
+    &__form {
+        position: relative;
+    }
+
     &__submit {
         cursor: pointer;
         width: 100%;
