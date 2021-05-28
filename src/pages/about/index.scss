@@ -15,14 +15,17 @@
         margin-bottom: 16px;
     }
 
-    &__section--centered {
-        display: flex;
+    &__section--vertical {
+        display: grid;
+        grid-auto-rows: min-content;
         justify-content: center;
+        row-gap: 28px;
     }
 
     &__description {
-        letter-spacing: 0.3px;
-        line-height: 1.4;
+        font-size: 17px;
+        letter-spacing: 0.4px;
+        line-height: 1.5;
     }
 
     &__list {
@@ -48,7 +51,7 @@
 
     &__action {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-evenly;
         margin: 5vh auto 0;
         max-width: 75%;
     }

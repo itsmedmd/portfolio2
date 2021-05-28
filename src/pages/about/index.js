@@ -2,9 +2,10 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { Layout, ListImageItem } from "components";
 import "./index.scss";
+import { createSVGImagesObject } from "utils";
 
 const About = ({ data }) => {
-  console.log(data.about);
+  const images = createSVGImagesObject(data.allFile.nodes);
 
   return (
     <Layout className="about">
@@ -33,24 +34,34 @@ const About = ({ data }) => {
           </ul>
           <div className="about__skills">
             <ul className="about__skills-column">
-              <ListImageItem img="react.svg" text="reactjs" />
-              <ListImageItem img="javascript.svg" text="javascript" />
-              <ListImageItem img="css.svg" text="css" />
-              <ListImageItem img="git.svg" text="git" />
+              <ListImageItem img={images.react} text="reactjs" />
+              <ListImageItem img={images.javascript} text="javascript" />
+              <ListImageItem img={images.css} text="css" />
+              <ListImageItem img={images.git} text="git" />
             </ul>
             <ul className="about__skills-column">
-              <ListImageItem img="gatsby.svg" text="gatsby" />
-              <ListImageItem img="sass.svg" text="sass(scss)" />
-              <ListImageItem img="html.svg" text="html" />
-              <ListImageItem img="webpack.svg" text="webpack" />
+              <ListImageItem img={images.gatsby} text="gatsby" />
+              <ListImageItem img={images.sass} text="sass(scss)" />
+              <ListImageItem img={images.html} text="html" />
+              <ListImageItem img={images.webpack} text="webpack" />
             </ul>
           </div>
         </section>
 
-        <section className="about__section about__section--centered">
-            <a className="button-link button-link--with-img" href="https://github.com/ElqBell">
-              <img className="button-link__image" src={require("images/github.svg")} alt=""/>
-              My github profile
+        <section
+          className="about__section about__section--vertical"
+        >
+            <a
+              className="button-link button-link--small"
+              href="https://www.linkedin.com/in/deimantas-but%C4%97nas-85870a192/"
+            >
+              <img className="button-link__image" src={images.linkedin} alt=""/>
+              LinkedIn profile
+            </a>
+
+            <a className="button-link button-link--small" href="https://github.com/ElqBell/">
+              <img className="button-link__image" src={images.github} alt=""/>
+              GitHub profile
             </a>
         </section>
 
@@ -67,6 +78,12 @@ const About = ({ data }) => {
 
 export const query = graphql`
   query AboutQuery {
+    allFile(filter: {extension: {regex: "/svg/"}}) {
+      nodes {
+        relativePath
+        publicURL
+      }
+    }
     about {
       description
       experiences

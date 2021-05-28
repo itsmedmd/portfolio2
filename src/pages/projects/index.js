@@ -22,10 +22,6 @@ const Projects = ({ data }) => {
   const DEFAULT_OFFSET = DEFAULT_PROJECT_SIZE / 2;
   //const DEFAULT_OFFSET = DEFAULT_PROJECT_SIZE / 2 - activeProject * PROJECT_MARGIN_SIZE * 2;
 
-  // Only 'allFile' entries that have "childImageSharp" are important.
-  // *.svg files don't have it, those svg files are not used here.
-  const allImages = allFile.nodes.filter(file => file.childImageSharp); 
-
   // update active project ID
   const handleActiveProjectChange = (newProjectID) => {
     setNoTransition(false);
@@ -71,7 +67,7 @@ const Projects = ({ data }) => {
       >
         {
             projects.map(({id, img, title, slug}, index) => {
-              const sharpImg = allImages.find(imgSharp => imgSharp.relativePath === img);
+              const sharpImg = allFile.nodes.find(imgSharp => imgSharp.relativePath === img);
               return (
                 <ProjectLink
                   key={`${id}-${index}`}
@@ -94,7 +90,7 @@ const Projects = ({ data }) => {
 
 export const query = graphql`
   query ProjectsQuery {
-    allFile {
+    allFile(filter: {extension: {regex: "/^((?!svg).)*$/"}}) {
       nodes {
         childImageSharp {
           gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
