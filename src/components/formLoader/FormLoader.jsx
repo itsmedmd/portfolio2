@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import "./formLoader.scss";
 
 export const FormLoader = ({
     status,
     defaultStatus,
     successStatus,
-    errorStatus
+    errorStatus,
+    fadeTimeoutTime
 }) => {
+    const [isFadingOut, setIsFadingOut] = useState(false);
+
+    if(status === successStatus || status === errorStatus) {
+        setTimeout(() => setIsFadingOut(true), fadeTimeoutTime);
+    } else if (isFadingOut) {
+        setIsFadingOut(false);
+    }
+
     return (
         <div
             className={`
                 form-overlay
                 ${status === defaultStatus ? " form-overlay--disabled" : ""}
+                ${isFadingOut ? " form-overlay--fade-out" : ""}
             `}
         >
             {

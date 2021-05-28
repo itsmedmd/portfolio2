@@ -3,14 +3,14 @@ import "./formField.scss";
 
 export const FormField = ({
     fieldFor,
-    type,
+    fieldType,
     labelText,
     handleChange,
     isRequired,
     isTextArea
 }) => {
     const properties = {
-        type: type,
+        type: fieldType,
         id: fieldFor,
         name: fieldFor,
         onChange: handleChange
@@ -30,7 +30,6 @@ export const FormField = ({
                 <textarea className="form-field__textarea" {...properties}/> :
                 <input className="form-field__input" {...properties}/>
             }
-
         </div>
     );
 };

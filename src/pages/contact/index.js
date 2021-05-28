@@ -57,12 +57,12 @@ const Contact = ({ data }) => {
         setFormStatus(status.error);
         console.error("Error sending email!", res);
       }
-      setTimeout(() => setFormStatus(status.idle), 2500);
+      setTimeout(() => setFormStatus(status.idle), 3000);
     })
     .catch(error => {
       setFormStatus(status.error);
       console.error("Error sending email!", error);
-      setTimeout(() => setFormStatus(status.idle), 2500);
+      setTimeout(() => setFormStatus(status.idle), 3000);
     });
   };
 
@@ -103,12 +103,13 @@ const Contact = ({ data }) => {
                 defaultStatus={status.idle}
                 successStatus={status.success}
                 errorStatus={status.error}
+                fadeTimeoutTime={2500}
               />
 
               <div className="form-row">
                 <FormField
                   fieldFor="name"
-                  type="text"
+                  fieldType="text"
                   labelText="Name"
                   handleChange={handleNameChange}
                   isRequired={true}
@@ -116,7 +117,7 @@ const Contact = ({ data }) => {
 
                 <FormField
                   fieldFor="email"
-                  type="email"
+                  fieldType="email"
                   labelText="Email"
                   handleChange={handleEmailChange}
                   isRequired={true}
@@ -125,7 +126,7 @@ const Contact = ({ data }) => {
 
               <FormField
                 fieldFor="message"
-                type="text"
+                fieldType="text"
                 labelText="Message"
                 handleChange={handleMessageChange}
                 isRequired={true}
