@@ -4,8 +4,9 @@ const projectsData = [
         description: "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design.",
         img: "japanese-musicians.jpg",
         tools: [
-            "ReactJS with GatsbyJS",
-            "SCSS",
+            "React",
+            "Gatsby",
+            "SASS(SCSS)",
             "HTML"
         ]
     },
@@ -14,13 +15,14 @@ const projectsData = [
         description: "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
         img: "zyzz-bodybuilding.jpg",
         features: [
-            "Real pictures of the one and only God",
             "Image lazyloading",
-            "Animations with Intersection Observer API"
+            "Animations with Intersection Observer API",
+            "Real pictures of the one and only God"
         ],
         tools: [
-            "ReactJS with GatsbyJS",
-            "SCSS",
+            "React",
+            "Gatsby",
+            "SASS(SCSS)",
             "HTML"
         ]
     },
@@ -36,8 +38,9 @@ const projectsData = [
             "Movie sorting by popularity"
         ],
         tools: [
-            "ReactJS with GatsbyJS",
-            "SCSS",
+            "React",
+            "Gatsby",
+            "SASS(SCSS)",
             "HTML"
         ]
     },    

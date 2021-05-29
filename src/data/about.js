@@ -7,38 +7,14 @@ const aboutData = {
         "Organising styles using BEM methodology"
     ],
     skills: [
-        {
-            text: "reactjs",
-            img: "react.svg"
-        },
-        {
-            text: "javascript",
-            img: "javascript.svg"
-        },
-        {
-            text: "css",
-            img: "css.svg"
-        },
-        {
-            text: "git",
-            img: "git.svg"
-        },
-        {
-            text: "gatsby",
-            img: "gatsby.svg"
-        },
-        {
-            text: "sass(scss)",
-            img: "sass.svg"
-        },
-        {
-            text: "html",
-            img: "html.svg"
-        },
-        {
-            text: "webpack",
-            img: "webpack.svg"
-        }
+        "react",
+        "javascript",
+        "css",
+        "git",
+        "gatsby",
+        "sass(scss)",
+        "html",
+        "webpack"
     ]
 };
 
