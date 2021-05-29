@@ -1,13 +1,41 @@
 const projectsData = [
     {
-        title: "Japanese Musicians",
-        description: "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design.",
-        img: "japanese-musicians.jpg",
+        title: "Photography portfolio",
+        description: "A photography and videography portfolio website.",
+        img: "photography-portfolio.jpg",
+        features: [
+            "Image and video lazyloading",
+            "Automatic image compression",
+            "Automatic image clean-up(deletion) from Amazon S3",
+            "Automatic 'videos' page HTML code generation",
+            "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
+            "Email contact form"
+        ],
         tools: [
-            "React",
-            "Gatsby",
-            "SASS(SCSS)",
-            "HTML"
+            {
+                text: "Amazon API Gateway",
+                img: "aws"
+            },
+            {
+                text: "Amazon Simple Email Service",
+                img: "aws"
+            },
+            {
+                text: "AWS Lambda with NodeJS",
+                img: "aws"
+            },
+            {
+                text: "NodeJS image processing module 'sharp'",
+                img: "javascript"
+            },
+            {
+                text: "SASS(SCSS)",
+                img: "sass"
+            },
+            {
+                text: "HTML",
+                img: "html"
+            }
         ]
     },
     {
@@ -20,10 +48,22 @@ const projectsData = [
             "Real pictures of the one and only God"
         ],
         tools: [
-            "React",
-            "Gatsby",
-            "SASS(SCSS)",
-            "HTML"
+            {
+                text: "React",
+                img: "react"
+            },
+            {
+                text: "Gatsby",
+                img: "gatsby"
+            },
+            {
+                text: "SASS(SCSS)",
+                img: "sass"
+            },
+            {
+                text: "HTML",
+                img: "html"
+            }
         ]
     },
     {
@@ -38,33 +78,47 @@ const projectsData = [
             "Movie sorting by popularity"
         ],
         tools: [
-            "React",
-            "Gatsby",
-            "SASS(SCSS)",
-            "HTML"
-        ]
-    },    
-    {
-        title: "Photography portfolio",
-        description: "A photography and videography portfolio website.",
-        img: "photography-portfolio.jpg",
-        features: [
-            "Image and video lazyloading",
-            "Automatic image compression",
-            "Automatic image clean-up(deletion) from Amazon S3",
-            "Automatic 'videos' page HTML code generation",
-            "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
-            "Email contact form"
-        ],
-        tools: [
-            "Amazon Web Services(AWS)",
-            "NodeJS with AWS Lambda",
-            "NodeJS image processing module 'sharp'",
-            "JavaScript",
-            "SCSS",
-            "HTML"
+            {
+                text: "React",
+                img: "react"
+            },
+            {
+                text: "Gatsby",
+                img: "gatsby"
+            },
+            {
+                text: "SASS(SCSS)",
+                img: "sass"
+            },
+            {
+                text: "HTML",
+                img: "html"
+            }
         ]
     },
+    {
+        title: "Japanese Musicians",
+        description: "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design.",
+        img: "japanese-musicians.jpg",
+        tools: [
+            {
+                text: "React",
+                img: "react"
+            },
+            {
+                text: "Gatsby",
+                img: "gatsby"
+            },
+            {
+                text: "SASS(SCSS)",
+                img: "sass"
+            },
+            {
+                text: "HTML",
+                img: "html"
+            }
+        ]
+    }
 ];
 
 module.exports = projectsData;

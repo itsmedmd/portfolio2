@@ -44,21 +44,25 @@ const Project = ({ pageContext }) => {
             </h3>
             <ul className="page__list">
               { features &&
-                features.map((text, id) =>
+                features.map((feature, id) =>
                   <li
                     className="page__list-item"
-                    key={`${title}-feature-${id}-${text}`}
+                    key={`${title}-feature-${id}-${feature}`}
                   >
-                    {text}
+                    {feature}
                   </li>
                 )
               }
             </ul>
             <div className="page__skills">
-              <ul className="page__skills-column">
+              <ul className="page__skills-column page__skills-column--wide">
                 {
-                  tools.map((text, id) =>
-                    <ListImageItem text={text} key={`${title}-tool-${id}-${text}`}/>
+                  tools.map((tool, id) =>
+                    <ListImageItem
+                      img={SVGImages[tool.img]}
+                      text={tool.text}
+                      key={`${title}-tool-${id}-${tool.text}`}
+                    />
                   )
                 }
               </ul>

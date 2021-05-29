@@ -139,6 +139,10 @@
         flex-basis: 30%;
     }
 
+    &__skills-column--wide {
+        flex-basis: 50%;
+    }
+
     &__description {
         font-size: 17px;
         letter-spacing: 0.4px;

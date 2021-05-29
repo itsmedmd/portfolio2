@@ -83,7 +83,10 @@ exports.createPages = async ({ graphql, actions }) => {
                     features
                     img
                     title
-                    tools
+                    tools {
+                        text
+                        img
+                    }
                     slug
                 }
             }
