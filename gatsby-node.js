@@ -60,6 +60,14 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const projectsQuery = await graphql(`
         query ProjectsQuery {
+            allFile(filter: {extension: {regex: "/^((?!svg).)*$/"}}) {
+                nodes {
+                  childImageSharp {
+                    gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
+                  }
+                  relativePath
+                }
+              }
             allProject {
                 nodes {
                     id
@@ -74,15 +82,20 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `);
 
-    projectsQuery.data.allProject.nodes.forEach(node => 
+    const { allFile, allProject } = projectsQuery.data;
+
+    allProject.nodes.forEach(node => {
+        const {img, ...data} = node;
+        const sharpImg = allFile.nodes.find(imgSharp => imgSharp.relativePath === img);
         createPage({
             path: node.slug,
             component: path.resolve(`src/templates/project/Project.jsx`),
             context: {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
-                slug: node.slug
+                ...data,
+                sharpImg: sharpImg.childImageSharp.gatsbyImageData
             }
-        })
-    );
+        });
+    });
 };

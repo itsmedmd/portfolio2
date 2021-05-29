@@ -1,7 +1,7 @@
 import React from "react";
 import "./project.scss";
 
-const Project = ({pageContext}) => {
+const Project = ({ pageContext }) => {
   console.log(pageContext);
   return (
       <div className="project">
