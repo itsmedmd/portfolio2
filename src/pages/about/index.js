@@ -1,8 +1,7 @@
 import React from "react";
 import { Link, graphql } from "gatsby";
 import { Layout, ListImageItem } from "components";
-import "./index.scss";
-import { createSVGImagesObject } from "utils";
+const createSVGImagesObject = require("utils/createSVGImagesObject").createSVGImagesObject;
 
 const About = ({ data }) => {
   const images = createSVGImagesObject(data.allFile.nodes);
@@ -11,9 +10,9 @@ const About = ({ data }) => {
     <Layout className="about">
       <h1 className="side-title-right">About</h1>
       <h2 className="side-title-left">Deimantas Butėnas</h2>
-      <article className="about__content">
-        <section className="about__section">
-          <p className="about__description">
+      <article className="page__content">
+        <section className="page__section">
+          <p className="page__description">
             I don't know who you are. I don't know what you want. If you are looking 
             for a back-end developer, I can tell you I don't have the expertise, but what I do have are a very 
             particular set of skills. Skills I have acquired over many cold and endless nights.
@@ -24,22 +23,22 @@ const About = ({ data }) => {
           </p>
         </section>
 
-        <section className="about__section">
-          <h3 className="about__section-title">I have experience with:</h3>
-          <ul className="about__list">
-            <li className="about__list-item">Working on projects in Agile teams</li>
-            <li className="about__list-item">Writing clean, efficient and reusable code</li>
-            <li className="about__list-item">Developing accessible websites</li>
-            <li className="about__list-item">Organising styles using BEM methodology</li>
+        <section className="page__section">
+          <h3 className="page__section-title">I have experience with:</h3>
+          <ul className="page__list">
+            <li className="page__list-item">Working on projects in Agile teams</li>
+            <li className="page__list-item">Writing clean, efficient and reusable code</li>
+            <li className="page__list-item">Developing accessible websites</li>
+            <li className="page__list-item">Organising styles using BEM methodology</li>
           </ul>
-          <div className="about__skills">
-            <ul className="about__skills-column">
-              <ListImageItem img={images.react} text="reactjs" />
+          <div className="page__skills">
+            <ul className="page__skills-column">
+              <ListImageItem img={images.react} text="react" />
               <ListImageItem img={images.javascript} text="javascript" />
               <ListImageItem img={images.css} text="css" />
               <ListImageItem img={images.git} text="git" />
             </ul>
-            <ul className="about__skills-column">
+            <ul className="page__skills-column">
               <ListImageItem img={images.gatsby} text="gatsby" />
               <ListImageItem img={images.sass} text="sass(scss)" />
               <ListImageItem img={images.html} text="html" />
@@ -49,7 +48,7 @@ const About = ({ data }) => {
         </section>
 
         <section
-          className="about__section about__section--vertical"
+          className="page__section page__section--vertical"
         >
             <a
               className="button-link button-link--small"
@@ -65,8 +64,8 @@ const About = ({ data }) => {
             </a>
         </section>
 
-        <section className="about__section">
-          <div className="about__action">
+        <section className="page__section">
+          <div className="page__action">
             <Link className="button-link" to="/projects">Projects</Link>
             <Link className="button-link" to="/contact">Contact</Link>
           </div>
@@ -88,10 +87,7 @@ export const query = graphql`
       description
       experiences
       id
-      skills {
-        img
-        text
-      }
+      skills
     }
   }
 `;
