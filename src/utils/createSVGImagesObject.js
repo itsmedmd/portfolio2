@@ -6,7 +6,7 @@
     you could access it with obj.exampleimg and the
     value would be the path of the file in the project.
 */
-export const createSVGImagesObject = (array) => {
+function createSVGImagesObject(array) {
     const obj = {};
     array.forEach(svg => {
         const filename = svg.relativePath.split(".svg")[0];
@@ -14,3 +14,5 @@ export const createSVGImagesObject = (array) => {
     });
     return obj;
 };
+
+module.exports.createSVGImagesObject = createSVGImagesObject;

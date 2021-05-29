@@ -1,6 +1,7 @@
 const path = require("path");
-const projectsData = require("./src/data/projects.js");
-const aboutData = require("./src/data/about.js");
+const projectsData = require("./src/data/projects");
+const aboutData = require("./src/data/about");
+const createSVGImagesObject = require("./src/utils/createSVGImagesObject").createSVGImagesObject;
 
 // custom webpack config
 exports.onCreateWebpackConfig = ({ actions }) => {
@@ -64,14 +65,17 @@ exports.createPages = async ({ graphql, actions }) => {
                 nodes {
                   childImageSharp {
                     gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
-                    duotone1: gatsbyImageData(transformOptions: {
-                        duotone: {highlight: "#ff00a4", shadow: "#000000", opacity: 80}})
-                    duotone2: gatsbyImageData(transformOptions: {
-                        duotone: {highlight: "#00ffef", shadow: "#000000", opacity: 80}})
+                    coloredImg: gatsbyImageData(transformOptions: {duotone: {highlight: "#ffffff", shadow: "#000000"}})
                   }
                   relativePath
                 }
-              }
+            }
+            svgAllFile: allFile(filter: {extension: {regex: "/svg/"}}) {
+                nodes {
+                  relativePath
+                  publicURL
+                }
+            }
             allProject {
                 nodes {
                     id
@@ -86,7 +90,8 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `);
 
-    const { allFile, allProject } = projectsQuery.data;
+    const { allFile, allProject, svgAllFile } = projectsQuery.data;
+    const SVGImages = createSVGImagesObject(svgAllFile.nodes);
 
     allProject.nodes.forEach(node => {
         const {img, ...data} = node;
@@ -98,7 +103,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
                 ...data,
-                sharpImg: sharpImg.childImageSharp
+                sharpImg: sharpImg.childImageSharp,
+                SVGImages
             }
         });
     });
