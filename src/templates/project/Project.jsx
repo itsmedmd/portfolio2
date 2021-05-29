@@ -4,30 +4,27 @@ import { Layout, ListImageItem } from "components";
 import "./project.scss";
 
 const Project = ({ pageContext }) => {
-  const { description, features, slug, title, tools, id, sharpImg, SVGImages } = pageContext;
+  const { title, description, features, tools, sharpImg, SVGImages } = pageContext;
   console.log(pageContext);
   return (
       <Layout className="project">
         <h2 className="side-title-right">Project</h2>
         <h2 className="side-title-left">{title}</h2>
-        <article className="project__content">
-          <section className="page__section">
+        <article>
+          <section className="page__section project__banner">
             <GatsbyImage
               image={sharpImg.gatsbyImageData}
-              className=""
-              imgClassName=""
+              className="project__image-container"
               alt=""
             />
             <GatsbyImage
-              image={sharpImg.coloredImg}
-              className=""
-              imgClassName=""
+              image={sharpImg.gatsbyImageData}
+              className="project__image-container-left"
               alt=""
             />
             <GatsbyImage
-              image={sharpImg.coloredImg}
-              className=""
-              imgClassName=""
+              image={sharpImg.gatsbyImageData}
+              className="project__image-container-right"
               alt=""
             />
           </section>

@@ -65,7 +65,6 @@ exports.createPages = async ({ graphql, actions }) => {
                 nodes {
                   childImageSharp {
                     gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
-                    coloredImg: gatsbyImageData(transformOptions: {duotone: {highlight: "#ffffff", shadow: "#000000"}})
                   }
                   relativePath
                 }
@@ -78,7 +77,6 @@ exports.createPages = async ({ graphql, actions }) => {
             }
             allProject {
                 nodes {
-                    id
                     description
                     features
                     img
@@ -97,17 +95,17 @@ exports.createPages = async ({ graphql, actions }) => {
     const SVGImages = createSVGImagesObject(svgAllFile.nodes);
 
     allProject.nodes.forEach(node => {
-        const {img, ...data} = node;
+        const {img, slug, ...data} = node;
         const sharpImg = allFile.nodes.find(imgSharp => imgSharp.relativePath === img);
         createPage({
-            path: node.slug,
+            path: slug,
             component: path.resolve(`src/templates/project/Project.jsx`),
             context: {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
                 ...data,
-                sharpImg: sharpImg.childImageSharp,
-                SVGImages
+                SVGImages,
+                sharpImg: sharpImg.childImageSharp
             }
         });
     });
