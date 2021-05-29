@@ -64,6 +64,10 @@ exports.createPages = async ({ graphql, actions }) => {
                 nodes {
                   childImageSharp {
                     gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
+                    duotone1: gatsbyImageData(transformOptions: {
+                        duotone: {highlight: "#ff00a4", shadow: "#000000", opacity: 80}})
+                    duotone2: gatsbyImageData(transformOptions: {
+                        duotone: {highlight: "#00ffef", shadow: "#000000", opacity: 80}})
                   }
                   relativePath
                 }
@@ -94,7 +98,7 @@ exports.createPages = async ({ graphql, actions }) => {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
                 ...data,
-                sharpImg: sharpImg.childImageSharp.gatsbyImageData
+                sharpImg: sharpImg.childImageSharp
             }
         });
     });
