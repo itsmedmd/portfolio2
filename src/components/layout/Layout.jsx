@@ -19,12 +19,13 @@ export const Layout = ({
         ${animation ? " layout--with-animation" : ""}
       `}
     >
+      <div className="layout__background-color"></div>
       <StaticImage
         src="../../images/background.jpg"
         alt=""
         className="layout__background-image"
         placeholder="dominantColor"
-        quality="25"
+        quality="60"
       />
 
       <header className="header">
