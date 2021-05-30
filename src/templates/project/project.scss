@@ -7,21 +7,7 @@
     }
 
     &__image-container {
-        animation: opacity-fade-in 2s linear 1 forwards;
-    }
-
-    &__image-container-left,
-    &__image-container-right {
-        position: absolute;
-        top: 0;
-    }
-
-    &__image-container-left {
-        animation: project-banner-slide-from-left 1.5s linear 1 forwards;
-    }
-
-    &__image-container-right {
-        animation: project-banner-slide-from-right 1.5s linear 1 forwards;
+        //animation: opacity-fade-in 2s linear 1 forwards;
     }
 
     &__title {

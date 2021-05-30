@@ -17,16 +17,6 @@ const Project = ({ pageContext }) => {
               className="project__image-container"
               alt=""
             />
-            <GatsbyImage
-              image={sharpImg.gatsbyImageData}
-              className="project__image-container-left"
-              alt=""
-            />
-            <GatsbyImage
-              image={sharpImg.gatsbyImageData}
-              className="project__image-container-right"
-              alt=""
-            />
           </section>
 
           <h1 className="project__title">{title}</h1>

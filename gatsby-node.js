@@ -64,7 +64,10 @@ exports.createPages = async ({ graphql, actions }) => {
             allFile(filter: {extension: {regex: "/^((?!svg).)*$/"}}) {
                 nodes {
                   childImageSharp {
-                    gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
+                    gatsbyImageData(
+                        placeholder: DOMINANT_COLOR
+                        quality: 80
+                    )
                   }
                   relativePath
                 }
