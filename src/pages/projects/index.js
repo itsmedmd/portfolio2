@@ -93,7 +93,7 @@ export const query = graphql`
     allFile(filter: {extension: {regex: "/^((?!svg).)*$/"}}) {
       nodes {
         childImageSharp {
-          gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 80)
+          gatsbyImageData(placeholder: DOMINANT_COLOR, quality: 75)
         }
         relativePath
       }

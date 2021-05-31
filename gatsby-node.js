@@ -66,7 +66,7 @@ exports.createPages = async ({ graphql, actions }) => {
                   childImageSharp {
                     gatsbyImageData(
                         placeholder: DOMINANT_COLOR
-                        quality: 80
+                        quality: 75
                     )
                   }
                   relativePath

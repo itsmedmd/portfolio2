@@ -1,5 +1,6 @@
 import React from "react";
 import { GatsbyImage } from "gatsby-plugin-image";
+import { Link } from "gatsby";
 import { Layout, ListImageItem } from "components";
 import "./project.scss";
 
@@ -18,9 +19,17 @@ const Project = ({ pageContext }) => {
             />
           </section>
 
-          <h1 className="project__title">{title}</h1>
+          <div className="page__action page__action--no-margin project__preview-link">
+              <a
+                className="button-link button-link--wide"
+                href="preview"
+              >
+                Visit project page
+              </a>
+          </div>
 
           <section className="page__section">
+            <h1 className="project__title">{title}</h1>
             <p className="page__description">{description}</p>
           </section>
 
@@ -52,6 +61,12 @@ const Project = ({ pageContext }) => {
                   )
                 }
               </ul>
+            </div>
+          </section>
+
+          <section className="page__section">
+            <div className="page__action">
+              <Link className="button-link" to="/projects">See other projects</Link>
             </div>
           </section>
         </article>

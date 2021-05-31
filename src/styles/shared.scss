@@ -35,6 +35,10 @@
         font-size: 26px;
         padding: 6px 16px;
     }
+
+    &--wide {
+        width: 75%;
+    }
 }
 
 .button-link:hover {
@@ -156,5 +160,9 @@
         justify-content: space-evenly;
         margin: 5vh auto 0;
         max-width: 75%;
+    }
+
+    &__action--no-margin {
+        margin: 0 auto;
     }
 }
