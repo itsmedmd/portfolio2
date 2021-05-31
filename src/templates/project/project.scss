@@ -1,5 +1,16 @@
+@import "styles";
+
 .project {
-    &__sample {
-        color: red;
+    &__banner {
+        text-align: center;
+    }
+
+    &__preview-link {
+        padding-bottom: 64px;
+    }
+
+    &__title {
+        font-size: 42px;
+        padding-bottom: 32px;
     }
 }

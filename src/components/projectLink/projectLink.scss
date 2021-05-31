@@ -19,6 +19,7 @@
         padding: 28px; 
         position: absolute;
         left: 0;
+        text-align: center;
         transition: opacity $slider-transition-length ease-out;
         top: 0;
         opacity: 0;
@@ -38,8 +39,8 @@
     &__title {
         border-bottom: 1px solid $white;
         display: inline-block;
-        font-size: 26px;
-        font-weight: 500;
+        font-size: 40px;
+        font-weight: 700;
         padding: 4px 8px;
     }
 

@@ -14,6 +14,16 @@
         z-index: $z-index-hidden;
     }
 
+    &__background-color {    
+        background-color: $page-background-image-color;    
+        height: 100%;
+        top: 0;
+        position: absolute;
+        left: 0;    
+        width: 100%;
+        z-index: $z-index-hidden;
+    }
+
     &--with-animation {
         overflow: hidden;
     }
@@ -34,9 +44,9 @@
     background: url("../../images/background-overlay.png"); 
     background-attachment: fixed;
     background-repeat: repeat;
-    background-color: rgba($page-background, 0.6);
+    background-color: rgba($page-background, 0.55);
     flex-grow: 1;
-    padding: $page-padding-vertical $page-padding-horizontal;
+    padding: 60px 60px 60px 80px;
 
     &__content {
         margin: 0 auto;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./index.scss";
 import { graphql } from "gatsby";
 import { Layout, FormField, FormLoader } from "components";
-import { createSVGImagesObject } from "utils";
+const createSVGImagesObject = require("utils/createSVGImagesObject").createSVGImagesObject;
 
 const Contact = ({ data }) => {
   // status of the form used for 'formStatus' state variable

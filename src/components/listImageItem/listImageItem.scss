@@ -2,15 +2,21 @@
 
 .list-image-item {
     align-items: center;
-    border: 1px solid rgba($white, 0.1);
+    background-color: rgba($page-background, 0.04);
+    border: 1px solid rgba($white, 0.15);
     display: flex;
     padding: 4px 8px;
     margin-bottom: 18px;
 
-    &__image {
+    &__image-container {
         height: 36px;
         margin-right: 16px;
         width: 36px;
+    }
+
+    &__image {
+        height: 100%;
+        width: 100%;
     }
 
     &__text {

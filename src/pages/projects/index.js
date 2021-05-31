@@ -101,7 +101,6 @@ export const query = graphql`
     allProject {
       nodes {
         id
-        description
         img
         title
         slug

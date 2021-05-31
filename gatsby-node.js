@@ -1,6 +1,7 @@
 const path = require("path");
-const projectsData = require("./src/data/projects.js");
-const aboutData = require("./src/data/about.js");
+const projectsData = require("./src/data/projects");
+const aboutData = require("./src/data/about");
+const createSVGImagesObject = require("./src/utils/createSVGImagesObject").createSVGImagesObject;
 
 // custom webpack config
 exports.onCreateWebpackConfig = ({ actions }) => {
@@ -60,29 +61,55 @@ exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const projectsQuery = await graphql(`
         query ProjectsQuery {
+            allFile(filter: {extension: {regex: "/^((?!svg).)*$/"}}) {
+                nodes {
+                  childImageSharp {
+                    gatsbyImageData(
+                        placeholder: DOMINANT_COLOR
+                        quality: 75
+                    )
+                  }
+                  relativePath
+                }
+            }
+            svgAllFile: allFile(filter: {extension: {regex: "/svg/"}}) {
+                nodes {
+                  relativePath
+                  publicURL
+                }
+            }
             allProject {
                 nodes {
-                    id
                     description
                     features
                     img
                     title
-                    tools
+                    tools {
+                        text
+                        img
+                    }
                     slug
                 }
             }
         }
     `);
 
-    projectsQuery.data.allProject.nodes.forEach(node => 
+    const { allFile, allProject, svgAllFile } = projectsQuery.data;
+    const SVGImages = createSVGImagesObject(svgAllFile.nodes);
+
+    allProject.nodes.forEach(node => {
+        const {img, slug, ...data} = node;
+        const sharpImg = allFile.nodes.find(imgSharp => imgSharp.relativePath === img);
         createPage({
-            path: node.slug,
+            path: slug,
             component: path.resolve(`src/templates/project/Project.jsx`),
             context: {
                 // Data passed to context is available
                 // in page queries as GraphQL variables.
-                slug: node.slug
+                ...data,
+                SVGImages,
+                sharpImg: sharpImg.childImageSharp
             }
-        })
-    );
+        });
+    });
 };
