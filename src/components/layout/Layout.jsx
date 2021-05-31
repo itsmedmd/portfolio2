@@ -25,7 +25,7 @@ export const Layout = ({
         alt=""
         className="layout__background-image"
         placeholder="dominantColor"
-        quality="60"
+        quality="50"
       />
 
       <header className="header">
