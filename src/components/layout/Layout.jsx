@@ -10,7 +10,8 @@ export const Layout = ({
   noPadding,
   noMaxWidth,
   centered,
-  animation
+  animation,
+  disableNavigation
 }) => {
   return (
     <div 
@@ -25,11 +26,11 @@ export const Layout = ({
         alt=""
         className="layout__background-image"
         placeholder="dominantColor"
-        quality="60"
+        quality="50"
       />
 
       <header className="header">
-        <Navigation/>
+        {!disableNavigation && <Navigation/>}
       </header>
 
       <main
