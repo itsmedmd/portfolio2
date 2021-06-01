@@ -10,7 +10,8 @@ export const Layout = ({
   noPadding,
   noMaxWidth,
   centered,
-  animation
+  animation,
+  disableNavigation
 }) => {
   return (
     <div 
@@ -29,7 +30,7 @@ export const Layout = ({
       />
 
       <header className="header">
-        <Navigation/>
+        {!disableNavigation && <Navigation/>}
       </header>
 
       <main

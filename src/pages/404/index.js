@@ -5,7 +5,7 @@ import "./index.scss";
 
 const NotFoundPage = () => {
   return (
-    <Layout className="not-found">
+    <Layout className="not-found" disableNavigation={true}>
       <section className="page__section">
         <h1 className="not-found__title">Sorry, this page does not exist.</h1>
       </section>
