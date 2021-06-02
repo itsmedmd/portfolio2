@@ -99,7 +99,7 @@
 }
 
 // ----------------------------------------------------
-// pages
+// page layout (mainly used for 'about' and 'single project' pages)
 .page {
     &__section {
         padding-bottom: 64px;
@@ -137,6 +137,10 @@
         display: flex;
         justify-content: space-evenly;
         margin-top: 128px;
+    }
+
+    &__skills--reduced-margin {
+        margin-top: 64px;
     }
 
     &__skills-column {
