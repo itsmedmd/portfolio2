@@ -1,2 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?>
-<svg id="master-artboard" viewBox="0 0 1400 980" version="1.1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" style="enable-background:new 0 0 336 235.2;" width="1400px" height="980px"><g transform="matrix(0.9800000610351562, 0, 0, 0.9800000610351562, 209.99995139680505, 0)"><metadata> Svg Vector Icons : http://www.onlinewebfonts.com/icon </metadata><g><path d="M64.4,10l81.7,884.7L500,990l353.9-95.3L935.6,10H64.4z M760.2,296.7L499.7,408.1l-0.6,0.3h0.6H751l-28.8,331.3l-222.1,64.8l-0.4-0.1v0.1l-223.3-66L262,571.6h0.4h110h0.4l7.2,86.4l118.6,30l1-0.3v0.1l122.8-34.6l8.4-139.2l-131.2-0.4l-244.9-0.8l-8.4-104.4l253.3-105.5l14.8-6.1h-14.8H236.8l-13.2-106.9h276.1H771L760.2,296.7z" style="fill: rgb(255, 255, 255);"/></g></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg enable-background="new 0 0 336 235.2" version="1.1" viewBox="0 0 1400 980" xmlns="http://www.w3.org/2000/svg">
+<g transform="matrix(.98 0 0 .98 210 0)">
+<path d="m64.4 10 81.7 884.7 353.9 95.3 353.9-95.3 81.7-884.7h-871.2zm695.8 286.7-260.5 111.4-0.6 0.3h251.9l-28.8 331.3-222.1 64.8-0.4-0.1v0.1l-223.3-66-14.4-166.9h110.8l7.2 86.4 118.6 30 1-0.3v0.1l122.8-34.6 8.4-139.2-131.2-0.4-244.9-0.8-8.4-104.4 253.3-105.5 14.8-6.1h-277.6l-13.2-106.9h547.4l-10.8 106.8z" fill="#fff"/>
+</g>
+</svg>
