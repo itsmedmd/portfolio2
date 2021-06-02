@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import { Helmet } from "react-helmet";
 import { Layout, PageLoadAnimation } from "components";
 import "./index.scss";
 
@@ -12,6 +13,10 @@ const HomePage = () => {
 
   return (
     <Layout className="homepage" animation={isAnimationActive} >
+      <Helmet>
+        <title>Deimantas Butėnas - Home</title>
+      </Helmet>
+
       <PageLoadAnimation text="Deimantas Butėnas" sendIsAnimationActiveSignal={handleAnimationChange} />
       <h1 className="homepage__title">
         Your friendly neighbourhood spider with a passion for webs

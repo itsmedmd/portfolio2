@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import "./index.scss";
 import { graphql } from "gatsby";
+import { Helmet } from "react-helmet";
 import { Layout, ProjectLink } from "components";
 
 const Projects = ({ data }) => {
@@ -58,6 +59,10 @@ const Projects = ({ data }) => {
 
   return (
     <Layout className="projects" noPadding={true} noMaxWidth={true} centered={true}>
+      <Helmet>
+        <title>Deimantas Butėnas - Projects</title>
+      </Helmet>
+
       <h1 className="sr-only">Projects</h1>
 
       <div

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { GatsbyImage } from "gatsby-plugin-image";
 import { Link } from "gatsby";
 import { Layout, ListImageItem } from "components";
@@ -6,9 +7,12 @@ import "./project.scss";
 
 const Project = ({ pageContext }) => {
   const { title, description, features, tools, sharpImg, SVGImages } = pageContext;
-  console.log(pageContext);
   return (
       <Layout className="project">
+        <Helmet>
+          <title>Deimantas Butėnas - {title}</title>
+        </Helmet>
+
         <h2 className="side-title-right">Project</h2>
         <h2 className="side-title-left">{title}</h2>
         <article>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import { Layout, ListImageItem } from "components";
 const createSVGImagesObject = require("utils/createSVGImagesObject").createSVGImagesObject;
@@ -8,6 +9,10 @@ const About = ({ data }) => {
 
   return (
     <Layout className="about">
+      <Helmet>
+        <title>Deimantas Butėnas - About</title>
+      </Helmet>
+
       <h1 className="side-title-right">About</h1>
       <h2 className="side-title-left">Deimantas Butėnas</h2>
       <article className="page__content">

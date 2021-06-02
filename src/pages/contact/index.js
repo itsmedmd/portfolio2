@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Helmet } from "react-helmet";
 import "./index.scss";
 import { graphql } from "gatsby";
 import { Layout, FormField, FormLoader } from "components";
@@ -68,6 +69,10 @@ const Contact = ({ data }) => {
 
   return (
     <Layout className="contact" centered={true}>
+      <Helmet>
+        <title>Deimantas Butėnas - Contact</title>
+      </Helmet>
+
       <h1 className="side-title-right">Contact</h1>
 
       <article className="contact__content">
