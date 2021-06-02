@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import "styles/global.scss";
 import "./layout.scss";
 import { StaticImage } from "gatsby-plugin-image"
@@ -20,6 +21,10 @@ export const Layout = ({
         ${animation ? " layout--with-animation" : ""}
       `}
     >
+      <Helmet>
+        <meta name="description" content="Portfolio website of a front-end developer Deimantas Butėnas." />
+      </Helmet>
+
       <div className="layout__background-color"></div>
       <StaticImage
         src="../../images/background.jpg"

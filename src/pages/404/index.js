@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "gatsby";
 import { Layout } from "components";
 import "./index.scss";
@@ -6,6 +7,10 @@ import "./index.scss";
 const NotFoundPage = () => {
   return (
     <Layout className="not-found" disableNavigation={true}>
+      <Helmet>
+        <title>Deimantas Butėnas - Page not found</title>
+      </Helmet>
+
       <section className="page__section">
         <h1 className="not-found__title">Sorry, this page does not exist.</h1>
       </section>
