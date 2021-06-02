@@ -6,7 +6,7 @@ import { Layout, ListImageItem } from "components";
 import "./project.scss";
 
 const Project = ({ pageContext }) => {
-  const { title, description, features, tools, sharpImg, SVGImages } = pageContext;
+  const { title, description, features, tools, sharpImg, SVGImages, slug } = pageContext;
   return (
       <Layout className="project">
         <Helmet>
@@ -26,7 +26,7 @@ const Project = ({ pageContext }) => {
           <div className="page__action page__action--no-margin project__preview-link">
               <a
                 className="button-link button-link--wide"
-                href="preview"
+                href={`/${slug}/preview`}
               >
                 Visit project page
               </a>
