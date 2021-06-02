@@ -108,7 +108,8 @@ exports.createPages = async ({ graphql, actions }) => {
                 // in page queries as GraphQL variables.
                 ...data,
                 SVGImages,
-                sharpImg: sharpImg.childImageSharp
+                sharpImg: sharpImg.childImageSharp,
+                slug
             }
         });
     });

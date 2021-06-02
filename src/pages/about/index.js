@@ -6,6 +6,20 @@ const createSVGImagesObject = require("utils/createSVGImagesObject").createSVGIm
 
 const About = ({ data }) => {
   const images = createSVGImagesObject(data.allFile.nodes);
+  const { description, experiences, skills, secondarySkills } = data.about;
+
+  const createSkillsList = (array, start, end) => {
+    return (
+      array.slice(start, end)
+      .map((item, id) => 
+        <ListImageItem
+          img={images[item.img]}
+          text={item.text}
+          key={`about-skill-${start}-${id}-${item.text}`}
+        />
+      )
+    );
+  };
 
   return (
     <Layout className="about">
@@ -17,37 +31,69 @@ const About = ({ data }) => {
       <h2 className="side-title-left">Deimantas Butėnas</h2>
       <article className="page__content">
         <section className="page__section">
-          <p className="page__description">
-            I don't know who you are. I don't know what you want. If you are looking 
-            for a back-end developer, I can tell you I don't have the expertise, but what I do have are a very 
-            particular set of skills. Skills I have acquired over many cold and endless nights.
-            Skills that make me a delight for people like you. If you exit this website 
-            now that'll be the end of it. I will not look for you, I will not pursue you, but
-            if you decide to proceed, I will wait for your message, I will reply to you and I will write
-            the best front-end code you've seen.
-          </p>
+          <p className="page__description">{description}</p>
         </section>
 
         <section className="page__section">
-          <h3 className="page__section-title">I have experience with:</h3>
+          <h3 className="page__section-title">I specialise in:</h3>
           <ul className="page__list">
-            <li className="page__list-item">Working on projects in Agile teams</li>
-            <li className="page__list-item">Writing clean, efficient and reusable code</li>
-            <li className="page__list-item">Developing accessible websites</li>
-            <li className="page__list-item">Organising styles using BEM methodology</li>
+            { experiences &&
+              experiences.map((text, id) =>
+                <li
+                  className="page__list-item"
+                  key={`about-experience-${id}-${text}`}
+                >
+                  {text}
+                </li>
+              )
+            }
           </ul>
           <div className="page__skills">
             <ul className="page__skills-column">
-              <ListImageItem img={images.react} text="react" />
-              <ListImageItem img={images.javascript} text="javascript" />
-              <ListImageItem img={images.css} text="css" />
-              <ListImageItem img={images.git} text="git" />
+              {
+                skills &&
+                createSkillsList(
+                  skills,
+                  0,
+                  Math.ceil(skills.length / 2)
+                )
+              }
             </ul>
             <ul className="page__skills-column">
-              <ListImageItem img={images.gatsby} text="gatsby" />
-              <ListImageItem img={images.sass} text="sass(scss)" />
-              <ListImageItem img={images.html} text="html" />
-              <ListImageItem img={images.webpack} text="webpack" />
+              {
+                skills &&
+                createSkillsList(
+                  skills,
+                  Math.ceil(skills.length / 2),
+                  skills.length
+                )
+              }
+            </ul>
+          </div>
+        </section>
+
+        <section className="page__section">
+          <h3 className="page__section-title">I'm also familiar with:</h3>
+          <div className="page__skills page__skills--reduced-margin">
+            <ul className="page__skills-column">
+              {
+                secondarySkills &&
+                createSkillsList(
+                  secondarySkills,
+                  0,
+                  Math.ceil(secondarySkills.length / 2)
+                )
+              }
+            </ul>
+            <ul className="page__skills-column">
+              {
+                secondarySkills &&
+                createSkillsList(
+                  secondarySkills,
+                  Math.ceil(secondarySkills.length / 2),
+                  secondarySkills.length
+                )
+              }
             </ul>
           </div>
         </section>
@@ -91,8 +137,14 @@ export const query = graphql`
     about {
       description
       experiences
-      id
-      skills
+      skills {
+        text
+        img
+      }
+      secondarySkills {
+        text
+        img
+      }
     }
   }
 `;
