@@ -12,7 +12,8 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "pretty": "npx prettier --write src"
   },
   "dependencies": {
     "gatsby": "^3.5.1",
