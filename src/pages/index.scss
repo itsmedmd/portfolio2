@@ -1,21 +1,21 @@
 @import "styles";
 
 .homepage {
-    max-width: $home-page-max-width;
+  max-width: $home-page-max-width;
 
-    &__title {
-        text-align: center;
-        text-transform: uppercase;
-        margin: 10vh auto 0;
-        max-width: 75%;
-        letter-spacing: 7px;
-        line-height: 1.8;
-    }
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    margin: 10vh auto 0;
+    max-width: 75%;
+    letter-spacing: 7px;
+    line-height: 1.8;
+  }
 
-    &__action {
-        display: flex;
-        justify-content: space-around;
-        margin: 20vh auto 2vh;
-        max-width: 75%;
-    }
+  &__action {
+    display: flex;
+    justify-content: space-around;
+    margin: 20vh auto 2vh;
+    max-width: 75%;
+  }
 }

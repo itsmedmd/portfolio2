@@ -1,16 +1,16 @@
 .not-found {
-    &__title,
-    &__suggestion {
-        text-align: center;
-    }
+  &__title,
+  &__suggestion {
+    text-align: center;
+  }
 
-    &__title {
-        font-size: 36px;
-        margin-top: 32px;
-    }
+  &__title {
+    font-size: 36px;
+    margin-top: 32px;
+  }
 
-    &__suggestion {
-        font-size: 28px;
-        margin-bottom: 40px;
-    }
+  &__suggestion {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
 }

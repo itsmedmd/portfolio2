@@ -7,12 +7,12 @@
     value would be the path of the file in the project.
 */
 function createSVGImagesObject(array) {
-    const obj = {};
-    array.forEach(svg => {
-        const filename = svg.relativePath.split(".svg")[0];
-        obj[filename] = svg.publicURL;
-    });
-    return obj;
-};
+  const obj = {};
+  array.forEach((svg) => {
+    const filename = svg.relativePath.split(".svg")[0];
+    obj[filename] = svg.publicURL;
+  });
+  return obj;
+}
 
 module.exports.createSVGImagesObject = createSVGImagesObject;

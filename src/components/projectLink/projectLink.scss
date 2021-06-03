@@ -1,98 +1,99 @@
 @import "styles";
 
 .project-link {
-    flex-shrink: 0;
-    position: relative;
-    max-width: 100%;
-    transition: transform $slider-transition-length ease-out, opacity $slider-transition-length ease-out;
-    transform: scaleY(0.9);
-    opacity: 0.75;    
+  flex-shrink: 0;
+  position: relative;
+  max-width: 100%;
+  transition: transform $slider-transition-length ease-out,
+    opacity $slider-transition-length ease-out;
+  transform: scaleY(0.9);
+  opacity: 0.75;
 
-    &__image-container {
-        display: block;
-        max-height: $page-height-viewport-content;        
-    }
+  &__image-container {
+    display: block;
+    max-height: $page-height-viewport-content;
+  }
 
-    &__overlay {
-        pointer-events: none;
-        height: 100%;
-        padding: 28px; 
-        position: absolute;
-        left: 0;
-        text-align: center;
-        transition: opacity $slider-transition-length ease-out;
-        top: 0;
-        opacity: 0;
-        width: 100%;
-        z-index: $z-index-overlay;
-    }
+  &__overlay {
+    pointer-events: none;
+    height: 100%;
+    padding: 28px;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    transition: opacity $slider-transition-length ease-out;
+    top: 0;
+    opacity: 0;
+    width: 100%;
+    z-index: $z-index-overlay;
+  }
 
-    &__overlay--no-transition {
-        transition: none;
-    }
+  &__overlay--no-transition {
+    transition: none;
+  }
 
-    &__overlay--active {
-        pointer-events: initial;
-        opacity: 1;
-    }
+  &__overlay--active {
+    pointer-events: initial;
+    opacity: 1;
+  }
 
-    &__title {
-        border-bottom: 1px solid $white;
-        display: inline-block;
-        font-size: 40px;
-        font-weight: 700;
-        padding: 4px 8px;
-    }
+  &__title {
+    border-bottom: 1px solid $white;
+    display: inline-block;
+    font-size: 40px;
+    font-weight: 700;
+    padding: 4px 8px;
+  }
 
-    &__link {
-        bottom: 32px;
-        position: absolute;
-        right: 100px;
-    }
+  &__link {
+    bottom: 32px;
+    position: absolute;
+    right: 100px;
+  }
 
-    &__navigation {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-    }
+  &__navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 
-    &__navigate {
-        background: none;
-        border: 0;
-        cursor: pointer;
-        color: $text-bright;
-        font-size: 100px;
-        padding: 0 24px;
-    }
-    
-    &__navigate:hover {
-        color: $text-hover;
-    }
+  &__navigate {
+    background: none;
+    border: 0;
+    cursor: pointer;
+    color: $text-bright;
+    font-size: 100px;
+    padding: 0 24px;
+  }
 
-    &__navigate:active {
-        color: $text-active;
-    }
+  &__navigate:hover {
+    color: $text-hover;
+  }
 
-    &__navigate--left {
-        left: 0;
-    }
+  &__navigate:active {
+    color: $text-active;
+  }
 
-    &__navigate--right {
-        right: 0;
-    }
+  &__navigate--left {
+    left: 0;
+  }
 
-    &--active {
-        margin: 0 6px;
-        transform: none;
-        opacity: 1;
-    }
+  &__navigate--right {
+    right: 0;
+  }
 
-    &--no-transition {
-        transition: none;
-    }
+  &--active {
+    margin: 0 6px;
+    transform: none;
+    opacity: 1;
+  }
+
+  &--no-transition {
+    transition: none;
+  }
 }

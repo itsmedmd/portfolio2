@@ -2,7 +2,7 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import "styles/global.scss";
 import "./layout.scss";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
 import { Navigation } from "components";
 
 export const Layout = ({
@@ -12,17 +12,20 @@ export const Layout = ({
   noMaxWidth,
   centered,
   animation,
-  disableNavigation
+  disableNavigation,
 }) => {
   return (
-    <div 
+    <div
       className={`
         layout
         ${animation ? " layout--with-animation" : ""}
       `}
     >
       <Helmet>
-        <meta name="description" content="Portfolio website of a front-end developer Deimantas Butėnas." />
+        <meta
+          name="description"
+          content="Portfolio website of a front-end developer Deimantas Butėnas."
+        />
       </Helmet>
 
       <div className="layout__background-color"></div>
@@ -34,9 +37,7 @@ export const Layout = ({
         quality="50"
       />
 
-      <header className="header">
-        {!disableNavigation && <Navigation/>}
-      </header>
+      <header className="header">{!disableNavigation && <Navigation />}</header>
 
       <main
         className={`
