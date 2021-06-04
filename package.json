@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "prettify": "npx prettier --write src",
-    "prepare": "husky install"
+    "stylelint": "npx stylelint \"**/*.scss\" --fix",
+    "stylelint-check": "npx stylelint \"**/*.scss\""
   },
   "dependencies": {
     "gatsby": "^3.5.1",
@@ -37,9 +38,13 @@
     "lint-staged": "^11.0.0",
     "mrm": "^3.0.2",
     "mrm-task-lint-staged": "^6.0.0",
-    "prettier": "2.3.0"
+    "prettier": "2.3.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-sass-guidelines": "^8.0.0",
+    "stylelint-declaration-use-variable": "^1.7.3"
   },
   "lint-staged": {
-    "*.{js,jsx,scss}": "npx prettier --write src"
+    "*.{js,jsx}": "npx prettier --write src",
+    "*.scss": "npx stylelint \"**/*.scss\" --fix"
   }
 }
