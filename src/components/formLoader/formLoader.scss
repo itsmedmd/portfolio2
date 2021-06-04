@@ -1,56 +1,56 @@
 @import "styles";
 
 .form-overlay {
-  align-items: center;
-  background-color: $grey-400;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  left: 0;
-  padding-bottom: 64px;
-  position: absolute;
-  top: 0;
-  transition: opacity 0.5s;
-  z-index: $z-index-overlay;
-  width: 100%;
+	align-items: center;
+	background-color: $grey-400;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	justify-content: center;
+	left: 0;
+	padding-bottom: 64px;
+	position: absolute;
+	top: 0;
+	transition: opacity 0.5s;
+	width: 100%;
+	z-index: $z-index-overlay;
 
-  &__loader,
-  &__error,
-  &__success {
-    font-size: 60px;
-    height: 64px;
-    text-align: center;
-    margin-bottom: 32px;
-    width: 64px;
-  }
+	&__loader,
+	&__error,
+	&__success {
+		font-size: $font-60;
+		height: 64px;
+		margin-bottom: 32px;
+		text-align: center;
+		width: 64px;
+	}
 
-  &__loader {
-    animation: spinning-loader 1.2s linear infinite;
-    border: 4px solid rgba($black, 0.8);
-    border-bottom: 0;
-    border-left: 0;
-    border-radius: 50%;
-  }
+	&__loader {
+		animation: spinning-loader 1.2s linear infinite;
+		border: 4px solid rgba($black, 0.8);
+		border-bottom: 0;
+		border-left: 0;
+		border-radius: 50%;
+	}
 
-  &__error {
-    color: $red;
-  }
+	&__error {
+		color: $red;
+	}
 
-  &__success {
-    color: $green;
-  }
+	&__success {
+		color: $green;
+	}
 
-  &__text {
-    color: rgba($black, 0.85);
-    font-size: 24px;
-  }
+	&__text {
+		color: rgba($black, 0.85);
+		font-size: $font-24;
+	}
 
-  &--disabled {
-    display: none;
-  }
+	&--disabled {
+		display: none;
+	}
 
-  &--fade-out {
-    opacity: 0;
-  }
+	&--fade-out {
+		opacity: 0;
+	}
 }

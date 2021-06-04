@@ -1,67 +1,67 @@
 @import "styles";
 
 .nav {
-  font-family: $font-navigation;
-  z-index: $z-index-overlay;
+	font-family: $font-navigation;
+	z-index: $z-index-overlay;
 
-  &__list {
-    display: flex;
-    align-items: center;
-    padding: 8px 24px;
-    list-style: none;
-  }
+	&__list {
+		align-items: center;
+		display: flex;
+		list-style: none;
+		padding: 8px 24px;
+	}
 
-  &__item {
-    margin-right: 52px;
-  }
+	&__item {
+		margin-right: 52px;
+	}
 
-  &__item:first-of-type {
-    text-align: center;
-  }
+	&__item:first-of-type {
+		text-align: center;
+	}
 
-  &__big-text {
-    color: $text-bright;
-    display: block;
-    font-size: 44px;
-    line-height: 0.75;
-    letter-spacing: 2px;
-  }
+	&__big-text {
+		color: $text-bright;
+		display: block;
+		font-size: $font-44;
+		letter-spacing: 2px;
+		line-height: 0.75;
+	}
 
-  &__small-text {
-    display: inline-block;
-    font-size: 18px;
-    width: 100%;
-  }
+	&__small-text {
+		display: inline-block;
+		font-size: $font-18;
+		width: 100%;
+	}
 
-  &__link {
-    border-bottom: 1px solid $transparent;
-    color: $text-bright;
-    text-transform: uppercase;
-    font-size: 20px;
-    letter-spacing: 0.5px;
-  }
+	&__link {
+		border-bottom: 1px solid $transparent;
+		color: $text-bright;
+		font-size: $font-20;
+		letter-spacing: 0.5px;
+		text-transform: uppercase;
+	}
 
-  &__link:hover {
-    color: $text-hover;
-    border-bottom: 1px solid $text-hover;
-  }
+	&__link:hover {
+		border-bottom: 1px solid $text-hover;
+		color: $text-hover;
+	}
 
-  &__link:active {
-    color: $text-active;
-    border-bottom: 1px solid $text-active;
-  }
+	&__link:active {
+		border-bottom: 1px solid $text-active;
+		color: $text-active;
+	}
 
-  &__link:focus {
-    outline-offset: 0;
-  }
+	&__link:focus {
+		outline-offset: 0;
+	}
 
-  &__link--active {
-    border-bottom: 1px solid $text-bright;
-  }
+	&__link--active {
+		border-bottom: 1px solid $text-bright;
+	}
 
-  &__link--home {
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-  }
+	&__link--home {
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+	}
 }

@@ -1,31 +1,31 @@
-@import "./typography.scss";
-@import "./colors.scss";
+@import "./typography";
+@import "./colors";
 
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-  color: $text-default;
-  font-family: $font-text;
-  position: relative;
+	color: $text-default;
+	font-family: $font-text;
+	position: relative;
 }
 
 a {
-  color: $white;
-  text-decoration: none;
+	color: $white;
+	text-decoration: none;
 }
 
 button,
 input,
 textarea {
-  border: none;
-  font-family: $font-text;
+	border: 0;
+	font-family: $font-text;
 }
 
 input:focus,
 textarea:focus {
-  outline-offset: 2px;
+	outline-offset: 2px;
 }

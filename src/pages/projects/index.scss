@@ -1,17 +1,17 @@
 @import "styles";
 
 .projects {
-  max-width: 2000px;
-  overflow-x: hidden;
+	max-width: 2000px;
+	overflow-x: hidden;
 
-  &__slider {
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    transition: transform $slider-transition-length ease-out;
-  }
+	&__slider {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		transition: transform $slider-transition-length ease-out;
+	}
 
-  &__slider--no-transition {
-    transition: none;
-  }
+	&__slider--no-transition {
+		transition: none;
+	}
 }

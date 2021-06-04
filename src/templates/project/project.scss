@@ -1,16 +1,16 @@
 @import "styles";
 
 .project {
-  &__banner {
-    text-align: center;
-  }
+	&__banner {
+		text-align: center;
+	}
 
-  &__preview-link {
-    padding-bottom: 64px;
-  }
+	&__preview-link {
+		padding-bottom: 64px;
+	}
 
-  &__title {
-    font-size: 42px;
-    padding-bottom: 32px;
-  }
+	&__title {
+		font-size: $font-42;
+		padding-bottom: 32px;
+	}
 }

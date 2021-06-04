@@ -1,67 +1,67 @@
 @import "styles";
 
 .layout {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 
-  &__background-image {
-    top: 0;
-    position: fixed;
-    left: 0;
-    min-height: 100vh;
-    min-width: 100vw;
-    z-index: $z-index-hidden;
-  }
+	&__background-image {
+		left: 0;
+		min-height: 100vh;
+		min-width: 100vw;
+		position: fixed;
+		top: 0;
+		z-index: $z-index-hidden;
+	}
 
-  &__background-color {
-    background-color: $page-background-image-color;
-    height: 100%;
-    top: 0;
-    position: absolute;
-    left: 0;
-    width: 100%;
-    z-index: $z-index-hidden;
-  }
+	&__background-color {
+		background-color: $page-background-image-color;
+		height: 100%;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: $z-index-hidden;
+	}
 
-  &--with-animation {
-    overflow: hidden;
-  }
+	&--with-animation {
+		overflow: hidden;
+	}
 }
 
 .header,
 .footer {
-  background-color: $header-background;
-  height: $header-height;
+	background-color: $header-background;
+	height: $header-height;
 }
 
 .header {
-  align-items: center;
-  display: flex;
+	align-items: center;
+	display: flex;
 }
 
 .main {
-  background: url("../../images/background-overlay.png");
-  background-attachment: fixed;
-  background-repeat: repeat;
-  background-color: rgba($page-background, 0.55);
-  flex-grow: 1;
-  padding: 60px 60px 60px 80px;
+	background: url("../../images/background-overlay.png");
+	background-attachment: fixed;
+	background-color: rgba($page-background, 0.55);
+	background-repeat: repeat;
+	flex-grow: 1;
+	padding: 60px 60px 60px 80px;
 
-  &__content {
-    margin: 0 auto;
-  }
+	&__content {
+		margin: 0 auto;
+	}
 
-  &__content--with-max-width {
-    max-width: $page-max-width;
-  }
+	&__content--with-max-width {
+		max-width: $page-max-width;
+	}
 
-  &--no-padding {
-    padding: 0;
-  }
+	&--no-padding {
+		padding: 0;
+	}
 
-  &--centered {
-    display: flex;
-    align-items: center;
-  }
+	&--centered {
+		align-items: center;
+		display: flex;
+	}
 }

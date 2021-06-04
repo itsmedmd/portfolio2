@@ -1,22 +1,22 @@
-@import "./typography.scss";
-@import "./colors.scss";
+@import "./typography";
+@import "./colors";
 
 @mixin side-title {
-  color: $side-title-color;
-  font-family: $font-navigation;
-  position: absolute;
-  text-transform: uppercase;
-  writing-mode: vertical-rl;
+	color: $side-title-color;
+	font-family: $font-navigation;
+	position: absolute;
+	text-transform: uppercase;
+	writing-mode: vertical-rl;
 }
 
 @mixin respond-to($media, $value) {
-  @media screen and ($media: $value) {
-    @content;
-  }
+	@media screen and ($media: $value) {
+		@content;
+	}
 }
 
 @mixin respond-between($media, $value, $media2, $value2) {
-  @media screen and ($media: $value) and ($media2: $value2) {
-    @content;
-  }
+	@media screen and ($media: $value) and ($media2: $value2) {
+		@content;
+	}
 }

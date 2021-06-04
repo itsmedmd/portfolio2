@@ -1,52 +1,52 @@
 @import "styles";
 
 .contact {
-  flex-grow: 1;
+	flex-grow: 1;
 
-  &__content {
-    display: flex;
-    padding: 0 8px;
-  }
+	&__content {
+		display: flex;
+		padding: 0 8px;
+	}
 
-  &__links {
-    display: grid;
-    flex-grow: 2;
-    row-gap: 44px;
-    grid-auto-rows: min-content;
-    margin-top: 12vh;
+	&__links {
+		display: grid;
+		flex-grow: 2;
+		grid-auto-rows: min-content;
+		margin-top: 12vh;
+		row-gap: 44px;
 
-    @include respond-to(max-width, 1160px) {
-      flex-grow: 1;
-    }
-  }
+		@include respond-to(max-width, 1160px) {
+			flex-grow: 1;
+		}
+	}
 
-  &__email-link {
-    font-size: 24px;
-    text-align: center;
-  }
+	&__email-link {
+		font-size: $font-24;
+		text-align: center;
+	}
 
-  &__message {
-    flex-grow: 3;
-    margin-left: 100px;
+	&__message {
+		flex-grow: 3;
+		margin-left: 100px;
 
-    @include respond-to(max-width, 1160px) {
-      margin-left: 64px;
-      flex-grow: 4;
-    }
-  }
+		@include respond-to(max-width, 1160px) {
+			flex-grow: 4;
+			margin-left: 64px;
+		}
+	}
 
-  &__message-title {
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 48px;
-  }
+	&__message-title {
+		font-size: $font-30;
+		font-weight: 500;
+		margin-bottom: 48px;
+	}
 
-  &__form {
-    position: relative;
-  }
+	&__form {
+		position: relative;
+	}
 
-  &__submit {
-    cursor: pointer;
-    width: 100%;
-  }
+	&__submit {
+		cursor: pointer;
+		width: 100%;
+	}
 }
