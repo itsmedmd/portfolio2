@@ -12,19 +12,28 @@ const HomePage = () => {
   };
 
   return (
-    <Layout className="homepage" animation={isAnimationActive} >
+    <Layout className="homepage" animation={isAnimationActive}>
       <Helmet>
         <title>Deimantas Butėnas - Home</title>
       </Helmet>
 
-      <PageLoadAnimation text="Deimantas Butėnas" sendIsAnimationActiveSignal={handleAnimationChange} />
+      <PageLoadAnimation
+        text="Deimantas Butėnas"
+        sendIsAnimationActiveSignal={handleAnimationChange}
+      />
       <h1 className="homepage__title">
         Your friendly neighbourhood spider with a passion for webs
       </h1>
       <div className="homepage__action">
-        <Link className="button-link" to="/about">About</Link>
-        <Link className="button-link" to="/projects">Projects</Link>
-        <Link className="button-link" to="/contact">Contact</Link>
+        <Link className="button-link" to="/about">
+          About
+        </Link>
+        <Link className="button-link" to="/projects">
+          Projects
+        </Link>
+        <Link className="button-link" to="/contact">
+          Contact
+        </Link>
       </div>
     </Layout>
   );

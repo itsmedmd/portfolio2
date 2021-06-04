@@ -9,7 +9,7 @@ export const PageLoadAnimation = ({ text, sendIsAnimationActiveSignal }) => {
     const handleAnimationFinish = () => {
       sendIsAnimationActiveSignal(false);
       setIsFinished(true);
-    }; 
+    };
 
     const timeout1 = setTimeout(() => setIsActive(false), 1500);
     const timeout2 = setTimeout(handleAnimationFinish, 2000);
@@ -21,26 +21,23 @@ export const PageLoadAnimation = ({ text, sendIsAnimationActiveSignal }) => {
   }, [sendIsAnimationActiveSignal]);
 
   return (
-      <div
-        className={`
-          page-load-animation
-          ${isActive ? "" : " page-load-animation--invisible"}
-          ${isFinished ? " page-load-animation--finished" : ""}
-        `}
-      >
-        <h2 className="page-load-animation__text">
-          {
-            text.split(" ")
-              .map((word, id) => 
-                <span
-                  key={`page-animation-${text}-${id}`}
-                  className="page-load-animation__word"
-                >
-                  {word}
-                </span>
-              )
-          }
-        </h2>
-      </div>
+    <div
+      className={`
+        page-load-animation
+        ${isActive ? "" : " page-load-animation--invisible"}
+        ${isFinished ? " page-load-animation--finished" : ""}
+      `}
+    >
+      <h2 className="page-load-animation__text">
+        {text.split(" ").map((word, id) => (
+          <span
+            key={`page-animation-${text}-${id}`}
+            className="page-load-animation__word"
+          >
+            {word}
+          </span>
+        ))}
+      </h2>
+    </div>
   );
 };
