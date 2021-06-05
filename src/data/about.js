@@ -39,10 +39,6 @@ const aboutData = {
   ],
   secondarySkills: [
     {
-      text: "webpack",
-      img: "webpack",
-    },
-    {
       text: "Amazon Web Services",
       img: "aws",
     },

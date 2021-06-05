@@ -140,7 +140,10 @@ const Contact = ({ data }) => {
               isTextArea={true}
             ></FormField>
 
-            <button type="submit" className="button-link contact__submit">
+            <button
+              type="submit"
+              className="button-link button-link--no-margin contact__submit"
+            >
               Submit
             </button>
           </form>

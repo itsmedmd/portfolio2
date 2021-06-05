@@ -16,6 +16,10 @@
 	padding: 10px 16px;
 	text-transform: uppercase;
 
+	@include respond-to(max-width, $break-laptop) {
+		margin: 0 16px;
+	}
+
 	&__image {
 		height: 36px;
 		margin-right: 8px;
@@ -38,6 +42,10 @@
 
 	&--wide {
 		width: 75%;
+	}
+
+	&--no-margin {
+		margin: 0;
 	}
 }
 
