@@ -70,8 +70,8 @@
 
 .side-title-right {
 	@include side-title;
-	bottom: 0;
 
+	bottom: 0;
 	font-size: $font-48;
 	padding-bottom: calc(#{$header-height} / 3);
 	right: 0;
@@ -168,5 +168,9 @@
 
 	&__action--no-margin {
 		margin: 0 auto;
+	}
+
+	&__action--homepage {
+		margin: 20vh auto 2vh;
 	}
 }
