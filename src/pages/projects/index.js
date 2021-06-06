@@ -11,11 +11,11 @@ const Projects = ({ data }) => {
   // copy 2 last projects to the start and 2 first projects to the end
   // of the array. This is used to create an "infinite" image carousel
   const projects = [...allProject.nodes];
+  projects.push(projects[2], projects[3]);
   projects.unshift(
     projects[projects.length - 2],
     projects[projects.length - 1]
   );
-  projects.push(projects[2], projects[3]);
 
   const projectRef = useRef(null);
   const [noTransition, setNoTransition] = useState(false);
