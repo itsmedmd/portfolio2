@@ -6,6 +6,7 @@ import { Layout, ProjectLink } from "components";
 
 const Projects = ({ data }) => {
   const { allFile, allProject } = data;
+  const DEFAULT_OFFSET = 1024;
 
   // copy 2 last projects to the start and 2 first projects to the end
   // of the array. This is used to create an "infinite" image carousel
@@ -18,15 +19,10 @@ const Projects = ({ data }) => {
 
   const projectRef = useRef(null);
   const [noTransition, setNoTransition] = useState(false);
-  const [sliderOffset, setSliderOffset] = useState(1);
+  const [sliderOffset, setSliderOffset] = useState(DEFAULT_OFFSET);
   const [activeProject, setActiveProject] = useState(
     Math.ceil(projects.length / 2) - 1
   );
-  const DEFAULT_PROJECT_SIZE = 1024;
-
-  // use the second DEFAULT_OFFSET if animation on load is not wanted
-  const DEFAULT_OFFSET = DEFAULT_PROJECT_SIZE / 2;
-  //const DEFAULT_OFFSET = DEFAULT_PROJECT_SIZE / 2 - activeProject * PROJECT_MARGIN_SIZE * 2;
 
   // update active project ID
   const handleActiveProjectChange = (newProjectID) => {
@@ -49,19 +45,21 @@ const Projects = ({ data }) => {
   useEffect(() => {
     // Calculate the offset to set on the slider to center the active project on the screen
     const centerSlider = () => {
-      const projectWidth =
-        projectRef?.current?.offsetWidth || DEFAULT_PROJECT_SIZE;
+      const projectWidth = projectRef?.current?.offsetWidth || DEFAULT_OFFSET;
       const offset = 3.5 * projectWidth - activeProject * projectWidth;
       setSliderOffset(offset);
     };
 
-    if (projectRef?.current) {
-      centerSlider();
-    }
+    // center slider on render
+    centerSlider();
+
+    // very rarely on small screens the first center function call doesn't
+    // center the projects properly, so call it again after some time
+    setTimeout(centerSlider, 500);
 
     window.addEventListener("resize", centerSlider);
     return () => window.removeEventListener("resize", centerSlider);
-  }, [projectRef, activeProject]);
+  }, [projectRef?.current?.offsetWidth, activeProject]);
 
   return (
     <Layout
@@ -82,11 +80,7 @@ const Projects = ({ data }) => {
           projects__slider
           ${noTransition ? "projects__slider--no-transition" : ""}
         `}
-        style={{
-          transform: `translateX(${
-            sliderOffset === 1 ? DEFAULT_OFFSET : sliderOffset
-          }px)`,
-        }}
+        style={{ transform: `translateX(${sliderOffset}px)` }}
       >
         {projects.map(({ id, img, title, slug }, index) => {
           const sharpImg = allFile.nodes.find(

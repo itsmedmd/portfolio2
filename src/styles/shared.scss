@@ -177,6 +177,10 @@
 		line-height: 1.5;
 		max-width: 80%;
 		padding-left: 48px;
+
+		@include respond-to(max-width, $break-tablet-big) {
+			max-width: 90%;
+		}
 	}
 
 	&__action {
