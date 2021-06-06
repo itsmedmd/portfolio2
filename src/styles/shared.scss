@@ -46,6 +46,10 @@
 
 	&--no-margin {
 		margin: 0;
+
+		@include respond-to(max-width, $break-laptop) {
+			margin: 0;
+		}
 	}
 }
 
@@ -153,10 +157,18 @@
 
 	&__skills-column {
 		flex-basis: 30%;
+
+		@include respond-to(max-width, $break-tablet-big) {
+			flex-basis: 40%;
+		}
 	}
 
 	&__skills-column--wide {
 		flex-basis: 50%;
+
+		@include respond-to(max-width, $break-tablet-big) {
+			flex-basis: 70%;
+		}
 	}
 
 	&__description {
@@ -172,6 +184,10 @@
 		justify-content: space-evenly;
 		margin: 5vh auto 0;
 		max-width: 75%;
+
+		@include respond-to(max-width, $break-tablet-big) {
+			max-width: 100%;
+		}
 	}
 
 	&__action--no-margin {

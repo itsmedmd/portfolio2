@@ -25,5 +25,9 @@
 	&__textarea {
 		height: 220px;
 		resize: vertical;
+
+		@include respond-to(max-width, $break-tablet-big) {
+			height: 300px;
+		}
 	}
 }
