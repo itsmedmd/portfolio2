@@ -50,7 +50,7 @@ const Projects = ({ data }) => {
 
     window.addEventListener("resize", centerSlider);
     return () => window.removeEventListener("resize", centerSlider);
-  }, [projectRef?.current?.offsetWidth, activeProject]);
+  }, [projectRef?.current?.offsetWidth, activeProject, isSliderEnabled]);
 
   // update active project ID
   const handleActiveProjectChange = (newProjectID, target) => {
