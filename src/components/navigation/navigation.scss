@@ -9,6 +9,10 @@
 		display: flex;
 		list-style: none;
 		padding: 8px 24px;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			flex-direction: column;
+		}
 	}
 
 	&__item {

@@ -20,6 +20,11 @@
 		margin: 0 16px;
 	}
 
+	@include respond-to(max-width, $break-tablet-small) {
+		margin: 0 0 32px;
+		text-align: center;
+	}
+
 	&__image {
 		height: 36px;
 		margin-right: 8px;
@@ -27,7 +32,7 @@
 	}
 
 	&--small {
-		font-size: $font-20;
+		font-size: $font-22;
 		padding: 4px 16px;
 	}
 
@@ -42,12 +47,22 @@
 
 	&--wide {
 		width: 75%;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			width: 100%;
+		}
 	}
 
 	&--no-margin {
 		margin: 0;
 
 		@include respond-to(max-width, $break-laptop) {
+			margin: 0;
+		}
+	}
+
+	&:last-of-type {
+		@include respond-to(max-width, $break-tablet-small) {
 			margin: 0;
 		}
 	}
@@ -108,6 +123,11 @@
 .form-row {
 	display: flex;
 	gap: 24px;
+
+	@include respond-to(max-width, $break-form-row-one-column) {
+		flex-direction: column;
+		gap: 0;
+	}
 }
 
 // ----------------------------------------------------
@@ -118,7 +138,7 @@
 	}
 
 	&__section:not(:first-of-type) {
-		border-top: 1px solid rgba($white, 0.2);
+		border-top: 1px solid $section-border-color;
 		padding-top: 64px;
 	}
 
@@ -132,6 +152,10 @@
 		grid-auto-rows: min-content;
 		justify-content: center;
 		row-gap: 28px;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			row-gap: 0;
+		}
 	}
 
 	&__list {
@@ -149,6 +173,10 @@
 		display: flex;
 		justify-content: space-evenly;
 		margin-top: 128px;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			flex-direction: column;
+		}
 	}
 
 	&__skills--reduced-margin {
@@ -181,6 +209,10 @@
 		@include respond-to(max-width, $break-tablet-big) {
 			max-width: 90%;
 		}
+
+		@include respond-to(max-width, $break-phone-big) {
+			padding-left: 46px;
+		}
 	}
 
 	&__action {
@@ -192,6 +224,10 @@
 		@include respond-to(max-width, $break-tablet-big) {
 			max-width: 100%;
 		}
+
+		@include respond-to(max-width, $break-tablet-small) {
+			flex-direction: column;
+		}
 	}
 
 	&__action--no-margin {
@@ -200,5 +236,9 @@
 
 	&__action--homepage {
 		margin: 20vh auto 2vh;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			margin: 12vh auto 2vh;
+		}
 	}
 }

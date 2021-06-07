@@ -36,8 +36,13 @@ const About = ({ data }) => {
       <article className="page__content">
         <section className="page__section">
           {description &&
-            description.map((paragraph) => (
-              <p className="page__description about__paragraph">{paragraph}</p>
+            description.map((paragraph, id) => (
+              <p
+                className="page__description about__paragraph"
+                key={`about-${id}-${paragraph}`}
+              >
+                {paragraph}
+              </p>
             ))}
         </section>
 

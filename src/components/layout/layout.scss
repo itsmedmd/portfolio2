@@ -48,6 +48,14 @@
 	flex-grow: 1;
 	padding: 60px 80px;
 
+	@include respond-to(max-width, $break-tablet-small) {
+		padding: 32px 16px 48px;
+	}
+
+	@include respond-to(max-width, $break-phone-big) {
+		padding: 32px 8px 48px;
+	}
+
 	&__content {
 		margin: 0 auto;
 	}

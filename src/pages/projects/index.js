@@ -111,7 +111,7 @@ const Projects = ({ data }) => {
         onTransitionEnd={handleTransitionEnd}
         className={`
           projects__slider
-          ${noTransition ? "projects__slider--no-transition" : ""}
+          ${noTransition ? " projects__slider--no-transition" : ""}
         `}
         style={{
           transform: `translateX(${isSliderEnabled ? sliderOffset : 0}px)`,

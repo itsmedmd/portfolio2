@@ -30,8 +30,8 @@ export const ProjectLink = ({
     <div
       className={`
           project-link
-          ${isActive && isInSlider ? "project-link--active" : ""}
-          ${noTransition && isInSlider ? "project-link--no-transition" : ""}
+          ${isActive && isInSlider ? " project-link--active" : ""}
+          ${noTransition && isInSlider ? " project-link--no-transition" : ""}
         `}
       ref={projectRef}
     >
@@ -40,16 +40,16 @@ export const ProjectLink = ({
         className="project-link__image-container"
         imgClassName="project-link__image"
         alt=""
-        objectFit={isDesktopSmallHeight ? "contain" : "cover"}
+        objectFit={isDesktopSmallHeight ? " contain" : "cover"}
       />
 
       <div
         className={`
           project-link__overlay
-          ${isActive || !isInSlider ? "project-link__overlay--active" : ""}
+          ${isActive || !isInSlider ? " project-link__overlay--active" : ""}
           ${
             noTransition && isInSlider
-              ? "project-link__overlay--no-transition"
+              ? " project-link__overlay--no-transition"
               : ""
           }
         `}
