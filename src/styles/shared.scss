@@ -43,6 +43,10 @@
 	&--project {
 		font-size: $font-26;
 		padding: 6px 16px;
+
+		@include respond-to(max-width, $break-phone-big) {
+			font-size: $font-22;
+		}
 	}
 
 	&--wide {
@@ -124,7 +128,7 @@
 	display: flex;
 	gap: 24px;
 
-	@include respond-to(max-width, $break-form-row-one-column) {
+	@include respond-to(max-width, $break-phone-huge) {
 		flex-direction: column;
 		gap: 0;
 	}

@@ -98,7 +98,8 @@ const Contact = ({ data }) => {
             href="mailto:deimantas.butenas@gmail.com"
             className="contact__email-link"
           >
-            deimantas.butenas@gmail.com
+            <span className="contact__email-link-word">deimantas.butenas</span>
+            <span className="contact__email-link-word">@gmail.com</span>
           </a>
         </section>
 

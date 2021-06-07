@@ -15,6 +15,14 @@
 		transform: none;
 	}
 
+	@include respond-to(max-width, $break-phone-huge) {
+		margin-bottom: 116px;
+	}
+
+	@include respond-to(max-width, $break-phone-big) {
+		margin-bottom: 124px;
+	}
+
 	&__image-container {
 		display: block;
 		max-height: $page-height-viewport-content;
@@ -36,6 +44,10 @@
 		transition: opacity $slider-transition-length ease-out;
 		width: 100%;
 		z-index: $z-index-overlay;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			padding: 16px;
+		}
 	}
 
 	&__overlay--no-transition {
@@ -53,12 +65,42 @@
 		font-size: $font-40;
 		font-weight: 700;
 		padding: 4px 8px;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			font-size: $font-30;
+		}
+
+		@include respond-to(max-width, $break-phone-huge) {
+			font-size: $font-28;
+			left: 0;
+			position: absolute;
+			top: -36px;
+			width: 100%;
+		}
+
+		@include respond-to(max-width, $break-phone-big) {
+			font-size: $font-24;
+			top: -44px;
+		}
 	}
 
 	&__link {
 		bottom: 32px;
 		position: absolute;
 		right: 100px;
+
+		@include respond-to(max-width, $break-tablet-small) {
+			bottom: 20px;
+		}
+
+		@include respond-to(max-width, $break-phone-huge) {
+			bottom: -12px;
+			right: 48px;
+		}
+
+		@include respond-to(max-width, $break-phone-big) {
+			right: 24px;
+		}
 	}
 
 	&__navigation {

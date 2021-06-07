@@ -17,7 +17,7 @@
 		padding: 4px 8px;
 		width: 100%;
 
-		@include respond-to(max-width, $break-form-row-one-column) {
+		@include respond-to(max-width, $break-phone-huge) {
 			margin-bottom: 20px;
 		}
 	}

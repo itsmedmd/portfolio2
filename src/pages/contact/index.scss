@@ -42,14 +42,23 @@
 		}
 	}
 
-	&__links-title {
+	&__links-title,
+	&__message-title {
 		font-size: $font-30;
 		font-weight: 500;
+
+		@include respond-to(max-width, $break-phone-big) {
+			font-size: $font-28;
+		}
 	}
 
 	&__email-link {
 		font-size: $font-24;
 		text-align: center;
+	}
+
+	&__email-link-word {
+		display: inline-block;
 	}
 
 	&__message {
@@ -68,8 +77,6 @@
 	}
 
 	&__message-title {
-		font-size: $font-30;
-		font-weight: 500;
 		margin-bottom: 36px;
 	}
 
