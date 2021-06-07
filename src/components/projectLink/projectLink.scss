@@ -9,9 +9,19 @@
 	transition: transform $slider-transition-length ease-out,
 		opacity $slider-transition-length ease-out;
 
+	@include respond-to(max-width, $break-laptop-small) {
+		margin-bottom: 64px;
+		opacity: 1;
+		transform: none;
+	}
+
 	&__image-container {
 		display: block;
 		max-height: $page-height-viewport-content;
+
+		@include respond-to(max-width, $break-laptop-small) {
+			max-height: none;
+		}
 	}
 
 	&__overlay {
