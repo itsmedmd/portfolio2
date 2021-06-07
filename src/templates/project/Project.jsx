@@ -14,8 +14,7 @@ const Project = ({ pageContext }) => {
         <title>Deimantas Butėnas - {title}</title>
       </Helmet>
 
-      <h2 className="side-title-right">Project</h2>
-      <h2 className="side-title-left">{title}</h2>
+      <h2 className="side-title-right">{title}</h2>
       <article>
         <section className="page__section project__banner">
           <GatsbyImage image={sharpImg.gatsbyImageData} alt="" />
