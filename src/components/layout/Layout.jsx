@@ -59,6 +59,7 @@ export const Layout = ({
           main
           ${noPadding ? " main--no-padding" : ""}
           ${centered ? " main--centered" : ""}
+          ${isMobileNavEnabled ? " main--hidden" : ""}
         `}
       >
         <div
