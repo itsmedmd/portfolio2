@@ -33,10 +33,9 @@
 	&__link-button {
 		@include respond-between(
 			min-width,
-      $break-phone-big,
-      max-width,
-      $break-tablet-big
-    ) {
+			$break-phone-big,
+			max-width,
+			$break-tablet-big) {
 			justify-self: center;
 			width: 70%;
 		}
