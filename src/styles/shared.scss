@@ -2,6 +2,52 @@
 @import "./mixins";
 @import "./variables";
 
+// side titles
+.side-title-left {
+	@include side-title;
+
+	font-size: $font-40;
+	left: 0;
+	padding-bottom: calc(#{$header-height} + 16px);
+	top: 0;
+	transform: rotate(180deg);
+}
+
+.side-title-right {
+	@include side-title;
+
+	bottom: 0;
+	font-size: $font-48;
+	padding-bottom: calc(#{$header-height} / 3);
+	right: 0;
+}
+
+// ----------------------------------------------------
+// for screen reader
+.sr-only:not(:focus):not(:active) {
+	clip: rect(0 0 0 0);
+	clip-path: inset(50%);
+	height: 1px;
+	left: -10000px;
+	overflow: hidden;
+	position: absolute;
+	top: auto;
+	white-space: nowrap;
+	width: 1px;
+}
+
+// ----------------------------------------------------
+// form
+.form-row {
+	display: flex;
+	gap: 24px;
+
+	@include respond-to(max-width, $break-phone-huge) {
+		flex-direction: column;
+		gap: 0;
+	}
+}
+
 // buttons
 .button-link {
 	align-items: center;
@@ -88,55 +134,9 @@
 }
 
 // ----------------------------------------------------
-// text
-.side-title-left {
-	@include side-title;
-
-	font-size: $font-40;
-	left: 0;
-	padding-bottom: calc(#{$header-height} + 16px);
-	top: 0;
-	transform: rotate(180deg);
-}
-
-.side-title-right {
-	@include side-title;
-
-	bottom: 0;
-	font-size: $font-48;
-	padding-bottom: calc(#{$header-height} / 3);
-	right: 0;
-}
-
-// ----------------------------------------------------
-// for screen reader
-.sr-only:not(:focus):not(:active) {
-	clip: rect(0 0 0 0);
-	clip-path: inset(50%);
-	height: 1px;
-	left: -10000px;
-	overflow: hidden;
-	position: absolute;
-	top: auto;
-	white-space: nowrap;
-	width: 1px;
-}
-
-// ----------------------------------------------------
-// form
-.form-row {
-	display: flex;
-	gap: 24px;
-
-	@include respond-to(max-width, $break-phone-huge) {
-		flex-direction: column;
-		gap: 0;
-	}
-}
-
-// ----------------------------------------------------
 // page layout (mainly used for 'about' and 'single project' pages)
 .page {
+	// sections
 	&__section {
 		padding-bottom: 64px;
 	}
@@ -162,6 +162,7 @@
 		}
 	}
 
+	// list (can be a lot of text)
 	&__list {
 		list-style-type: "\2B25";
 		margin-left: 48px;
@@ -173,6 +174,7 @@
 		padding-left: 4px;
 	}
 
+	// multiple column layout list (should be a low amount of text)
 	&__skills {
 		display: flex;
 		justify-content: space-evenly;
@@ -203,6 +205,7 @@
 		}
 	}
 
+	// paragraph of text
 	&__description {
 		font-size: $font-17;
 		letter-spacing: 0.4px;
@@ -219,6 +222,7 @@
 		}
 	}
 
+	// action buttons (navigation to other pages)
 	&__action {
 		display: flex;
 		justify-content: space-evenly;
