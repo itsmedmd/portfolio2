@@ -10,12 +10,15 @@
 		max-width: 75%;
 		text-align: center;
 		text-transform: uppercase;
-	}
 
-	&__action {
-		display: flex;
-		justify-content: space-around;
-		margin: 20vh auto 2vh;
-		max-width: 75%;
+		@include respond-to(max-width, $break-tablet-small) {
+			font-size: $font-30;
+			line-height: 1.6;
+			max-width: 100%;
+		}
+
+		@include respond-to(max-width, $break-phone-big) {
+			font-size: $font-23;
+		}
 	}
 }

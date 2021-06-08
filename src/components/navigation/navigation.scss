@@ -2,23 +2,25 @@
 
 .nav {
 	font-family: $font-navigation;
+	width: 100%;
 	z-index: $z-index-overlay;
 
-	&__list {
-		align-items: center;
-		display: flex;
-		list-style: none;
-		padding: 8px 24px;
-	}
-
+	// navigation <li> is &__item
 	&__item {
 		margin-right: 52px;
 	}
 
-	&__item:first-of-type {
+	&__item--home {
 		text-align: center;
 	}
 
+	&__item:not(&__item--home) {
+		@include respond-to(max-width, $break-mobile-navigation) {
+			display: none;
+		}
+	}
+
+	// text for &__item--home
 	&__big-text {
 		color: $text-bright;
 		display: block;
@@ -33,7 +35,49 @@
 		width: 100%;
 	}
 
-	&__link {
+	// navigation elements list
+	&__list {
+		align-items: center;
+		display: flex;
+		list-style: none;
+		padding: 8px 24px;
+
+		@include respond-to(max-width, $break-mobile-navigation) {
+			justify-content: space-between;
+		}
+	}
+
+	&__list--active {
+		@include respond-to(max-width, $break-mobile-navigation) {
+			flex-direction: column;
+		}
+	}
+
+	&__list--active &__item {
+		@include respond-to(max-width, $break-mobile-navigation) {
+			display: list-item;
+			margin-bottom: 32px;
+			margin-right: 0;
+		}
+	}
+
+	// navigation links (&__menu is for opening navigation on mobile)
+	&__menu {
+		position: absolute;
+		right: 24px;
+		top: 23px;
+
+		@include respond-to(min-width, $break-mobile-navigation-min) {
+			display: none;
+		}
+	}
+
+	&__menu-text {
+		font-size: $font-24;
+	}
+
+	&__link,
+	&__menu {
 		border-bottom: 1px solid $transparent;
 		color: $text-bright;
 		font-size: $font-20;
@@ -41,17 +85,20 @@
 		text-transform: uppercase;
 	}
 
-	&__link:hover {
+	&__link:hover,
+	&__menu:hover {
 		border-bottom: 1px solid $text-hover;
 		color: $text-hover;
 	}
 
-	&__link:active {
+	&__link:active,
+	&__menu:active {
 		border-bottom: 1px solid $text-active;
 		color: $text-active;
 	}
 
-	&__link:focus {
+	&__link:focus,
+	&__menu:focus {
 		outline-offset: 0;
 	}
 

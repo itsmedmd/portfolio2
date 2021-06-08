@@ -6,17 +6,48 @@
 	&__content {
 		display: flex;
 		padding: 0 8px;
+
+		@include respond-to(max-width, $break-tablet-big) {
+			flex-direction: column;
+		}
 	}
 
 	&__links {
 		display: grid;
 		flex-grow: 2;
 		grid-auto-rows: min-content;
-		margin-top: 12vh;
+		margin-top: 100px;
 		row-gap: 44px;
 
-		@include respond-to(max-width, 1160px) {
+		@include respond-to(max-width, $break-laptop-small) {
 			flex-grow: 1;
+		}
+
+		@include respond-to(max-width, $break-tablet-big) {
+			border-bottom: 1px solid $section-border-color;
+			margin-top: 0;
+			padding-bottom: 64px;
+		}
+	}
+
+	&__link-button {
+		@include respond-between(
+			min-width,
+			$break-phone-big,
+			max-width,
+			$break-tablet-big) {
+			justify-self: center;
+			width: 70%;
+		}
+	}
+
+	&__links-title,
+	&__message-title {
+		font-size: $font-30;
+		font-weight: 500;
+
+		@include respond-to(max-width, $break-phone-big) {
+			font-size: $font-28;
 		}
 	}
 
@@ -25,20 +56,27 @@
 		text-align: center;
 	}
 
+	&__email-link-word {
+		display: inline-block;
+	}
+
 	&__message {
 		flex-grow: 3;
 		margin-left: 100px;
 
-		@include respond-to(max-width, 1160px) {
+		@include respond-to(max-width, $break-laptop-small) {
 			flex-grow: 4;
 			margin-left: 64px;
+		}
+
+		@include respond-to(max-width, $break-tablet-big) {
+			margin-left: 0;
+			margin-top: 64px;
 		}
 	}
 
 	&__message-title {
-		font-size: $font-30;
-		font-weight: 500;
-		margin-bottom: 48px;
+		margin-bottom: 36px;
 	}
 
 	&__form {

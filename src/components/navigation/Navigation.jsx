@@ -1,16 +1,42 @@
 import React from "react";
+import { useMediaQuery } from "react-responsive";
 import { Link } from "gatsby";
 import "./navigation.scss";
 
-export const Navigation = () => {
+export const Navigation = ({ toggleMobileNav, isMobileNavEnabled }) => {
+  const isDesktop = useMediaQuery({ query: "(min-width: 600px)" });
+
+  const handleMobileToggle = (event) => {
+    if (event.keyCode === 13) toggleMobileNav();
+  };
+
+  if (isDesktop && isMobileNavEnabled) {
+    toggleMobileNav();
+  }
+
   return (
     <nav className="nav">
-      <ul className="nav__list">
-        <li className="nav__item">
+      <ul
+        className={`nav__list ${
+          isMobileNavEnabled ? " nav__list--active" : ""
+        }`}
+      >
+        <li className="nav__menu">
+          <div
+            role="button"
+            tabIndex="0"
+            onClick={toggleMobileNav}
+            onKeyDown={handleMobileToggle}
+          >
+            <span className="nav__menu-text">MENU</span>
+          </div>
+        </li>
+        <li className="nav__item nav__item--home">
           <Link
             className="nav__link nav__link--home"
             activeClassName="nav__link--active"
             to="/"
+            tabIndex={isMobileNavEnabled ? "0" : isDesktop ? "0" : "-1"}
           >
             <span className="nav__big-text">DB</span>
             <span className="nav__small-text">Home</span>

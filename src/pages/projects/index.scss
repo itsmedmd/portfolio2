@@ -4,11 +4,19 @@
 	max-width: 2000px;
 	overflow-x: hidden;
 
+	@include respond-to(max-width, $break-laptop-small) {
+		padding: 64px 0 0;
+	}
+
 	&__slider {
 		align-items: center;
 		display: flex;
 		justify-content: center;
 		transition: transform $slider-transition-length ease-out;
+
+		@include respond-to(max-width, $break-laptop-small) {
+			flex-direction: column;
+		}
 	}
 
 	&__slider--no-transition {

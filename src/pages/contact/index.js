@@ -79,30 +79,34 @@ const Contact = ({ data }) => {
 
       <article className="contact__content">
         <section className="contact__links">
+          <h2 className="contact__links-title">You can reach me at:</h2>
           <a
-            href="mailto:deimantas.butenas@gmail.com"
-            className="contact__email-link"
-          >
-            deimantas.butenas@gmail.com
-          </a>
-          <a
-            className="button-link button-link--medium"
+            className="button-link button-link--no-margin button-link--medium contact__link-button"
             href="https://www.linkedin.com/in/deimantas-but%C4%97nas-85870a192/"
           >
             <img className="button-link__image" src={images.linkedin} alt="" />
             LinkedIn
           </a>
           <a
-            className="button-link button-link--medium"
+            className="button-link button-link--no-margin button-link--medium contact__link-button"
             href="https://github.com/ElqBell/"
           >
             <img className="button-link__image" src={images.github} alt="" />
             GitHub
           </a>
+          <a
+            href="mailto:deimantas.butenas@gmail.com"
+            className="contact__email-link"
+          >
+            <span className="contact__email-link-word">deimantas.butenas</span>
+            <span className="contact__email-link-word">@gmail.com</span>
+          </a>
         </section>
 
         <aside className="contact__message">
-          <h2 className="contact__message-title">Send me a quick message.</h2>
+          <h2 className="contact__message-title">
+            Or send me a quick message:
+          </h2>
 
           <form className="contact__form" onSubmit={handleSubmit}>
             <FormLoader
@@ -140,7 +144,10 @@ const Contact = ({ data }) => {
               isTextArea={true}
             ></FormField>
 
-            <button type="submit" className="button-link contact__submit">
+            <button
+              type="submit"
+              className="button-link button-link--no-margin contact__submit"
+            >
               Submit
             </button>
           </form>

@@ -16,6 +16,10 @@
 		margin-bottom: 32px;
 		padding: 4px 8px;
 		width: 100%;
+
+		@include respond-to(max-width, $break-phone-huge) {
+			margin-bottom: 20px;
+		}
 	}
 
 	&__input {
@@ -25,5 +29,9 @@
 	&__textarea {
 		height: 220px;
 		resize: vertical;
+
+		@include respond-to(max-width, $break-tablet-big) {
+			height: 300px;
+		}
 	}
 }

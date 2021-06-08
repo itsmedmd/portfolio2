@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Helmet } from "react-helmet";
 import "styles/global.scss";
 import "./layout.scss";
@@ -14,6 +14,12 @@ export const Layout = ({
   animation,
   disableNavigation,
 }) => {
+  const [isMobileNavEnabled, setIsMobileNavEnabled] = useState(false);
+
+  const handleMobileToggle = () => {
+    setIsMobileNavEnabled(!isMobileNavEnabled);
+  };
+
   return (
     <div
       className={`
@@ -37,13 +43,23 @@ export const Layout = ({
         quality="50"
       />
 
-      <header className="header">{!disableNavigation && <Navigation />}</header>
+      <header
+        className={`header ${isMobileNavEnabled ? " header--nav-active" : ""}`}
+      >
+        {!disableNavigation && (
+          <Navigation
+            toggleMobileNav={handleMobileToggle}
+            isMobileNavEnabled={isMobileNavEnabled}
+          />
+        )}
+      </header>
 
       <main
         className={`
           main
           ${noPadding ? " main--no-padding" : ""}
           ${centered ? " main--centered" : ""}
+          ${isMobileNavEnabled ? " main--hidden" : ""}
         `}
       >
         <div
