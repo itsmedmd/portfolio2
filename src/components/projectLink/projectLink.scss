@@ -79,7 +79,7 @@
 		}
 
 		@include respond-to(max-width, $break-phone-big) {
-			font-size: $font-24;
+			font-size: $font-22;
 			top: -44px;
 		}
 	}
@@ -99,7 +99,7 @@
 		}
 
 		@include respond-to(max-width, $break-phone-big) {
-			right: 24px;
+			right: 12px;
 		}
 	}
 

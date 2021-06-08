@@ -80,7 +80,7 @@ export const ProjectLink = ({
         )}
 
         <Link
-          tabIndex={isActive && isInSlider ? "0" : "-1"}
+          tabIndex={isActive || !isInSlider ? "0" : "-1"}
           className="button-link button-link--project project-link__link"
           to={`/${slug}`}
         >
