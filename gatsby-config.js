@@ -7,7 +7,8 @@ module.exports = {
   },
   siteMetadata: {
     title: "Deimantas Butėnas - Portfolio",
-    description: "Portfolio website of a front-end developer Deimantas Butėnas.",
+    description:
+      "Portfolio website of a front-end developer Deimantas Butėnas.",
     siteUrl: "https://www.deimantasbutenas.lt/",
   },
   plugins: [
@@ -30,6 +31,18 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Deimantas Butėnas`,
+        short_name: `DB`,
+        start_url: `/`,
+        background_color: `#000`,
+        theme_color: `#18a8d8`,
+        display: `standalone`,
+        icon: `static/favicon.png`,
+      },
     },
   ],
 };

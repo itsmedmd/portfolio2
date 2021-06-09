@@ -35,7 +35,7 @@ export const Layout = ({
         />
         <meta
           name="keywords"
-          content="deimantas butėnas, deimantas butenas, web development, frontend, front-end, front end, portfolio, design, web design, react, gatsby, javascript, html, css, scss, sass, git, aws, graphql"
+          content="deimantas butėnas, deimantas butenas, web development, frontend, front-end, front end, front end development, front end developer, portfolio, design, web design, react, gatsby, javascript, html, css, scss, sass, git, aws, graphql"
         />
         <link rel="canonical" href="https://www.deimantasb.com/" />
 
@@ -51,7 +51,7 @@ export const Layout = ({
         />
         <meta
           property="og:image"
-          content="https://www.deimantasb.com/meta-og-image.png"
+          content="https://www.deimantasb.com/meta-image.png"
         />
 
         <meta property="twitter:card" content="summary_large_image" />
@@ -66,7 +66,7 @@ export const Layout = ({
         />
         <meta
           property="twitter:image"
-          content="https://www.deimantasb.com/meta-og-image.png"
+          content="https://www.deimantasb.com/meta-image.png"
         />
       </Helmet>
 
