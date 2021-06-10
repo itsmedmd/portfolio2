@@ -235,6 +235,11 @@
 
 		@include respond-to(max-width, $break-tablet-small) {
 			flex-direction: column;
+			max-width: 75%;
+		}
+
+		@include respond-to(max-width, $break-phone-huge) {
+			max-width: 100%;
 		}
 	}
 
