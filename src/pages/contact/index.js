@@ -89,7 +89,7 @@ const Contact = ({ data }) => {
           </a>
           <a
             className="button-link button-link--no-margin button-link--medium contact__link-button"
-            href="https://github.com/ElqBell/"
+            href="https://github.com/itsmedmd/"
           >
             <img className="button-link__image" src={images.github} alt="" />
             GitHub
