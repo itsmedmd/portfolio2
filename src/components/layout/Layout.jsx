@@ -71,13 +71,15 @@ export const Layout = ({
       </Helmet>
 
       <div className="layout__background-color"></div>
-      <StaticImage
-        src="../../images/background.jpg"
-        alt=""
-        className="layout__background-image"
-        placeholder="dominantColor"
-        quality="50"
-      />
+      <div className="layout__background-image-container">
+        <StaticImage
+          src="../../images/background.jpg"
+          alt=""
+          className="layout__background-image"
+          placeholder="dominantColor"
+          quality="50"
+        />
+      </div>
 
       <header
         className={`header ${isMobileNavEnabled ? " header--nav-active" : ""}`}
