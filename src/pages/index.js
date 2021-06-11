@@ -21,9 +21,12 @@ const HomePage = () => {
         text="Deimantas Butėnas"
         sendIsAnimationActiveSignal={handleAnimationChange}
       />
-      <h1 className="homepage__title">
+
+      <h1 className="sr-only">Homepage</h1>
+      <h2 className="homepage__title">
         Your friendly neighbourhood spider with a passion for webs
-      </h1>
+      </h2>
+
       <div className="page__action page__action--homepage">
         <Link className="button-link" to="/about">
           About

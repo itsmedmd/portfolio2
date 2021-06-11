@@ -7,7 +7,7 @@ import { Layout, ProjectLink } from "components";
 
 const Projects = ({ data }) => {
   const { allFile, allProject } = data;
-  const DEFAULT_OFFSET = 1024;
+  const DEFAULT_OFFSET = 1024; // original width of project images (all images should be the same width)
   const projects = [...allProject.nodes];
   const isSliderEnabled = useMediaQuery({ query: "(min-width: 1160px)" });
 
