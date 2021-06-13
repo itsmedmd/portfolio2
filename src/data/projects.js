@@ -1,15 +1,15 @@
 const projectsData = [
   {
     title: "Photography portfolio",
-    description: "A photography and videography portfolio website.",
+    description: "A sample photography and videography portfolio website.",
     img: "photography-portfolio.jpg",
     features: [
       "Image and video lazyloading",
-      "Automatic image compression",
-      "Automatic image clean-up(deletion) from Amazon S3",
+      "Content management (compressing, deleting, updating) with Amazon S3 and Lambda",
+      "Automatic image deletion from Amazon S3",
       "Automatic 'videos' page HTML code generation",
-      "Automatic HTML code generation of individual image galleries' pages and 'all-galleries' page",
-      "Email contact form",
+      "Automatic HTML code generation of individual image galleries' pages and 'all galleries' page",
+      "Email contact form that uses Amazon API Gateway, SES, Lambda",
     ],
     tools: [
       {
@@ -70,7 +70,7 @@ const projectsData = [
   {
     title: "Movie search system",
     description:
-      "Movie database website where you can search for movies and read information about them.",
+      "Movie search system website where you can search for movies and read information about them.",
     img: "movie-database.jpg",
     features: [
       "Data fetching from themoviedb.org",
@@ -101,7 +101,7 @@ const projectsData = [
   {
     title: "Japanese Musicians",
     description:
-      "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design.",
+      "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design and reusability.",
     img: "japanese-musicians.jpg",
     tools: [
       {

@@ -27,7 +27,7 @@ export const Layout = ({
         ${animation ? " layout--with-animation" : ""}
       `}
     >
-      <Helmet>
+      <Helmet htmlAttributes={{ lang: "en" }}>
         <meta name="title" content="Front-end developer Deimantas Butėnas" />
         <meta
           name="description"
