@@ -11,7 +11,7 @@ const Projects = ({ data }) => {
   const isSliderEnabled = useMediaQuery({ query: "(min-width: 1160px)" });
   const projectRef = useRef(null);
   const [noTransition, setNoTransition] = useState(false);
-  const [sliderOffset, setSliderOffset] = useState(DEFAULT_OFFSET);
+  const [offset, setOffset] = useState(DEFAULT_OFFSET);
 
   const projects = useMemo(() => {
     const projectsArray = [...allProject.nodes];
@@ -46,7 +46,7 @@ const Projects = ({ data }) => {
       if (isSliderEnabled) {
         const projectWidth = projectRef?.current?.offsetWidth || DEFAULT_OFFSET;
         const offset = 3.5 * projectWidth - activeProject * projectWidth;
-        setSliderOffset(offset);
+        setOffset(offset);
       }
     };
 
@@ -123,9 +123,7 @@ const Projects = ({ data }) => {
           projects__slider
           ${noTransition ? " projects__slider--no-transition" : ""}
         `}
-        style={{
-          transform: `translateX(${isSliderEnabled ? sliderOffset : 0}px)`,
-        }}
+        style={{ transform: `translateX(${isSliderEnabled ? offset : 0}px)` }}
       >
         {createProjectsToRender()}
       </div>
