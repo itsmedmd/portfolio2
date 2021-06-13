@@ -34,4 +34,12 @@
 			height: 300px;
 		}
 	}
+
+	&:nth-child(even) {
+		@include safari-only {
+			@include respond-to(min-width, $break-phone-huge-min) {
+				margin-left: 24px;
+			}
+		}
+	}
 }

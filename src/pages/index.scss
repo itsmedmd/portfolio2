@@ -4,6 +4,8 @@
 	max-width: $home-page-max-width;
 
 	&__title {
+		font-size: $font-32;
+		font-weight: 700;
 		letter-spacing: 7px;
 		line-height: 1.8;
 		margin: 10vh auto 0;

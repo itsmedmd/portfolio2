@@ -14,10 +14,15 @@ const Project = ({ pageContext }) => {
         <title>Deimantas Butėnas - {title}</title>
       </Helmet>
 
+      <h1 className="sr-only">{title} project page</h1>
       <h2 className="side-title-right">{title}</h2>
+      <h2 className="side-title-left">Project</h2>
       <article>
         <section className="page__section project__banner">
-          <GatsbyImage image={sharpImg.gatsbyImageData} alt="" />
+          <GatsbyImage
+            image={sharpImg.gatsbyImageData}
+            alt="Project preview image"
+          />
         </section>
 
         <div className="page__action page__action--no-margin project__preview-link">

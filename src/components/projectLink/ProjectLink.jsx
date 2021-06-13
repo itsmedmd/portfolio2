@@ -39,7 +39,7 @@ export const ProjectLink = ({
         image={sharpImg}
         className="project-link__image-container"
         imgClassName="project-link__image"
-        alt=""
+        alt="Project preview image"
         objectFit={isDesktopSmallHeight ? " contain" : "cover"}
       />
 

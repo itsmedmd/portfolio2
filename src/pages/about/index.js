@@ -108,7 +108,7 @@ const About = ({ data }) => {
 
           <a
             className="button-link button-link--small"
-            href="https://github.com/ElqBell/"
+            href="https://github.com/itsmedmd/"
           >
             <img className="button-link__image" src={images.github} alt="" />
             GitHub profile
