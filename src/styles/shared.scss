@@ -46,6 +46,12 @@
 		flex-direction: column;
 		gap: 0;
 	}
+
+	@include safari-only {
+		@include respond-to(min-width, $break-phone-huge-min) {
+			gap: 0;
+		}
+	}
 }
 
 // buttons
