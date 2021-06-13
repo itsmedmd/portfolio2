@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState, useMemo } from "react";
 import { useMediaQuery } from "react-responsive";
 import "./index.scss";
 import { graphql } from "gatsby";
@@ -8,29 +8,34 @@ import { Layout, ProjectLink } from "components";
 const Projects = ({ data }) => {
   const { allFile, allProject } = data;
   const DEFAULT_OFFSET = 1024; // original width of project images (all images should be the same width)
-  const projects = [...allProject.nodes];
   const isSliderEnabled = useMediaQuery({ query: "(min-width: 1160px)" });
-
-  if (isSliderEnabled) {
-    // copy 2 last projects to the start and 2 first projects to the end
-    // of the array. This is used to create an "infinite" image carousel effect
-    projects.unshift(
-      projects[projects.length - 2],
-      projects[projects.length - 1]
-    );
-    projects.push(projects[2], projects[3]);
-  } else {
-    // swap first and second project positions because by default in
-    // slider the second project is the most important, but not in
-    // vertical projects view when the slider is disabled
-    const temp = projects[0];
-    projects[0] = projects[1];
-    projects[1] = temp;
-  }
-
   const projectRef = useRef(null);
   const [noTransition, setNoTransition] = useState(false);
   const [sliderOffset, setSliderOffset] = useState(DEFAULT_OFFSET);
+
+  const projects = useMemo(() => {
+    const projectsArray = [...allProject.nodes];
+
+    if (isSliderEnabled) {
+      // copy 2 last projects to the start and 2 first projects to the end
+      // of the array. This is used to create an "infinite" image carousel effect
+      projectsArray.unshift(
+        projectsArray[projectsArray.length - 2],
+        projectsArray[projectsArray.length - 1]
+      );
+      projectsArray.push(projectsArray[2], projectsArray[3]);
+    } else {
+      // swap first and second project positions because by default in
+      // slider the second project is the most important, but not in
+      // vertical projects view when the slider is disabled
+      const temp = projectsArray[0];
+      projectsArray[0] = projectsArray[1];
+      projectsArray[1] = temp;
+    }
+
+    return projectsArray;
+  }, [isSliderEnabled, allProject.nodes]);
+
   const [activeProject, setActiveProject] = useState(
     Math.ceil(projects.length / 2) - 1
   );
@@ -50,7 +55,12 @@ const Projects = ({ data }) => {
 
     window.addEventListener("resize", centerSlider);
     return () => window.removeEventListener("resize", centerSlider);
-  }, [projectRef?.current?.offsetWidth, activeProject, isSliderEnabled]);
+  }, [
+    projectRef?.current?.offsetWidth,
+    activeProject,
+    isSliderEnabled,
+    projects,
+  ]);
 
   // update active project ID
   const handleActiveProjectChange = (newProjectID, target) => {
