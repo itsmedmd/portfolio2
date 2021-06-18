@@ -11,6 +11,7 @@ export const Layout = ({
   noPadding,
   centered,
   animation,
+  noMaxWidth,
   disableNavigation,
 }) => {
   const [isMobileNavEnabled, setIsMobileNavEnabled] = useState(false);
@@ -99,7 +100,14 @@ export const Layout = ({
           ${isMobileNavEnabled ? " main--hidden" : ""}
         `}
       >
-        <div className={`main__content ${className}`}>{children}</div>
+        <div
+          className={`
+          main__content
+          ${noMaxWidth ? "" : " main__content--with-max-width"}
+          ${className}`}
+        >
+          {children}
+        </div>
       </main>
 
       <footer className="footer"></footer>

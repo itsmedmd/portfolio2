@@ -12,7 +12,11 @@ const HomePage = () => {
   };
 
   return (
-    <Layout className="homepage" animation={isAnimationActive}>
+    <Layout
+      className="homepage"
+      noMaxWidth={true}
+      animation={isAnimationActive}
+    >
       <Helmet>
         <title>Deimantas Butėnas - Home</title>
       </Helmet>
