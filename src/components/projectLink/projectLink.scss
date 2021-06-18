@@ -1,19 +1,9 @@
 @import "styles";
 
 .project-link {
-	flex-shrink: 0;
-	max-width: 100%;
-	opacity: 0.75;
+	margin-bottom: 64px;
 	position: relative;
-	transform: scaleY(0.9);
-	transition: transform $slider-transition-length ease-out,
-		opacity $slider-transition-length ease-out;
 
-	@include respond-to(max-width, $break-laptop-small) {
-		margin-bottom: 64px;
-		opacity: 1;
-		transform: none;
-	}
 
 	@include respond-to(max-width, $break-phone-huge) {
 		margin-bottom: 116px;
@@ -25,39 +15,23 @@
 
 	&__image-container {
 		display: block;
-		max-height: $page-height-viewport-content;
-
-		@include respond-to(max-width, $break-laptop-small) {
-			max-height: none;
-		}
+		max-height: 100vh;
 	}
 
 	// image overlay
 	&__overlay {
 		height: 100%;
 		left: 0;
-		opacity: 0;
 		padding: 28px;
-		pointer-events: none;
 		position: absolute;
 		text-align: center;
 		top: 0;
-		transition: opacity $slider-transition-length ease-out;
 		width: 100%;
 		z-index: $z-index-overlay;
 
 		@include respond-to(max-width, $break-tablet-small) {
 			padding: 16px;
 		}
-	}
-
-	&__overlay--no-transition {
-		transition: none;
-	}
-
-	&__overlay--active {
-		opacity: 1;
-		pointer-events: initial;
 	}
 
 	&__title {
@@ -102,51 +76,5 @@
 		@include respond-to(max-width, $break-phone-big) {
 			right: 12px;
 		}
-	}
-
-	// navigation buttons (slide left/right)
-	&__navigation {
-		display: flex;
-		justify-content: space-between;
-		left: 0;
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		width: 100%;
-	}
-
-	&__navigate {
-		background: none;
-		border: 0;
-		color: $text-bright;
-		cursor: pointer;
-		font-size: $font-100;
-		padding: 0 24px;
-	}
-
-	&__navigate:hover {
-		color: $text-hover;
-	}
-
-	&__navigate:active {
-		color: $text-active;
-	}
-
-	&__navigate--left {
-		left: 0;
-	}
-
-	&__navigate--right {
-		right: 0;
-	}
-
-	&--active {
-		margin: 0 6px;
-		opacity: 1;
-		transform: none;
-	}
-
-	&--no-transition {
-		transition: none;
 	}
 }

@@ -9,9 +9,9 @@ export const Layout = ({
   className,
   children,
   noPadding,
-  noMaxWidth,
   centered,
   animation,
+  noMaxWidth,
   disableNavigation,
 }) => {
   const [isMobileNavEnabled, setIsMobileNavEnabled] = useState(false);
@@ -102,10 +102,9 @@ export const Layout = ({
       >
         <div
           className={`
-            main__content
-            ${noMaxWidth ? "" : " main__content--with-max-width"}
-            ${className}
-          `}
+          main__content
+          ${noMaxWidth ? "" : " main__content--with-max-width"}
+          ${className}`}
         >
           {children}
         </div>
