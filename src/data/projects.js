@@ -1,5 +1,34 @@
 const projectsData = [
   {
+    title: "Zyzz Bodybuilding",
+    description:
+      "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
+    img: "zyzz-bodybuilding.jpg",
+    features: [
+      "Image lazyloading",
+      "Animations with Intersection Observer API",
+      "Real pictures of the one and only God",
+    ],
+    tools: [
+      {
+        text: "React",
+        img: "react",
+      },
+      {
+        text: "Gatsby",
+        img: "gatsby",
+      },
+      {
+        text: "SASS(SCSS)",
+        img: "sass",
+      },
+      {
+        text: "HTML",
+        img: "html",
+      },
+    ],
+  },
+  {
     title: "Photography portfolio",
     description: "A sample photography and videography portfolio website.",
     img: "photography-portfolio.jpg",
@@ -27,35 +56,6 @@ const projectsData = [
       {
         text: "NodeJS image processing module 'sharp'",
         img: "javascript",
-      },
-      {
-        text: "SASS(SCSS)",
-        img: "sass",
-      },
-      {
-        text: "HTML",
-        img: "html",
-      },
-    ],
-  },
-  {
-    title: "Zyzz Bodybuilding",
-    description:
-      "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
-    img: "zyzz-bodybuilding.jpg",
-    features: [
-      "Image lazyloading",
-      "Animations with Intersection Observer API",
-      "Real pictures of the one and only God",
-    ],
-    tools: [
-      {
-        text: "React",
-        img: "react",
-      },
-      {
-        text: "Gatsby",
-        img: "gatsby",
       },
       {
         text: "SASS(SCSS)",
