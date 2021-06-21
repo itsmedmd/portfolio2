@@ -55,7 +55,6 @@ const Contact = ({ data }) => {
       .then((res) => {
         if (res.status === 200) {
           setFormStatus(status.success);
-          console.log("Success sending email!");
         } else {
           setFormStatus(status.error);
           console.error("Error sending email!", res);
