@@ -11,7 +11,7 @@ export const PageLoadAnimation = ({ text, sendIsAnimationActiveSignal }) => {
       setIsFinished(true);
     };
 
-    const timeout1 = setTimeout(() => setIsActive(false), 1500);
+    const timeout1 = setTimeout(() => setIsActive(false), 1350);
     const timeout2 = setTimeout(handleAnimationFinish, 2000);
 
     return () => {
