@@ -3,10 +3,17 @@
 .projects {
 	padding: 64px 0 0;
 
+	@include respond-to(min-width, $break-laptop) {
+		padding: 24px 0;
+	}
+
 	&__container {
-		align-items: center;
-		display: flex;
-		flex-direction: column;
+		display: grid;
 		justify-content: center;
+
+		@include respond-to(min-width, $break-laptop) {
+			gap: 24px;
+			grid-template-columns: 1fr 1fr;
+		}
 	}
 }

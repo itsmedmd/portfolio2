@@ -4,6 +4,9 @@
 	margin-bottom: 64px;
 	position: relative;
 
+	@include respond-to(min-width, $break-laptop) {
+		margin: 0;
+	}
 
 	@include respond-to(max-width, $break-phone-huge) {
 		margin-bottom: 116px;
@@ -34,7 +37,6 @@
 	}
 
 	&__title {
-		border-bottom: 1px solid $white;
 		display: inline-block;
 		font-size: $font-40;
 		font-weight: 700;
