@@ -25,7 +25,12 @@ const Projects = ({ data }) => {
   };
 
   return (
-    <Layout className="projects" noPadding={true}>
+    <Layout
+      className="projects"
+      noPadding={true}
+      noMaxWidth={true}
+      centered={true}
+    >
       <Helmet>
         <title>Deimantas Butėnas - Projects</title>
       </Helmet>

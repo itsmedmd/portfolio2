@@ -44,10 +44,15 @@
 
 	&--nav-active {
 		@include respond-to(max-width, $break-mobile-navigation) {
+			align-items: initial;
+			background: url("../../images/background-overlay.png");
+			background-attachment: fixed;
+			background-color: rgba($header-background, 0.65);
+			background-repeat: repeat;
 			left: 0;
 			min-height: 100vh;
 			overflow: scroll;
-			padding-top: 64px;
+			padding-top: 132px;
 			position: fixed;
 			top: 0;
 			width: 100vw;

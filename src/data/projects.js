@@ -29,6 +29,30 @@ const projectsData = [
     ],
   },
   {
+    title: "Japanese Musicians",
+    description:
+      "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design and reusability.",
+    img: "japanese-musicians.jpg",
+    tools: [
+      {
+        text: "React",
+        img: "react",
+      },
+      {
+        text: "Gatsby",
+        img: "gatsby",
+      },
+      {
+        text: "SASS(SCSS)",
+        img: "sass",
+      },
+      {
+        text: "HTML",
+        img: "html",
+      },
+    ],
+  },
+  {
     title: "Photography portfolio",
     description: "A sample photography and videography portfolio website.",
     img: "photography-portfolio.jpg",
@@ -79,30 +103,6 @@ const projectsData = [
       "Fast and efficient code",
       "Movie sorting by popularity",
     ],
-    tools: [
-      {
-        text: "React",
-        img: "react",
-      },
-      {
-        text: "Gatsby",
-        img: "gatsby",
-      },
-      {
-        text: "SASS(SCSS)",
-        img: "sass",
-      },
-      {
-        text: "HTML",
-        img: "html",
-      },
-    ],
-  },
-  {
-    title: "Japanese Musicians",
-    description:
-      "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design and reusability.",
-    img: "japanese-musicians.jpg",
     tools: [
       {
         text: "React",

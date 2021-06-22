@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Link } from "gatsby";
 import "./navigation.scss";
@@ -7,12 +7,16 @@ export const Navigation = ({ toggleMobileNav, isMobileNavEnabled }) => {
   const isDesktop = useMediaQuery({ query: "(min-width: 600px)" });
 
   const handleMobileToggle = (event) => {
-    if (event.keyCode === 13) toggleMobileNav();
+    if (event.keyCode === 13) {
+      toggleMobileNav();
+    }
   };
 
-  if (isDesktop && isMobileNavEnabled) {
-    toggleMobileNav();
-  }
+  useEffect(() => {
+    if (isDesktop && isMobileNavEnabled) {
+      toggleMobileNav();
+    }
+  }, [isDesktop, isMobileNavEnabled, toggleMobileNav]);
 
   return (
     <nav className="nav">
