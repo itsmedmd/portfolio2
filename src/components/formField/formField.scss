@@ -42,4 +42,8 @@
 			}
 		}
 	}
+
+	&--no-outline:focus {
+		outline: 0;
+	}
 }
