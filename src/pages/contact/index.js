@@ -33,11 +33,13 @@ const Contact = ({ data }) => {
     setMessage(e.target.value);
   };
 
+  const setError = (error) => {
+    setFormStatus(status.error);
+    console.error("Error sending email!", error);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    const url =
-      "https://3jxqp8oiza.execute-api.eu-central-1.amazonaws.com/beta/contact/";
-
     const options = {
       method: "POST",
       body: JSON.stringify({
@@ -51,19 +53,18 @@ const Contact = ({ data }) => {
     e.target.reset();
     setFormStatus(status.sending);
 
-    fetch(url, options)
+    fetch(
+      "https://3jxqp8oiza.execute-api.eu-central-1.amazonaws.com/beta/contact/",
+      options
+    )
       .then((res) => {
-        if (res.status === 200) {
-          setFormStatus(status.success);
-        } else {
-          setFormStatus(status.error);
-          console.error("Error sending email!", res);
-        }
+        if (res.status === 200) setFormStatus(status.success);
+        else setError(res);
+
         setTimeout(() => setFormStatus(status.idle), 3000);
       })
       .catch((error) => {
-        setFormStatus(status.error);
-        console.error("Error sending email!", error);
+        setError(error);
         setTimeout(() => setFormStatus(status.idle), 3000);
       });
   };
