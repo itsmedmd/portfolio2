@@ -8,6 +8,7 @@ export const FormField = ({
   handleChange,
   isRequired,
   isTextArea,
+  fieldClassName,
 }) => {
   const properties = {
     type: fieldType,
@@ -26,9 +27,19 @@ export const FormField = ({
         {labelText}
       </label>
       {isTextArea ? (
-        <textarea className="form-field__textarea" {...properties} />
+        <textarea
+          className={`form-field__textarea ${
+            fieldClassName ? fieldClassName : ""
+          }`}
+          {...properties}
+        />
       ) : (
-        <input className="form-field__input" {...properties} />
+        <input
+          className={`form-field__input ${
+            fieldClassName ? fieldClassName : ""
+          }`}
+          {...properties}
+        />
       )}
     </div>
   );

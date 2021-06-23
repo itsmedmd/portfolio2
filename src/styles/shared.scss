@@ -82,6 +82,24 @@
 		width: 36px;
 	}
 
+	&:last-of-type {
+		@include respond-to(max-width, $break-tablet-small) {
+			margin: 0;
+		}
+	}
+
+	&:hover {
+		background-color: rgba($white, 0.9);
+	}
+
+	&:active {
+		background-color: $white;
+	}
+
+	&:focus {
+		outline-offset: 8px;
+	}
+
 	&--small {
 		font-size: $font-22;
 		padding: 4px 16px;
@@ -115,24 +133,10 @@
 			margin: 0;
 		}
 	}
-
-	&:last-of-type {
-		@include respond-to(max-width, $break-tablet-small) {
-			margin: 0;
-		}
+	
+	&--no-outline:focus {
+		outline: 0;
 	}
-}
-
-.button-link:hover {
-	background-color: rgba($white, 0.9);
-}
-
-.button-link:active {
-	background-color: $white;
-}
-
-.button-link:focus {
-	outline-offset: 8px;
 }
 
 // ----------------------------------------------------

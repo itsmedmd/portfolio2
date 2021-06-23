@@ -124,6 +124,11 @@ const Contact = ({ data }) => {
                 labelText="Name"
                 handleChange={handleNameChange}
                 isRequired={true}
+                fieldClassName={
+                  formStatus !== status.idle
+                    ? "form-field--no-outline"
+                    : undefined
+                }
               ></FormField>
 
               <FormField
@@ -132,6 +137,11 @@ const Contact = ({ data }) => {
                 labelText="Email"
                 handleChange={handleEmailChange}
                 isRequired={true}
+                fieldClassName={
+                  formStatus !== status.idle
+                    ? "form-field--no-outline"
+                    : undefined
+                }
               ></FormField>
             </div>
 
@@ -142,11 +152,18 @@ const Contact = ({ data }) => {
               handleChange={handleMessageChange}
               isRequired={true}
               isTextArea={true}
+              fieldClassName={
+                formStatus !== status.idle
+                  ? "form-field--no-outline"
+                  : undefined
+              }
             ></FormField>
 
             <button
               type="submit"
-              className="button-link button-link--no-margin contact__submit"
+              className={`button-link button-link--no-margin contact__submit ${
+                formStatus !== status.idle ? "button-link--no-outline" : ""
+              }`}
             >
               Submit
             </button>
