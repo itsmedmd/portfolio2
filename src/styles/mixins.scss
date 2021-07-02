@@ -34,10 +34,4 @@
 	@include respond-to(max-width, $break-phone-big) {
 		font-size: $font-30;
 	}
-
-	&--always-enabled {
-		@include respond-to(max-width, $break-tablet-small) {
-			opacity: 1;
-		}
-	}
 }
