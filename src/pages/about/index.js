@@ -30,9 +30,7 @@ const About = ({ data }) => {
       </Helmet>
 
       <h1 className="side-title-right">About</h1>
-      <h2 className="side-title-left side-title-left--always-enabled">
-        Deimantas Butėnas
-      </h2>
+      <h2 className="side-title-left">Deimantas Butėnas</h2>
       <article className="page__content">
         <section className="page__section">
           {description &&
