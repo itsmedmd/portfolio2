@@ -213,14 +213,18 @@
 
 	// paragraph of text
 	&__description {
-		font-size: $font-17;
+		font-size: $font-18;
 		letter-spacing: 0.4px;
 		line-height: 1.5;
 		max-width: 80%;
 		padding-left: 48px;
 
 		@include respond-to(max-width, $break-tablet-big) {
+			
 			max-width: 90%;
+		}
+		@include respond-to(max-width, $break-tablet-small) {
+			font-size: $font-17;
 		}
 
 		@include respond-to(max-width, $break-phone-big) {
