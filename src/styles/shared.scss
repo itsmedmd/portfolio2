@@ -220,9 +220,9 @@
 		padding-left: 48px;
 
 		@include respond-to(max-width, $break-tablet-big) {
-			
 			max-width: 90%;
 		}
+		
 		@include respond-to(max-width, $break-tablet-small) {
 			font-size: $font-17;
 		}
