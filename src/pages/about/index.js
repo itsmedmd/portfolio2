@@ -45,7 +45,7 @@ const About = ({ data }) => {
         </section>
 
         <section className="page__section">
-          <h3 className="page__section-title">I specialise in:</h3>
+          <h3 className="page__section-title">I have experience with:</h3>
           <ul className="page__list">
             {experiences &&
               experiences.map((text, id) => (

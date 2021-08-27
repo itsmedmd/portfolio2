@@ -40,12 +40,16 @@ const aboutData = {
   ],
   secondarySkills: [
     {
-      text: "Amazon Web Services",
-      img: "aws",
+      text: "Next.js",
+      img: "nextjs",
     },
     {
-      text: "graphql",
-      img: "graphql",
+      text: "Redux",
+      img: "redux",
+    },
+    {
+      text: "Amazon Web Services",
+      img: "aws",
     },
     {
       text: "sql",
