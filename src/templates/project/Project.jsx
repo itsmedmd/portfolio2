@@ -6,8 +6,19 @@ import { Layout, ListImageItem } from "components";
 import "./project.scss";
 
 const Project = ({ pageContext }) => {
-  const { title, description, features, tools, sharpImg, SVGImages, slug } =
-    pageContext;
+  const {
+    title,
+    description,
+    url,
+    features,
+    tools,
+    sharpImg,
+    SVGImages,
+    slug,
+  } = pageContext;
+
+  const urlOut = url === "preview" ? `/${slug}/preview` : url;
+
   return (
     <Layout className="project">
       <Helmet>
@@ -26,10 +37,7 @@ const Project = ({ pageContext }) => {
         </section>
 
         <div className="page__action page__action--no-margin project__preview-link">
-          <a
-            className="button-link button-link--wide"
-            href={`/${slug}/preview`}
-          >
+          <a className="button-link button-link--wide" href={urlOut}>
             Visit project page
           </a>
         </div>
