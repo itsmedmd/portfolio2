@@ -4,7 +4,7 @@ const projectsData = [
     description:
       "A website where you can view the latest images from Mars taken by NASA rovers. This website uses Server-Side Rendering with Next.js to serve pages for infinitely scrolling masonry gallery, with data from NASA's \"Mars Rover Photos\" API that's periodically fetched for new data that is then stored in Amazon DynamoDB in order to achieve the most efficiency while rendering image gallery pages.",
     img: "mars-rover-photos.jpg",
-    url: "https://mars-rover-photos-kappa.vercel.app",
+    url: "https://mars-rover-photos-itsmedmd.vercel.app",
     features: [
       "Server-Side Rendering of gallery pages with Next.js",
       "Incremental Static Regeneration of main pages to periodically fetch new data",
