@@ -39,16 +39,11 @@ const projectsData = [
     ],
   },
   {
-    title: "Zyzz Bodybuilding",
+    title: "Japanese Musicians",
     description:
-      "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
-    img: "zyzz-bodybuilding.jpg",
+      "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design and reusability.",
+    img: "japanese-musicians.jpg",
     url: "preview",
-    features: [
-      "Image lazyloading",
-      "Animations with Intersection Observer API",
-      "Real pictures of the one and only God",
-    ],
     tools: [
       {
         text: "React",
@@ -69,11 +64,18 @@ const projectsData = [
     ],
   },
   {
-    title: "Japanese Musicians",
+    title: "Movie search system",
     description:
-      "A website showcasing a few music artists and bands from Japan. With this project I mainly focused on design and reusability.",
-    img: "japanese-musicians.jpg",
+      "Movie search system website where you can search for movies and read information about them.",
+    img: "movie-database.jpg",
     url: "preview",
+    features: [
+      "Data fetching from themoviedb.org",
+      "Debounce function for fetching data",
+      "Simple and intuitive design",
+      "Fast and efficient code",
+      "Movie sorting by popularity",
+    ],
     tools: [
       {
         text: "React",
@@ -134,17 +136,15 @@ const projectsData = [
     ],
   },
   {
-    title: "Movie search system",
+    title: "Zyzz Bodybuilding",
     description:
-      "Movie search system website where you can search for movies and read information about them.",
-    img: "movie-database.jpg",
+      "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
+    img: "zyzz-bodybuilding.jpg",
     url: "preview",
     features: [
-      "Data fetching from themoviedb.org",
-      "Debounce function for fetching data",
-      "Simple and intuitive design",
-      "Fast and efficient code",
-      "Movie sorting by popularity",
+      "Image lazyloading",
+      "Animations with Intersection Observer API",
+      "Real pictures of the one and only God",
     ],
     tools: [
       {
