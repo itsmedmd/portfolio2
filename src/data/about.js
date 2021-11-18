@@ -55,6 +55,10 @@ const aboutData = {
       text: "sql",
       img: "sql",
     },
+    {
+      text: "c#",
+      img: "csharp",
+    },
   ],
 };
 
