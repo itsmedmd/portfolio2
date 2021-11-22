@@ -9,7 +9,7 @@ module.exports = {
     title: "Deimantas Butėnas - Portfolio",
     description:
       "Portfolio website of a front-end developer Deimantas Butėnas.",
-    siteUrl: "https://www.deimantasbutenas.lt/",
+    siteUrl: "https://www.deimantasb.com/",
   },
   plugins: [
     "gatsby-plugin-sass",
