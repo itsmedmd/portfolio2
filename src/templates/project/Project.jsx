@@ -10,6 +10,7 @@ const Project = ({ pageContext }) => {
     title,
     description,
     url,
+    github_repo,
     features,
     tools,
     sharpImg,
@@ -39,6 +40,12 @@ const Project = ({ pageContext }) => {
         <div className="page__action page__action--no-margin project__preview-link">
           <a className="button-link button-link--wide" href={urlOut}>
             Visit project page
+          </a>
+        </div>
+
+        <div className="page__action page__action--no-margin project__preview-link">
+          <a className="button-link button-link--small" href={github_repo}>
+            Visit project code repository
           </a>
         </div>
 

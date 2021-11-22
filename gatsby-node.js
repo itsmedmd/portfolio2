@@ -83,6 +83,7 @@ exports.createPages = async ({ graphql, actions }) => {
           img
           title
           url
+          github_repo
           tools {
             text
             img
