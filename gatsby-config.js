@@ -39,7 +39,7 @@ module.exports = {
         short_name: `DB`,
         start_url: `/`,
         background_color: `#000`,
-        theme_color: `#18a8d8`,
+        theme_color: `#000`,
         display: `standalone`,
         icon: `static/favicon.png`,
       },

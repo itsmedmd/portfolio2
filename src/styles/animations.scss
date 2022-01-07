@@ -12,6 +12,10 @@
 	}
 }
 
+@keyframes disappear-on-end {
+	100% { visibility: hidden; }
+}
+
 @keyframes spinning-loader {
 	0% {
 		transform: rotate(0deg);
@@ -19,15 +23,5 @@
 
 	100% {
 		transform: rotate(360deg);
-	}
-}
-
-@keyframes opacity-fade-in {
-	0% {
-		opacity: 0;
-	}
-
-	100% {
-		opacity: 1;
 	}
 }

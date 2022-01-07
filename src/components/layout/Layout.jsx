@@ -70,7 +70,12 @@ export const Layout = ({
         />
       </Helmet>
 
-      <div className="layout__background-color"></div>
+      <div
+        className={`
+          layout__background-color
+          ${animation ? " layout__background-color--animation" : ""}
+        `}
+      ></div>
       <div className="layout__background-image-container">
         <StaticImage
           src="../../images/background.jpg"

@@ -1,6 +1,7 @@
 @import "styles";
 
 .page-load-animation {
+	animation: 2s disappear-on-end forwards;
 	background-color: $black;
 	font-size: $font-42;
 	height: 100%;
@@ -52,9 +53,5 @@
 
 	&--invisible {
 		opacity: 0;
-	}
-
-	&--finished {
-		z-index: $z-index-hidden;
 	}
 }
