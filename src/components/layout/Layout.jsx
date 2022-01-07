@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import "styles/global.scss";
 import "./layout.scss";
@@ -11,14 +11,28 @@ export const Layout = ({
   noPadding,
   centered,
   animation,
+  animationStarted,
   noMaxWidth,
   disableNavigation,
 }) => {
   const [isMobileNavEnabled, setIsMobileNavEnabled] = useState(false);
+  const [isBackgroundOverlayVisible, setIsBackgroundOverlayVisible] = useState(
+    animation || false
+  );
 
   const handleMobileToggle = () => {
     setIsMobileNavEnabled(!isMobileNavEnabled);
   };
+
+  useEffect(() => {
+    if (animationStarted && isBackgroundOverlayVisible) {
+      const timeout = setTimeout(
+        () => setIsBackgroundOverlayVisible(false),
+        500
+      );
+      return () => clearTimeout(timeout);
+    }
+  }, [animationStarted, isBackgroundOverlayVisible]);
 
   return (
     <div
@@ -71,21 +85,8 @@ export const Layout = ({
       </Helmet>
 
       <div
-        className={`
-          layout__background-color
-          ${animation ? " layout__background-color--animation" : ""}
-        `}
+        className={isBackgroundOverlayVisible ? "layout__background-color" : ""}
       ></div>
-      <div className="layout__background-image-container">
-        <StaticImage
-          src="../../images/background.jpg"
-          alt=""
-          className="layout__background-image"
-          placeholder="dominantColor"
-          quality="50"
-        />
-      </div>
-
       <header
         className={`header ${isMobileNavEnabled ? " header--nav-active" : ""}`}
       >
@@ -105,6 +106,16 @@ export const Layout = ({
           ${isMobileNavEnabled ? " main--hidden" : ""}
         `}
       >
+        <div className="main__background-color"></div>
+        <div className="main__background-image-container">
+          <StaticImage
+            src="../../images/background.jpg"
+            alt=""
+            className="main__background-image"
+            placeholder="dominantColor"
+            quality="50"
+          />
+        </div>
         <div
           className={`
           main__content

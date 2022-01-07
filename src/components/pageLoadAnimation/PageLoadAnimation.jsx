@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./pageLoadAnimation.scss";
 
-export const PageLoadAnimation = ({ text, sendIsAnimationActiveSignal }) => {
+export const PageLoadAnimation = ({
+  text,
+  sendIsAnimationActiveSignal,
+  sendAnimationStartSignal,
+}) => {
   const [isActive, setIsActive] = useState(true);
   const [isFinished, setIsFinished] = useState(false);
 
@@ -18,7 +22,15 @@ export const PageLoadAnimation = ({ text, sendIsAnimationActiveSignal }) => {
     if (!isActive && isFinished) {
       sendIsAnimationActiveSignal(false);
     }
-  }, [sendIsAnimationActiveSignal, isActive, isFinished]);
+
+    const timeout = setTimeout(() => sendAnimationStartSignal(), 200);
+    return () => clearTimeout(timeout);
+  }, [
+    sendIsAnimationActiveSignal,
+    sendAnimationStartSignal,
+    isActive,
+    isFinished,
+  ]);
 
   return (
     <div

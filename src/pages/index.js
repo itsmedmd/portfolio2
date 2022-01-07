@@ -6,6 +6,11 @@ import "./index.scss";
 
 const HomePage = () => {
   const [isAnimationActive, setIsAnimationActive] = useState(true);
+  const [isAnimationStarted, setIsAnimationStarted] = useState(false);
+
+  const handleAnimationStart = () => {
+    setIsAnimationStarted(true);
+  };
 
   const handleAnimationChange = (val) => {
     setIsAnimationActive(val);
@@ -16,6 +21,7 @@ const HomePage = () => {
       className="homepage"
       noMaxWidth={true}
       animation={isAnimationActive}
+      animationStarted={isAnimationStarted}
     >
       <Helmet>
         <title>Deimantas Butėnas - Home</title>
@@ -24,6 +30,7 @@ const HomePage = () => {
       <PageLoadAnimation
         text="Deimantas Butėnas"
         sendIsAnimationActiveSignal={handleAnimationChange}
+        sendAnimationStartSignal={handleAnimationStart}
       />
 
       <h1 className="sr-only">Homepage</h1>

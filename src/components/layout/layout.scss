@@ -4,31 +4,15 @@
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
-	
-	&__background-image-container {
-		left: 0;
-		position: fixed;
-		top: 0;
-		z-index: $z-index-hidden;
-	}
-
-	&__background-image {
-		min-height: 100vh;
-		min-width: 100vw;
-	}
 
 	&__background-color {
-		background-color: $page-background-image-color;
+		background-color: $black;
 		height: 100%;
 		left: 0;
 		position: absolute;
 		top: 0;
 		width: 100%;
-		z-index: $z-index-hidden;
-	}
-
-	&__background-color--animation {
-		background-color: $black;
+		z-index: $z-index-mobile-nav-overlay;
 	}
 
 	&--with-animation {
@@ -87,6 +71,29 @@
 
 	&__content--with-max-width {
 		max-width: $page-max-width;
+	}
+
+	&__background-image-container {
+		left: 0;
+		position: fixed;
+		top: 0;
+		z-index: $z-index-hidden;
+	}
+
+	&__background-image {
+		min-height: 100vh;
+		min-width: 100vw;
+	}
+
+	&__background-color {
+		background-color: $page-background-image-color;
+		height: 100%;
+		left: 0;
+		padding: $header-height 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: $z-index-hidden;
 	}
 
 	&--no-padding {
