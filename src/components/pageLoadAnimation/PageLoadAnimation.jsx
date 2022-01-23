@@ -37,6 +37,7 @@ export const PageLoadAnimation = ({
       className={`
         page-load-animation
         ${isActive ? "" : " page-load-animation--invisible"}
+        ${isFinished ? " page-load-animation--finished" : ""}
       `}
       onAnimationEnd={handleMainAnimationEnd}
     >

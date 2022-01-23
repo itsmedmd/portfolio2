@@ -54,4 +54,8 @@
 	&--invisible {
 		opacity: 0;
 	}
+
+	&--finished {
+		display: none;
+	}
 }
