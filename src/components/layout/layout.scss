@@ -73,6 +73,10 @@
 		max-width: $page-max-width;
 	}
 
+	&__content--hidden {
+		display: none;
+	}
+
 	&__background-image-container {
 		left: 0;
 		position: fixed;
@@ -103,9 +107,5 @@
 	&--centered {
 		align-items: center;
 		display: flex;
-	}
-
-	&--hidden {
-		display: none;
 	}
 }

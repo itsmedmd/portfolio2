@@ -5,6 +5,14 @@
 	width: 100%;
 	z-index: $z-index-overlay;
 
+	&-mobile-header-background {
+		background-color: $header-background;
+		height: $header-height;
+		position: absolute;
+		top: 0;
+		width: 100%;
+	}
+
 	// navigation <li> is &__item
 	&__item {
 		margin-right: 52px;

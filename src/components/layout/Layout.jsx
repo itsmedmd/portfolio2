@@ -103,7 +103,6 @@ export const Layout = ({
           main
           ${noPadding ? " main--no-padding" : ""}
           ${centered ? " main--centered" : ""}
-          ${isMobileNavEnabled ? " main--hidden" : ""}
         `}
       >
         <div className="main__background-color"></div>
@@ -118,9 +117,11 @@ export const Layout = ({
         </div>
         <div
           className={`
-          main__content
-          ${noMaxWidth ? "" : " main__content--with-max-width"}
-          ${className}`}
+            main__content
+            ${noMaxWidth ? "" : " main__content--with-max-width"}
+            ${className}
+            ${isMobileNavEnabled ? " main__content--hidden" : ""}
+          `}
         >
           {children}
         </div>
