@@ -49,7 +49,7 @@ export const Layout = ({
         />
         <meta
           name="keywords"
-          content="deimantas butėnas, deimantas butenas, web development, frontend, front-end, front end, front end development, front end developer, portfolio, design, web design, react, gatsby, javascript, html, css, scss, sass, git, aws, graphql"
+          content="deimantas butėnas, deimantas butenas, web development, web developer, frontend, front-end, front end, front end development, front end developer, portfolio, design, web design, react, gatsby, next, nextjs, vue, vuejs, typescript, js, ts, javascript, html, css, scss, sass, git, aws, graphql, sql, amazon web services, redux, lithuania, kaunas, vilnius"
         />
         <link rel="canonical" href="https://www.deimantasb.com/" />
 
