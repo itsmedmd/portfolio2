@@ -14,38 +14,46 @@ const aboutData = {
       img: "react",
     },
     {
+      text: "vue",
+      img: "vue",
+    },
+    {
       text: "javascript",
       img: "javascript",
     },
     {
-      text: "css",
-      img: "css",
-    },
-    {
-      text: "git",
-      img: "git",
-    },
-    {
-      text: "gatsby",
-      img: "gatsby",
+      text: "typescript",
+      img: "typescript",
     },
     {
       text: "sass(scss)",
       img: "sass",
     },
     {
+      text: "css",
+      img: "css",
+    },
+    {
       text: "html",
       img: "html",
     },
+    {
+      text: "git",
+      img: "git",
+    },
   ],
   secondarySkills: [
+    {
+      text: "Redux",
+      img: "redux",
+    },
     {
       text: "Next.js",
       img: "nextjs",
     },
     {
-      text: "Redux",
-      img: "redux",
+      text: "gatsby",
+      img: "gatsby",
     },
     {
       text: "Amazon Web Services",
@@ -54,10 +62,6 @@ const aboutData = {
     {
       text: "sql",
       img: "sql",
-    },
-    {
-      text: "c#",
-      img: "csharp",
     },
   ],
 };
