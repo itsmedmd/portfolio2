@@ -1,5 +1,45 @@
 const projectsData = [
   {
+    title: "Satellite Tracker",
+    description:
+      "A website where you can track real-time positions of almost 20,000 satellites orbiting the Earth in a 3D geospatial viewer. This project uses publicly available satellite TLE (Two-Line Element) data sets provided by CelesTrak, from which it's possible to calculate the precise position of an object at any given moment in time - be it the present, the future or the past.",
+    img: "satellites.jpg",
+    url: "https://satellites-itsmedmd.vercel.app",
+    github_repo: "https://github.com/itsmedmd/satellite-tracker",
+    features: [
+      "Satellite propagation via TLE data sets using satellite.js library by Shashwat Kandadai",
+      "Interactive in-browser 3D geospatial viewer rendering powered by Cesium ion",
+      "Time flow controls - ability to go back or forwards in time to see positions of objects",
+      "Almost 20,000 objects rendered in real-time with up to 60fps",
+    ],
+    tools: [
+      {
+        text: "React",
+        img: "react",
+      },
+      {
+        text: "Next.js",
+        img: "nextjs",
+      },
+      {
+        text: "Cesium",
+        img: "javascript",
+      },
+      {
+        text: "satellite.js",
+        img: "javascript",
+      },
+      {
+        text: "CSS",
+        img: "css",
+      },
+      {
+        text: "HTML",
+        img: "html",
+      },
+    ],
+  },
+  {
     title: "OpenSea NFT Explorer",
     description:
       "A website where you can explore NFT's from OpenSea - the world's first and largest NFT marketplace. This website uses OpenSea's API to fetch and display information about assets (NFTs) sorted by various filters in an on-demand fetched list of presumably never ending supply of new data (unless you're willing to scroll through millions of assets). The website also provides the ability to view details about each asset in a dynamically rendered asset page with detailed information fetched, you guessed it - on demand!",
@@ -81,6 +121,73 @@ const projectsData = [
       },
     ],
   },
+];
+
+/*
+{
+    title: "Movie search system",
+    description:
+      "Movie search system website where you can search for movies and read information about them.",
+    img: "movie-database.jpg",
+    url: "preview",
+    github_repo: "https://github.com/itsmedmd/movie-database",
+    features: [
+      "Data fetching from themoviedb.org",
+      "Debounce function for fetching data",
+      "Simple and intuitive design",
+      "Fast and efficient code",
+      "Movie sorting by popularity",
+    ],
+    tools: [
+      {
+        text: "React",
+        img: "react",
+      },
+      {
+        text: "Gatsby",
+        img: "gatsby",
+      },
+      {
+        text: "SASS(SCSS)",
+        img: "sass",
+      },
+      {
+        text: "HTML",
+        img: "html",
+      },
+    ],
+  },
+  {
+    title: "Zyzz Bodybuilding",
+    description:
+      "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
+    img: "zyzz-bodybuilding.jpg",
+    url: "preview",
+    github_repo: "https://github.com/itsmedmd/bodybuilding",
+    features: [
+      "Image lazyloading",
+      "Animations with Intersection Observer API",
+      "Real pictures of the one and only God",
+    ],
+    tools: [
+      {
+        text: "React",
+        img: "react",
+      },
+      {
+        text: "Gatsby",
+        img: "gatsby",
+      },
+      {
+        text: "SASS(SCSS)",
+        img: "sass",
+      },
+      {
+        text: "HTML",
+        img: "html",
+      },
+    ],
+  },
   {
     title: "Japanese Musicians",
     description:
@@ -148,73 +255,6 @@ const projectsData = [
       },
     ],
   },
-];
-
-/*
-{
-  title: "Movie search system",
-  description:
-    "Movie search system website where you can search for movies and read information about them.",
-  img: "movie-database.jpg",
-  url: "preview",
-  github_repo: "https://github.com/itsmedmd/movie-database",
-  features: [
-    "Data fetching from themoviedb.org",
-    "Debounce function for fetching data",
-    "Simple and intuitive design",
-    "Fast and efficient code",
-    "Movie sorting by popularity",
-  ],
-  tools: [
-    {
-      text: "React",
-      img: "react",
-    },
-    {
-      text: "Gatsby",
-      img: "gatsby",
-    },
-    {
-      text: "SASS(SCSS)",
-      img: "sass",
-    },
-    {
-      text: "HTML",
-      img: "html",
-    },
-  ],
-},
-{
-  title: "Zyzz Bodybuilding",
-  description:
-    "Азиз Сергеевич Шавершян or more commonly known as Zyzz was a bodybuilder that inspired millions, including me. This project is my tribute to his life.",
-  img: "zyzz-bodybuilding.jpg",
-  url: "preview",
-  github_repo: "https://github.com/itsmedmd/bodybuilding",
-  features: [
-    "Image lazyloading",
-    "Animations with Intersection Observer API",
-    "Real pictures of the one and only God",
-  ],
-  tools: [
-    {
-      text: "React",
-      img: "react",
-    },
-    {
-      text: "Gatsby",
-      img: "gatsby",
-    },
-    {
-      text: "SASS(SCSS)",
-      img: "sass",
-    },
-    {
-      text: "HTML",
-      img: "html",
-    },
-  ],
-},
 */
 
 module.exports = projectsData;

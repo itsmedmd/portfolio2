@@ -2,7 +2,6 @@ import React from "react";
 import { Helmet } from "react-helmet";
 import { Link, graphql } from "gatsby";
 import { Layout, ListImageItem } from "components";
-import "./index.scss";
 
 const createSVGImagesObject =
   require("utils/createSVGImagesObject").createSVGImagesObject;
@@ -33,15 +32,9 @@ const About = ({ data }) => {
       <h2 className="side-title-left">Deimantas Butėnas</h2>
       <article className="page__content">
         <section className="page__section">
-          {description &&
-            description.map((paragraph, id) => (
-              <p
-                className="page__description about__paragraph"
-                key={`about-${id}-${paragraph}`}
-              >
-                {paragraph}
-              </p>
-            ))}
+          <p className="page__description page__description--bigger">
+            {description}
+          </p>
         </section>
 
         <section className="page__section">
