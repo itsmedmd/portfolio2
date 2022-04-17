@@ -1,7 +1,6 @@
 const aboutData = {
-  description: [
-    "I'm a passionate front-end developer trying to create something cool one project at a time.",
-  ],
+  description:
+    "I'm a passionate front-end developer trying to create something cool one project at a time ^^",
   experiences: [
     "Working on projects in Agile teams",
     "Developing accessible websites",
