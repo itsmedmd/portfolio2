@@ -55,6 +55,10 @@ const aboutData = {
       img: "gatsby",
     },
     {
+      text: "Webpack",
+      img: "webpack",
+    },
+    {
       text: "Amazon Web Services",
       img: "aws",
     },
