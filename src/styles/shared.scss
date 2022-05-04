@@ -233,7 +233,9 @@
 	}
 
 	&__description--bigger {
-		font-size: $font-19;
+		font-size: $font-22;
+		max-width: none;
+		padding-left: 0;
 	}
 
 	// action buttons (navigation to other pages)

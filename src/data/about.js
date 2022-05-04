@@ -21,10 +21,6 @@ const aboutData = {
       img: "javascript",
     },
     {
-      text: "typescript",
-      img: "typescript",
-    },
-    {
       text: "sass(scss)",
       img: "sass",
     },
@@ -43,6 +39,10 @@ const aboutData = {
   ],
   secondarySkills: [
     {
+      text: "typescript",
+      img: "typescript",
+    },
+    {
       text: "Redux",
       img: "redux",
     },
@@ -59,12 +59,16 @@ const aboutData = {
       img: "webpack",
     },
     {
-      text: "Amazon Web Services",
-      img: "aws",
+      text: "php",
+      img: "php",
     },
     {
       text: "sql",
       img: "sql",
+    },
+    {
+      text: "Amazon Web Services",
+      img: "aws",
     },
   ],
 };
