@@ -36,6 +36,10 @@ const aboutData = {
       text: "git",
       img: "git",
     },
+    {
+      text: "sql",
+      img: "sql",
+    },
   ],
   secondarySkills: [
     {
@@ -61,10 +65,6 @@ const aboutData = {
     {
       text: "php",
       img: "php",
-    },
-    {
-      text: "sql",
-      img: "sql",
     },
     {
       text: "Amazon Web Services",
