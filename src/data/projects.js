@@ -39,47 +39,47 @@ const projectsData = [
       },
     ],
   },
-  {
-    title: "OpenSea NFT Explorer",
-    description:
-      "A website where you can explore NFT's from OpenSea - the world's first and largest NFT marketplace. This website uses OpenSea's API to fetch and display information about assets (NFTs) sorted by various filters in an on-demand fetched list of presumably never ending supply of new data (unless you're willing to scroll through millions of assets). The website also provides the ability to view details about each asset in a dynamically rendered asset page with detailed information fetched, you guessed it - on demand!",
-    img: "opensea-nft-explorer.jpg",
-    url: "https://opensea-nft-explorer.vercel.app",
-    github_repo: "https://github.com/itsmedmd/opensea-nft-explorer",
-    features: [
-      "Automatic asset list data prefetching",
-      "Efficient image and video loading that uses various fallback URLs based on predefined priority",
-      "Dynamic individual asset page rendering that uses a combination of general and specifically fetched detailed data",
-      "Asset randomisation",
-      "Custom image and video lazyloading",
-    ],
-    tools: [
-      {
-        text: "Vue",
-        img: "vue",
-      },
-      {
-        text: "TypeScript",
-        img: "typescript",
-      },
-      {
-        text: "Amazon API Gateway",
-        img: "aws",
-      },
-      {
-        text: "AWS Lambda",
-        img: "aws",
-      },
-      {
-        text: "SASS(SCSS)",
-        img: "sass",
-      },
-      {
-        text: "HTML",
-        img: "html",
-      },
-    ],
-  },
+  // {
+  //   title: "OpenSea NFT Explorer",
+  //   description:
+  //     "A website where you can explore NFT's from OpenSea - the world's first and largest NFT marketplace. This website uses OpenSea's API to fetch and display information about assets (NFTs) sorted by various filters in an on-demand fetched list of presumably never ending supply of new data (unless you're willing to scroll through millions of assets). The website also provides the ability to view details about each asset in a dynamically rendered asset page with detailed information fetched, you guessed it - on demand!",
+  //   img: "opensea-nft-explorer.jpg",
+  //   url: "https://opensea-nft-explorer.vercel.app",
+  //   github_repo: "https://github.com/itsmedmd/opensea-nft-explorer",
+  //   features: [
+  //     "Automatic asset list data prefetching",
+  //     "Efficient image and video loading that uses various fallback URLs based on predefined priority",
+  //     "Dynamic individual asset page rendering that uses a combination of general and specifically fetched detailed data",
+  //     "Asset randomisation",
+  //     "Custom image and video lazyloading",
+  //   ],
+  //   tools: [
+  //     {
+  //       text: "Vue",
+  //       img: "vue",
+  //     },
+  //     {
+  //       text: "TypeScript",
+  //       img: "typescript",
+  //     },
+  //     {
+  //       text: "Amazon API Gateway",
+  //       img: "aws",
+  //     },
+  //     {
+  //       text: "AWS Lambda",
+  //       img: "aws",
+  //     },
+  //     {
+  //       text: "SASS(SCSS)",
+  //       img: "sass",
+  //     },
+  //     {
+  //       text: "HTML",
+  //       img: "html",
+  //     },
+  //   ],
+  // },
   {
     title: "Mars Rover Photos",
     description:
