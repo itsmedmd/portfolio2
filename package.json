@@ -29,5 +29,8 @@
     "react-helmet": "^6.1.0",
     "react-responsive": "^9.0.2",
     "sass": "^1.69.5"
+  },
+  "optionalDependencies": {
+    "@parcel/watcher-linux-x64-glibc": "^2.3.0"
   }
 }
