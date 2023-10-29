@@ -19,10 +19,13 @@ module.exports = {
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
     {
-      resolve: "gatsby-plugin-google-analytics",
+      resolve: `gatsby-plugin-google-gtag`,
       options: {
-        trackingId: "UA-175798206-1",
-      },
+        trackingIds: ['G-JVF07FSS8S'],
+        pluginConfig: {
+          head: true
+        }
+      }
     },
     {
       resolve: "gatsby-source-filesystem",
