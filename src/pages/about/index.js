@@ -91,7 +91,7 @@ const About = ({ data }) => {
         <section className="page__section page__section--vertical">
           <a
             className="button-link button-link--small"
-            href="https://www.linkedin.com/in/deimantas-but%C4%97nas-85870a192/"
+            href="https://www.linkedin.com/in/deimantasbu"
           >
             <img className="button-link__image" src={images.linkedin} alt="" />
             LinkedIn profile

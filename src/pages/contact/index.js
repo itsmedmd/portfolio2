@@ -82,7 +82,7 @@ const Contact = ({ data }) => {
           <h2 className="contact__links-title">You can reach me at:</h2>
           <a
             className="button-link button-link--no-margin button-link--medium contact__link-button"
-            href="https://www.linkedin.com/in/deimantas-but%C4%97nas-85870a192/"
+            href="https://www.linkedin.com/in/deimantasbu"
           >
             <img className="button-link__image" src={images.linkedin} alt="" />
             LinkedIn
