@@ -237,6 +237,10 @@
 		font-size: $font-22;
 		max-width: none;
 		padding-left: 0;
+
+		@include respond-to(max-width, $break-phone-big) {
+			font-size: $font-18;
+		}
 	}
 
 	// action buttons (navigation to other pages)
