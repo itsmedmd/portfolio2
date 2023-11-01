@@ -2,15 +2,18 @@ const projectsData = [
   {
     title: "Satellite Tracker",
     description:
-      "A website where you can track real-time positions of almost 20,000 satellites orbiting the Earth in a 3D geospatial viewer. This project uses publicly available satellite TLE (Two-Line Element) data sets provided by CelesTrak, from which it's possible to calculate the precise position of an object at any given moment in time - be it the present, the future or the past.",
+      "Track positions and orbits of over 22,000 satellites orbiting the Earth in a 3D geospatial viewer powered by Cesium.",
     img: "satellites.jpg",
     url: "https://satellites-itsmedmd.vercel.app",
     github_repo: "https://github.com/itsmedmd/satellite-tracker",
     features: [
-      "Satellite propagation via TLE data sets using satellite.js library by Shashwat Kandadai",
-      "Interactive in-browser 3D geospatial viewer rendering powered by Cesium ion",
-      "Time flow controls - ability to go back or forwards in time to see positions of objects",
-      "Almost 20,000 objects rendered in real-time with up to 60fps",
+      "Satellite Propagation with TLE Data: Utilizing the satellite.js library by Shashwat Kandadai for accurate satellite tracking",
+      "3D Geospatial Viewer: Enjoy an interactive, in-browser 3D geospatial viewer powered by Cesium ion",
+      "Conditional Satellite Orbit Display: Choose when to display satellite orbits based on your preferences",
+      "Satellite Tracking: Follow satellites from their own vantage points in real-time",
+      "Time Control: Seamlessly navigate backward and forward in simulation time for a dynamic experience",
+      "Real-time Rendering: Experience smooth, real-time rendering of over 22,000 objects at up to 60fps",
+      "Up-to-Date Satellite Catalog: Access an always-current satellite catalog with data on launches from the past month"
     ],
     tools: [
       {
@@ -22,6 +25,10 @@ const projectsData = [
         img: "nextjs",
       },
       {
+        text: "redux",
+        img: "redux",
+      },
+      {
         text: "Cesium",
         img: "javascript",
       },
@@ -30,8 +37,8 @@ const projectsData = [
         img: "javascript",
       },
       {
-        text: "CSS",
-        img: "css",
+        text: "SCSS",
+        img: "sass",
       },
       {
         text: "HTML",
@@ -83,16 +90,16 @@ const projectsData = [
   {
     title: "Mars Rover Photos",
     description:
-      "A website where you can view the latest images from Mars taken by NASA rovers. This website uses Server-Side Rendering with Next.js to serve pages for infinitely scrolling masonry gallery, with data from NASA's \"Mars Rover Photos\" API that's periodically fetched for new data that is then stored in Amazon DynamoDB in order to achieve the most efficiency while rendering image gallery pages.",
+      "Explore Mars with the most recent images from NASA's rovers!",
     img: "mars-rover-photos.jpg",
     url: "https://mars-rover-photos-itsmedmd.vercel.app",
     github_repo: "https://github.com/itsmedmd/mars-rover-photos",
     features: [
-      "Server-Side Rendering of gallery pages with Next.js",
-      "Incremental Static Regeneration of main pages to periodically fetch new data",
-      "Data storage and retrieval powered by Amazon DynamoDB",
-      "Image delivery and optimization using Cloudinary",
-      "Responsive, infinitely scrolling masonry gallery",
+      "Server-Side Gallery Rendering: Utilizing Next.js for server-side rendering of gallery pages",
+      "Incremental Static Regeneration: Periodically fetching fresh data for main pages",
+      "DynamoDB-Powered Data Management: Seamless storage and retrieval of data using Amazon DynamoDB",
+      "Efficient Image Delivery: Optimizing image delivery with Cloudinary for a smoother experience",
+      "Responsive Masonry Gallery: Enjoy a responsive, infinitely scrolling masonry gallery.",
     ],
     tools: [
       {
@@ -108,11 +115,11 @@ const projectsData = [
         img: "redux",
       },
       {
-        text: "DynamoDB",
+        text: "Amazon DynamoDB",
         img: "aws",
       },
       {
-        text: "SASS(SCSS)",
+        text: "SCSS",
         img: "sass",
       },
       {
