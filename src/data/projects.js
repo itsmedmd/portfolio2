@@ -2,7 +2,7 @@ const projectsData = [
   {
     title: "Satellite Tracker",
     description:
-      "Track positions and orbits of over 22,000 satellites orbiting the Earth in a 3D geospatial viewer powered by Cesium",
+      "Track positions and orbits of over 22,000 satellites orbiting the Earth in a 3D geospatial viewer powered by Cesium.",
     img: "satellites.jpg",
     url: "https://satellites-itsmedmd.vercel.app",
     github_repo: "https://github.com/itsmedmd/satellite-tracker",
