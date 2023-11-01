@@ -1,5 +1,6 @@
 const projectsData = [
   {
+    sortIndex: 1,
     title: "Satellite Tracker",
     description:
       "Track positions and orbits of over 22,000 satellites orbiting the Earth in a 3D geospatial viewer powered by Cesium.",
@@ -88,6 +89,7 @@ const projectsData = [
   //   ],
   // },
   {
+    sortIndex: 2,
     title: "Mars Rover Photos",
     description:
       "Explore Mars with the most recent images from NASA's rovers!",

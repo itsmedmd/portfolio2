@@ -78,6 +78,7 @@ exports.createPages = async ({ graphql, actions }) => {
       }
       allProject {
         nodes {
+          sortIndex
           description
           features
           img

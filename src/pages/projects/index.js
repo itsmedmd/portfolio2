@@ -8,20 +8,22 @@ const Projects = ({ data }) => {
   const { allFile, allProject } = data;
 
   const createProjectsToRender = () => {
-    return allProject.nodes.map(({ id, img, title, slug }, index) => {
-      const sharpImg = allFile.nodes.find(
-        (imgSharp) => imgSharp.relativePath === img
-      );
+    return allProject.nodes
+      .map(({ id, img, title, slug }, index) => {
+        const sharpImg = allFile.nodes.find(
+          (imgSharp) => imgSharp.relativePath === img
+        );
 
-      return (
-        <ProjectLink
-          key={`${id}-${index}`}
-          title={title}
-          slug={slug}
-          sharpImg={sharpImg.childImageSharp.gatsbyImageData}
-        />
-      );
-    });
+        return (
+          <ProjectLink
+            key={`${id}-${index}`}
+            title={title}
+            slug={slug}
+            sharpImg={sharpImg.childImageSharp.gatsbyImageData}
+          />
+        );
+      })
+      .sort((a, b) => a.sortIndex - b.sortIndex);
   };
 
   return (
@@ -55,6 +57,7 @@ export const query = graphql`
     allProject {
       nodes {
         id
+        sortIndex
         img
         title
         slug
